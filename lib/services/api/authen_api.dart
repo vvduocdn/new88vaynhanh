@@ -1,0 +1,32 @@
+import 'package:dio/dio.dart';
+import 'package:vaynow_flutter/model/base_reponse/base_response.dart';
+import 'package:vaynow_flutter/model/home/change_password_body.dart';
+import 'package:vaynow_flutter/model/user/authen/info_user_put_body.dart';
+import 'package:vaynow_flutter/model/user/authen/login_body.dart';
+import 'package:vaynow_flutter/model/user/authen/login_response.dart';
+import 'package:vaynow_flutter/model/user/authen/signup_body.dart';
+import 'package:retrofit/retrofit.dart';
+
+part 'authen_api.g.dart';
+
+@RestApi()
+abstract class AuthServices {
+  factory AuthServices(Dio dio, {String baseUrl}) = _AuthServices;
+
+  @POST('/api/auth/login')
+  Future<BaseResponse<LoginResponse>> loginAccount(
+    @Body() LoginBody body,
+  );
+
+  @POST('/api/auth/signup')
+  Future<BaseResponse<LoginResponse>> signupAccount(
+    @Body() SignupBody body,
+  );
+
+  @PUT('/api/users/me')
+  Future<BaseResponse<UserResponse>> putUserInfo(@Body() InfoUserPutBody body);
+
+  @PATCH('/api/auth/change-password')
+  Future<BaseResponse<dynamic>> patchChangePassword(
+      @Body() ChangePasswordBody body);
+}
