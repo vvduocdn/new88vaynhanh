@@ -94,7 +94,7 @@ class ApiClient {
         }
 
         final result = await Connectivity().checkConnectivity();
-        if (result == ConnectivityResult.none) {
+        if (result.contains(ConnectivityResult.none)){
           const errorMsg =
               "No internet connection. Please check the connection again.";
           if (kDebugMode) {

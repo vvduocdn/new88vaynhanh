@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:vaynow_flutter/component/bottom_navigation.dart';
 import 'package:vaynow_flutter/component/theme.dart';
@@ -46,9 +47,23 @@ class _SplashScreenState extends State<SplashScreen>
 
   Future<void> _initApp() async {
     try {
-      final result = await SupaBaseApi().getStatusApp();
+      final result = await Connectivity().checkConnectivity();
+      if (result.contains(ConnectivityResult.none)) {
+        if (mounted) {
+          Future.delayed(Duration(seconds: Platform.isIOS ? 0 : 3), () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const BottomNavigation(),
+              ),
+            );
+          });
+        }
+        return;
+      }
+      final response = await SupaBaseApi().getStatusApp();
       if (result.isNotEmpty) {
-        bool status = result.first['status_link'];
+        bool status = response.first['status_link'];
         if (status && mounted) {
           Future.delayed(Duration(seconds: Platform.isIOS ? 0 : 3), () {
             Navigator.pushReplacement(

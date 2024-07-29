@@ -54,8 +54,8 @@ class HomePageBody extends StatelessWidget {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                               builder: (_) => const WebViewScreen(
-                                    initialUrl: 'https://new88030.com/Login',
-                                    titlePage: 'New88030',
+                                    initialUrl: 'https://new889.ec/?a=2423967',
+                                    titlePage: 'New889',
                                   )),
                         );
                       },
@@ -75,9 +75,8 @@ class HomePageBody extends StatelessWidget {
                         Navigator.of(context).push(
                           MaterialPageRoute(
                               builder: (_) => const WebViewScreen(
-                                    initialUrl:
-                                        'https://new88030.com/?a=2424228',
-                                    titlePage: 'New88030',
+                                initialUrl: 'https://new889.ec/?a=2423967',
+                                titlePage: 'New889',
                                   )),
                         );
                       },

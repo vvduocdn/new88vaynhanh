@@ -10,6 +10,7 @@ import 'package:vaynow_flutter/utils/spaces.dart';
 import 'package:vaynow_flutter/utils/styles.dart';
 import 'package:vaynow_flutter/view/profile/popup.dart';
 import 'package:vaynow_flutter/view/profile/image_previewer_dialog.dart';
+import 'package:vaynow_flutter/view/web_view/web_view_screen.dart';
 import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
 
 class InfoUserScreen extends StatefulWidget {
@@ -347,39 +348,50 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                         ),
                                       ],
                                     )),
-                                Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      color: context.colors.white,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(5)),
-                                    ),
-                                    alignment: Alignment.centerLeft,
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 10)
-                                            .add(const EdgeInsets.only(
-                                                left: 5, right: 5)),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.security_sharp,
-                                            size: 24,
-                                            color: context.colors.hF05D0E
-                                                .withOpacity(0.7)),
-                                        spaceW10,
-                                        Text(
-                                          'Chính sách bảo mật',
-                                          style: Styles.n16.copyWith(
-                                              color: context.colors.text),
-                                        ),
-                                        const Spacer(),
-                                        Icon(
-                                          Icons.chevron_right_rounded,
-                                          size: 30,
-                                          color: context.colors.main
-                                              .withOpacity(0.7),
-                                        ),
-                                      ],
-                                    )),
+                                GestureDetector(
+                                  onTap: (){
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (_) => const WebViewScreen(
+                                            initialUrl: 'https://www.freeprivacypolicy.com/live/90bb152c-be66-4797-84f3-0fb9a3e1d8f5',
+                                            titlePage: 'New88 VayNhanh',
+                                          )),
+                                    );
+                                  },
+                                  child: Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      decoration: BoxDecoration(
+                                        color: context.colors.white,
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(5)),
+                                      ),
+                                      alignment: Alignment.centerLeft,
+                                      padding:
+                                          const EdgeInsets.symmetric(vertical: 10)
+                                              .add(const EdgeInsets.only(
+                                                  left: 5, right: 5)),
+                                      child: Row(
+                                        children: [
+                                          Icon(Icons.security_sharp,
+                                              size: 24,
+                                              color: context.colors.hF05D0E
+                                                  .withOpacity(0.7)),
+                                          spaceW10,
+                                          Text(
+                                            'Chính sách bảo mật',
+                                            style: Styles.n16.copyWith(
+                                                color: context.colors.text),
+                                          ),
+                                          const Spacer(),
+                                          Icon(
+                                            Icons.chevron_right_rounded,
+                                            size: 30,
+                                            color: context.colors.main
+                                                .withOpacity(0.7),
+                                          ),
+                                        ],
+                                      )),
+                                ),
                                 Container(
                                     width: MediaQuery.of(context).size.width,
                                     decoration: BoxDecoration(
