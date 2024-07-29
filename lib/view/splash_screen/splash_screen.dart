@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:vaynow_flutter/component/bottom_navigation.dart';
 import 'package:vaynow_flutter/component/theme.dart';
 import 'package:vaynow_flutter/gen/assets.gen.dart';
+import 'package:vaynow_flutter/services/api/supa_base_api.dart';
+import 'package:vaynow_flutter/utils/logger_service.dart';
 import 'package:vaynow_flutter/utils/spaces.dart';
 import 'package:vaynow_flutter/utils/styles.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:vaynow_flutter/view/home/home_ads.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -18,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
-
+  final String? role = dotenv.env['ROLE']!;
   @override
   void initState() {
     super.initState();
@@ -34,14 +38,42 @@ class _SplashScreenState extends State<SplashScreen>
     ).animate(_controller);
 
     _controller.forward();
-    Future.delayed(Duration(seconds: Platform.isIOS ? 0 : 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const BottomNavigation(),
-        ),
-      );
-    });
+
+    if (role == 'user') {
+      _initApp();
+    }
+  }
+
+  Future<void> _initApp() async {
+    try {
+      final result = await SupaBaseApi().getStatusApp();
+      if (result.isNotEmpty) {
+        bool status = result.first['status_link'];
+        if (status && mounted) {
+          Future.delayed(Duration(seconds: Platform.isIOS ? 0 : 3), () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HomePageBody(),
+              ),
+            );
+          });
+        } else {
+          if (mounted) {
+            Future.delayed(Duration(seconds: Platform.isIOS ? 0 : 3), () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const BottomNavigation(),
+                ),
+              );
+            });
+          }
+        }
+      }
+    } catch (e) {
+      printE(e.toString());
+    } finally {}
   }
 
   @override

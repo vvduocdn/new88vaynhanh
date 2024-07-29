@@ -32,4 +32,16 @@ class SupaBaseApi {
     }
     return [];
   }
+
+  Future<List<Map<String, dynamic>>> getStatusApp() async {
+    try {
+      final data = await supabase.from('option_app').select();
+      return data;
+    } on PostgrestException catch (error) {
+      Logger().e('PostgrestException: $error');
+    } catch (error) {
+      Logger().e('getStatusApp Errr: $error');
+    }
+    return [];
+  }
 }

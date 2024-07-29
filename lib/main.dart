@@ -32,6 +32,7 @@ void main() async {
   Hive.registerAdapter(SocialNetworkAdapter());
   Hive.registerAdapter(JwtAdapter());
   Hive.registerAdapter(OrderAddressHiveAdapter());
+  SupaBaseService.instance;
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
     runApp(const MyApp());

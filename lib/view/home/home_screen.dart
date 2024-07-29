@@ -34,7 +34,6 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isConnectInternet = true;
   @override
   void initState() {
-    SupaBaseService.instance;
     super.initState();
   }
 
