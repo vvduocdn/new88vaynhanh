@@ -48,18 +48,18 @@ class HiveDataManager {
     _userThemeBox = null;
   }
 
-  Future<void> saveUserInfo(String phone) async {
+  Future<void> saveUserInfo(String phone,String createdAt, String id) async {
     await _openUserBox();
     var jwt = Jwt()
       ..token = ''
       ..expiredAt = '';
     var userInfo = UserInfo()
-      ..id = ''
+      ..id = id
       ..fullName = 'user$phone'
       ..avatar = ''
       ..email = ''
       ..status = ''
-      ..createdAt = ''
+      ..createdAt = createdAt
       ..phone = phone ?? ''
       ..updatedAt = '';
 

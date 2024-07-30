@@ -3,15 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vaynow_flutter/component/base_widget_spinkit.dart';
 import 'package:vaynow_flutter/component/theme.dart';
 import 'package:vaynow_flutter/gen/assets.gen.dart';
-import 'package:vaynow_flutter/l10n/localization/app_localizations.dart';
 import 'package:vaynow_flutter/services/di/locator.dart';
 import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
 import 'package:vaynow_flutter/utils/regex.dart';
 import 'package:vaynow_flutter/utils/spaces.dart';
 import 'package:vaynow_flutter/utils/styles.dart';
 import 'package:vaynow_flutter/view/home/widget/search_widget.dart';
-import 'package:vaynow_flutter/view/profile/popup.dart';
+import 'package:vaynow_flutter/view/profile/popup_logout.dart';
 import 'package:vaynow_flutter/view/profile/popup_success.dart';
+import 'package:vaynow_flutter/view/widget/popup_comfirm.dart';
 import 'package:vaynow_flutter/view_model/app_mode_bloc/app_mode_bloc.dart';
 import 'package:vaynow_flutter/view_model/app_mode_bloc/app_mode_state.dart';
 import 'package:vaynow_flutter/view_model/home_bloc/home_bloc.dart';
@@ -165,7 +165,8 @@ class _AddVayNowState extends State<AddVayNow> {
                                           phone: phone,
                                           func: (message, status) {
                                             if (status) {
-                                              BlocProvider.of<UserBloc>(context).add(GetCurrentUserInfo());
+                                              BlocProvider.of<UserBloc>(context)
+                                                  .add(GetCurrentUserInfo());
                                               showModalBottomSheet<void>(
                                                 context: context,
                                                 backgroundColor:
@@ -178,7 +179,7 @@ class _AddVayNowState extends State<AddVayNow> {
                                                 },
                                               );
                                             } else {
-                                              PopupLogout.showPopModelDialog(
+                                              PopupComfirm.showPopModelDialog(
                                                   context,
                                                   () async {},
                                                   'Thông báo',
@@ -229,18 +230,18 @@ class _AddVayNowState extends State<AddVayNow> {
                                     .copyWith(color: const Color(0xFF625231)),
                               ),
                               spaceH80,
-                              Container(
-                                height: 100,
-                                width: double.infinity,
-                                decoration: const BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(8)),
-                                    image: DecorationImage(
-                                      image: AssetImage(
-                                          "assets/images/banner_1.jpg"),
-                                      fit: BoxFit.fill,
-                                    )),
-                              ),
+                              // Container(
+                              //   height: 100,
+                              //   width: double.infinity,
+                              //   decoration: const BoxDecoration(
+                              //       borderRadius:
+                              //           BorderRadius.all(Radius.circular(8)),
+                              //       image: DecorationImage(
+                              //         image: AssetImage(
+                              //             "assets/images/banner_1.jpg"),
+                              //         fit: BoxFit.fill,
+                              //       )),
+                              // ),
                             ],
                           ),
                         ),

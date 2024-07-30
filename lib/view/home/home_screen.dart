@@ -10,10 +10,12 @@ import 'package:vaynow_flutter/utils/spaces.dart';
 import 'package:vaynow_flutter/utils/styles.dart';
 import 'package:vaynow_flutter/view/add_vay_now.dart';
 import 'package:vaynow_flutter/view/profile/info_user_screen.dart';
+import 'package:vaynow_flutter/view/widget/popup_comfirm.dart';
 import 'package:vaynow_flutter/view_model/app_mode_bloc/app_mode_bloc.dart';
 import 'package:vaynow_flutter/view_model/app_mode_bloc/app_mode_state.dart';
 import 'package:vaynow_flutter/view_model/home_bloc/home_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -51,6 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context, appModeState) {
         return BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
+            final user = context.watch<UserBloc>().state.userInfo;
             return Scaffold(
                 backgroundColor: context.colors.white,
                 body: Container(
@@ -168,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     spaceH10,
                                     Text(
-                                      'đ',
+                                      'đ 0',
                                       style: Styles.n18w7.copyWith(
                                           color: context.colors.white),
                                     ),
@@ -179,6 +182,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             spaceH30,
                             GestureDetector(
                               onTap: () {
+                                if (user?.phone != null &&
+                                    user!.phone!.isNotEmpty) {
+                                  PopupComfirm.showPopModelDialog(
+                                      context,
+                                      () async {},
+                                      'Thông báo',
+                                      'Gói vay now đ 30,000,000 đang được xét duyệt!!',
+                                      'Đóng');
+                                  return;
+                                }
                                 Navigator.push(
                                     context,
                                     CupertinoPageRoute(
@@ -206,7 +219,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     alignment: Alignment.center,
                                     child: Text(
-                                      'Lấy nó ngay',
+                                      ((user?.phone ?? '').isEmpty)
+                                          ? 'Lấy nó ngay'
+                                          : "Đang xét duyệt",
                                       style: Styles.n16b.copyWith(
                                           color: context.colors.hF05D0E
                                               .withOpacity(0.7)),

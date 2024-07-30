@@ -11,6 +11,7 @@ import 'package:vaynow_flutter/utils/spaces.dart';
 import 'package:vaynow_flutter/utils/styles.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:vaynow_flutter/view/home/home_ads.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -27,6 +28,8 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
+    FlutterNativeSplash.remove();
+
     // RqPermission().determinePosition();
     _controller = AnimationController(
       vsync: this,

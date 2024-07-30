@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vaynow_flutter/component/theme.dart';
@@ -9,9 +10,11 @@ import 'package:vaynow_flutter/gen/assets.gen.dart';
 import 'package:vaynow_flutter/services/di/locator.dart';
 import 'package:vaynow_flutter/utils/logger_service.dart';
 import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
-import 'package:vaynow_flutter/view/history/loan_screen.dart';
+import 'package:vaynow_flutter/view/add_vay_now.dart';
 import 'package:vaynow_flutter/view/home/home_screen.dart';
-import 'package:vaynow_flutter/view/loan/promotion_screen.dart';
+import 'package:vaynow_flutter/view/loan/loan_screen.dart';
+import 'package:vaynow_flutter/view/my_loan/my_loan_screen.dart';
+import 'package:vaynow_flutter/view/widget/popup_comfirm.dart';
 import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
 
 final StreamController streamConnectActivity =
@@ -62,91 +65,113 @@ class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
     final isLogin = context.watch<UserBloc>().state.isLoggedIn;
-    return Scaffold(
-        backgroundColor: Colors.white,
-        body: Stack(
-          children: [
-            _tabs[_currentIndex],
-            Positioned(
-                bottom: 45,
-                right: 5,
-                child: Assets.images.voucher.image(width: 100, height: 100))
-          ],
-        ),
-        bottomNavigationBar: Theme(
-          data: ThemeData(
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-          ),
-          child: BottomNavBar(
-            icons: [
-              TabbarItem(
-                  icon: Icon(
-                    Icons.home_outlined,
-                    color: context.colors.main,
-                    size: 24,
-                  ),
-                  label: 'Home'),
-              TabbarItem(
-                  icon: Icon(
-                    Icons.monetization_on_outlined,
-                    color: context.colors.main,
-                    size: 24,
-                  ),
-                  label: 'Loan'),
-              TabbarItem(
-                  icon: Icon(
-                    Icons.event_note_outlined,
-                    color: context.colors.main,
-                    size: 24,
-                  ),
-                  label: 'My Loans'),
-            ],
-            activeIcons: [
-              TabbarItem(
-                  icon: Icon(
-                    Icons.home_outlined,
-                    color: context.colors.hF05D0E,
-                    size: 24,
-                  ),
-                  label: 'Home'),
-              TabbarItem(
-                  icon: Icon(
-                    Icons.monetization_on_outlined,
-                    color: context.colors.hF05D0E,
-                    size: 24,
-                  ),
-                  label: 'Loan'),
-              TabbarItem(
-                  icon: Icon(
-                    Icons.event_note_outlined,
-                    color: context.colors.hF05D0E,
-                    size: 24,
-                  ),
-                  label: 'My Loans'),
-            ],
-            selectedIndex: _currentIndex,
-            onTap: (index) {
-              // if (index == 1 || index == 2) {
-              // if (!isLogin) {
-              //   showModalBottomSheet<void>(
-              //     context: navigationService.getCurrentContext,
-              //     backgroundColor: Colors.transparent,
-              //     isScrollControlled: true,
-              //     useSafeArea: true,
-              //     builder: (BuildContext context) {
-              //       return const PopupLogin();
-              //     },
-              //   );
-              //   return;
-              // }
-              // }
-              FocusScope.of(context).unfocus();
-              setState(() {
-                _currentIndex = index;
-              });
-            },
-          ),
-        ));
+    return BlocBuilder<UserBloc, UserState>(
+      builder: (context, state) {
+        return Scaffold(
+            backgroundColor: Colors.white,
+            body: Stack(
+              children: [
+                _tabs[_currentIndex],
+                Positioned(
+                    bottom: 45,
+                    right: 5,
+                    child: GestureDetector(
+                        onTap: () {
+                          if (state.userInfo?.phone != null &&
+                              state.userInfo!.phone!.isNotEmpty) {
+                            PopupComfirm.showPopModelDialog(
+                                context,
+                                () async {},
+                                'Thông báo',
+                                'Bạn đã sử dụng gói vay now đ 30,000,000.\nVui lòng theo dõi gói vay now nha!!',
+                                'Đóng');
+                            return;
+                          }
+                          Navigator.push(
+                              context,
+                              CupertinoPageRoute(
+                                  builder: (_) => const AddVayNow()));
+                        },
+                        child: Assets.images.voucher
+                            .image(width: 100, height: 100)))
+              ],
+            ),
+            bottomNavigationBar: Theme(
+              data: ThemeData(
+                splashColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+              ),
+              child: BottomNavBar(
+                icons: [
+                  TabbarItem(
+                      icon: Icon(
+                        Icons.home_outlined,
+                        color: context.colors.main,
+                        size: 24,
+                      ),
+                      label: 'Home'),
+                  TabbarItem(
+                      icon: Icon(
+                        Icons.monetization_on_outlined,
+                        color: context.colors.main,
+                        size: 24,
+                      ),
+                      label: 'Loan'),
+                  TabbarItem(
+                      icon: Icon(
+                        Icons.event_note_outlined,
+                        color: context.colors.main,
+                        size: 24,
+                      ),
+                      label: 'My Loans'),
+                ],
+                activeIcons: [
+                  TabbarItem(
+                      icon: Icon(
+                        Icons.home_outlined,
+                        color: context.colors.hF05D0E,
+                        size: 24,
+                      ),
+                      label: 'Home'),
+                  TabbarItem(
+                      icon: Icon(
+                        Icons.monetization_on_outlined,
+                        color: context.colors.hF05D0E,
+                        size: 24,
+                      ),
+                      label: 'Loan'),
+                  TabbarItem(
+                      icon: Icon(
+                        Icons.event_note_outlined,
+                        color: context.colors.hF05D0E,
+                        size: 24,
+                      ),
+                      label: 'My Loans'),
+                ],
+                selectedIndex: _currentIndex,
+                onTap: (index) {
+                  // if (index == 1 || index == 2) {
+                  // if (!isLogin) {
+                  //   showModalBottomSheet<void>(
+                  //     context: navigationService.getCurrentContext,
+                  //     backgroundColor: Colors.transparent,
+                  //     isScrollControlled: true,
+                  //     useSafeArea: true,
+                  //     builder: (BuildContext context) {
+                  //       return const PopupLogin();
+                  //     },
+                  //   );
+                  //   return;
+                  // }
+                  // }
+                  FocusScope.of(context).unfocus();
+                  setState(() {
+                    _currentIndex = index;
+                  });
+                },
+              ),
+            ));
+      },
+    );
   }
 }

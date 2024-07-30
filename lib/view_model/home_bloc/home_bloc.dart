@@ -64,7 +64,10 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       }
       final response = await SupaBaseApi().insertAccount(event.phone);
       if (response.isNotEmpty) {
-        HiveDataManager().saveUserInfo(event.phone);
+        HiveDataManager().saveUserInfo(
+            event.phone,
+            response.first['created_at'].toString(),
+            response.first['id'].toString());
         event.func.call('', true);
         return;
       }

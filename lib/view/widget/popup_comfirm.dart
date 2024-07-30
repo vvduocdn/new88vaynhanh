@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:vaynow_flutter/component/custom_button.dart';
 import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/gen/assets.gen.dart';
 import 'package:vaynow_flutter/resources/app_color.dart';
 import 'package:vaynow_flutter/utils/styles.dart';
 
-class PopupLogout extends StatefulWidget {
+class PopupComfirm extends StatefulWidget {
   final Function onApprove;
   final String title;
   final String content;
   final String cancel;
 
-  const PopupLogout({
+  const PopupComfirm({
     super.key,
     required this.onApprove,
     required this.title,
@@ -25,7 +24,7 @@ class PopupLogout extends StatefulWidget {
       barrierDismissible: false,
       context: parentContext,
       builder: (context) {
-        return PopupLogout(
+        return PopupComfirm(
           onApprove: onApprove,
           title: title,
           cancel: cancel,
@@ -36,10 +35,10 @@ class PopupLogout extends StatefulWidget {
   }
 
   @override
-  State<PopupLogout> createState() => _PopupLogoutState();
+  State<PopupComfirm> createState() => _PopupComfirmState();
 }
 
-class _PopupLogoutState extends State<PopupLogout> {
+class _PopupComfirmState extends State<PopupComfirm> {
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -50,7 +49,7 @@ class _PopupLogoutState extends State<PopupLogout> {
             children: [
               Container(
                   padding: const EdgeInsets.only(top: 10),
-                  margin: const EdgeInsets.only(top: 20),
+                  margin: const EdgeInsets.only(top: 10),
                   alignment: Alignment.center,
                   height: 150,
                   decoration: BoxDecoration(
