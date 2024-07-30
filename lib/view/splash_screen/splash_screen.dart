@@ -78,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen>
           });
         } else {
           if (mounted) {
-            Future.delayed(Duration(seconds: Platform.isIOS ? 0 : 3), () {
+            Future.delayed(Duration(seconds: Platform.isIOS ? 0 : 0), () {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
@@ -113,7 +113,7 @@ class _SplashScreenState extends State<SplashScreen>
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Assets.images.iconApp.image(width: 80, height: 80),
+              Assets.images.icLauncher.image(width: 80, height: 80),
               spaceH4,
               Text(
                 'VayNow',

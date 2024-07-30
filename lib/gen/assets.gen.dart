@@ -238,9 +238,48 @@ class $AssetsImagesGen {
   AssetGenImage get banner6 =>
       const AssetGenImage('assets/images/banner_6.jpg');
 
+  /// File path: assets/images/bg.jpeg
+  AssetGenImage get bg => const AssetGenImage('assets/images/bg.jpeg');
+
   /// File path: assets/images/business_loans.jpg
   AssetGenImage get businessLoans =>
       const AssetGenImage('assets/images/business_loans.jpg');
+
+  /// File path: assets/images/cat1.png
+  AssetGenImage get cat1 => const AssetGenImage('assets/images/cat1.png');
+
+  /// File path: assets/images/cat10.png
+  AssetGenImage get cat10 => const AssetGenImage('assets/images/cat10.png');
+
+  /// File path: assets/images/cat11.png
+  AssetGenImage get cat11 => const AssetGenImage('assets/images/cat11.png');
+
+  /// File path: assets/images/cat12.png
+  AssetGenImage get cat12 => const AssetGenImage('assets/images/cat12.png');
+
+  /// File path: assets/images/cat2.png
+  AssetGenImage get cat2 => const AssetGenImage('assets/images/cat2.png');
+
+  /// File path: assets/images/cat3.png
+  AssetGenImage get cat3 => const AssetGenImage('assets/images/cat3.png');
+
+  /// File path: assets/images/cat4.png
+  AssetGenImage get cat4 => const AssetGenImage('assets/images/cat4.png');
+
+  /// File path: assets/images/cat5.png
+  AssetGenImage get cat5 => const AssetGenImage('assets/images/cat5.png');
+
+  /// File path: assets/images/cat6.png
+  AssetGenImage get cat6 => const AssetGenImage('assets/images/cat6.png');
+
+  /// File path: assets/images/cat7.png
+  AssetGenImage get cat7 => const AssetGenImage('assets/images/cat7.png');
+
+  /// File path: assets/images/cat8.png
+  AssetGenImage get cat8 => const AssetGenImage('assets/images/cat8.png');
+
+  /// File path: assets/images/cat9.png
+  AssetGenImage get cat9 => const AssetGenImage('assets/images/cat9.png');
 
   /// File path: assets/images/discount.png
   AssetGenImage get discount =>
@@ -252,6 +291,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/giftbox.png
   AssetGenImage get giftbox => const AssetGenImage('assets/images/giftbox.png');
 
+  /// File path: assets/images/ic_launcher.png
+  AssetGenImage get icLauncher =>
+      const AssetGenImage('assets/images/ic_launcher.png');
+
   /// File path: assets/images/icon_app.jpg
   AssetGenImage get iconApp =>
       const AssetGenImage('assets/images/icon_app.jpg');
@@ -260,9 +303,19 @@ class $AssetsImagesGen {
   AssetGenImage get imageSplash =>
       const AssetGenImage('assets/images/image_splash.png');
 
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
+  /// File path: assets/images/no-photo.png
+  AssetGenImage get noPhoto =>
+      const AssetGenImage('assets/images/no-photo.png');
+
   /// File path: assets/images/password_secure.png
   AssetGenImage get passwordSecure =>
       const AssetGenImage('assets/images/password_secure.png');
+
+  /// File path: assets/images/photo.png
+  AssetGenImage get photo => const AssetGenImage('assets/images/photo.png');
 
   /// File path: assets/images/result_search.jpg
   AssetGenImage get resultSearch =>
@@ -278,13 +331,30 @@ class $AssetsImagesGen {
         banner2,
         banner4,
         banner6,
+        bg,
         businessLoans,
+        cat1,
+        cat10,
+        cat11,
+        cat12,
+        cat2,
+        cat3,
+        cat4,
+        cat5,
+        cat6,
+        cat7,
+        cat8,
+        cat9,
         discount,
         frame,
         giftbox,
+        icLauncher,
         iconApp,
         imageSplash,
+        logo,
+        noPhoto,
         passwordSecure,
+        photo,
         resultSearch,
         voucher
       ];
