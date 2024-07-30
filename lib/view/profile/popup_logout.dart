@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vaynow_flutter/component/bottom_navigation.dart';
 import 'package:vaynow_flutter/component/custom_button.dart';
 import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/gen/assets.gen.dart';
 import 'package:vaynow_flutter/resources/app_color.dart';
+import 'package:vaynow_flutter/services/hive/hive_data_manager.dart';
+import 'package:vaynow_flutter/utils/spaces.dart';
 import 'package:vaynow_flutter/utils/styles.dart';
+import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
 
 class PopupLogout extends StatefulWidget {
   final Function onApprove;
@@ -86,15 +90,39 @@ class _PopupLogoutState extends State<PopupLogout> {
                             textAlign: TextAlign.center,
                           ),
                           const Spacer(),
-                          CustomButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            text: widget.cancel,
-                            colorText: context.colors.white,
-                            backgroundColors: context.colors.hF05D0E,
-                            colorBorder: context.colors.hF05D0E,
-                          )
+                          Row(
+                            children: [
+                              spaceW2,
+                              Expanded(
+                                  child: CustomButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                text: 'Cancel',
+                                colorText: context.colors.hF05D0E,
+                                backgroundColors: context.colors.white,
+                                colorBorder: context.colors.hF05D0E,
+                              )),
+                              spaceW6,
+                              Expanded(
+                                  child: CustomButton(
+                                onPressed: () async {
+                                  await HiveDataManager()
+                                      .logout()
+                                      .then((value) => {
+                                        widget.onApprove.call(),
+                                            Navigator.pop(context)
+                                          });
+                                },
+                                text: 'Logout',
+                                colorText: context.colors.white,
+                                backgroundColors: context.colors.hF05D0E,
+                                colorBorder: context.colors.hF05D0E,
+                              )),
+                              spaceW2,
+                            ],
+                          ),
+                          spaceH4
                         ]),
                   )),
             ],

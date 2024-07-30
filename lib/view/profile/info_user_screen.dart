@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vaynow_flutter/component/bottom_navigation.dart';
 import 'package:vaynow_flutter/component/theme.dart';
 import 'package:vaynow_flutter/gen/assets.gen.dart';
 import 'package:vaynow_flutter/l10n/localization/app_localizations.dart';
@@ -8,7 +9,7 @@ import 'package:vaynow_flutter/services/hive/hive_data_manager.dart';
 import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
 import 'package:vaynow_flutter/utils/spaces.dart';
 import 'package:vaynow_flutter/utils/styles.dart';
-import 'package:vaynow_flutter/view/profile/popup.dart';
+import 'package:vaynow_flutter/view/profile/popup_logout.dart';
 import 'package:vaynow_flutter/view/profile/image_previewer_dialog.dart';
 import 'package:vaynow_flutter/view/web_view/web_view_screen.dart';
 import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
@@ -27,7 +28,7 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
       locator.get<NavigatorGlobalContextHelper>().getCurrentContext;
   Future<void> onLogout() async {
     PopupLogout.showPopModelDialog(context, () async {
-      await HiveDataManager().logout().then((value) => {});
+      BlocProvider.of<UserBloc>(context).add(GetCurrentUserInfo());
     }, AppLocalizations.of(context)!.r63, AppLocalizations.of(context)!.r64,
         AppLocalizations.of(context)!.r65);
   }
@@ -54,7 +55,12 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
       },
       listener: (context, state) {
         if (!state.isLoggedIn) {
-          Navigator.of(context).popUntil((route) => route.isFirst);
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const BottomNavigation(),
+            ),
+          );
         }
       },
       child: BlocBuilder<UserBloc, UserState>(
@@ -349,13 +355,14 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                       ],
                                     )),
                                 GestureDetector(
-                                  onTap: (){
+                                  onTap: () {
                                     Navigator.of(context).push(
                                       MaterialPageRoute(
                                           builder: (_) => const WebViewScreen(
-                                            initialUrl: 'https://www.freeprivacypolicy.com/live/90bb152c-be66-4797-84f3-0fb9a3e1d8f5',
-                                            titlePage: 'New88 VayNhanh',
-                                          )),
+                                                initialUrl:
+                                                    'https://www.freeprivacypolicy.com/live/90bb152c-be66-4797-84f3-0fb9a3e1d8f5',
+                                                titlePage: 'New88 VayNhanh',
+                                              )),
                                     );
                                   },
                                   child: Container(
@@ -366,10 +373,10 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                             Radius.circular(5)),
                                       ),
                                       alignment: Alignment.centerLeft,
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 10)
-                                              .add(const EdgeInsets.only(
-                                                  left: 5, right: 5)),
+                                      padding: const EdgeInsets.symmetric(
+                                              vertical: 10)
+                                          .add(const EdgeInsets.only(
+                                              left: 5, right: 5)),
                                       child: Row(
                                         children: [
                                           Icon(Icons.security_sharp,
@@ -425,39 +432,42 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                         ),
                                       ],
                                     )),
-                                Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      color: context.colors.white,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(5)),
-                                    ),
-                                    alignment: Alignment.centerLeft,
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 10)
-                                            .add(const EdgeInsets.only(
-                                                left: 5, right: 5)),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.restore_from_trash_rounded,
-                                            size: 24,
-                                            color: context.colors.hF05D0E
-                                                .withOpacity(0.7)),
-                                        spaceW10,
-                                        Text(
-                                          'Xóa dữ liệu',
-                                          style: Styles.n16.copyWith(
-                                              color: context.colors.text),
-                                        ),
-                                        const Spacer(),
-                                        Icon(
-                                          Icons.chevron_right_rounded,
-                                          size: 30,
-                                          color: context.colors.main
-                                              .withOpacity(0.7),
-                                        ),
-                                      ],
-                                    )),
+                                GestureDetector(
+                                  onTap: onLogout,
+                                  child: Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      decoration: BoxDecoration(
+                                        color: context.colors.white,
+                                        borderRadius: const BorderRadius.all(
+                                            Radius.circular(5)),
+                                      ),
+                                      alignment: Alignment.centerLeft,
+                                      padding: const EdgeInsets.symmetric(
+                                              vertical: 10)
+                                          .add(const EdgeInsets.only(
+                                              left: 5, right: 5)),
+                                      child: Row(
+                                        children: [
+                                          Icon(Icons.restore_from_trash_rounded,
+                                              size: 24,
+                                              color: context.colors.hF05D0E
+                                                  .withOpacity(0.7)),
+                                          spaceW10,
+                                          Text(
+                                            'Xóa dữ liệu',
+                                            style: Styles.n16.copyWith(
+                                                color: context.colors.text),
+                                          ),
+                                          const Spacer(),
+                                          Icon(
+                                            Icons.chevron_right_rounded,
+                                            size: 30,
+                                            color: context.colors.main
+                                                .withOpacity(0.7),
+                                          ),
+                                        ],
+                                      )),
+                                ),
                               ],
                             )),
                       ],

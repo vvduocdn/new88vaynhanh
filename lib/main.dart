@@ -15,7 +15,7 @@ import 'package:vaynow_flutter/model/user/user_info.dart';
 import 'package:vaynow_flutter/services/di/locator.dart';
 import 'package:vaynow_flutter/services/supa_base/supa_base_service.dart';
 import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:vaynow_flutter/view/splash_screen/splash_screen.dart';
 import 'package:vaynow_flutter/view_model/app_mode_bloc/app_mode_bloc.dart';
 import 'package:vaynow_flutter/view_model/auth_bloc/authen_bloc.dart';
@@ -25,7 +25,8 @@ import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
 void main() async {
   setUpInjector();
   await dotenv.load(fileName: ".env");
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   Hive.initFlutter();
   Hive.registerAdapter(UserAdapter());
   Hive.registerAdapter(UserInfoAdapter());
@@ -33,6 +34,7 @@ void main() async {
   Hive.registerAdapter(JwtAdapter());
   Hive.registerAdapter(OrderAddressHiveAdapter());
   SupaBaseService.instance;
+
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
     runApp(const MyApp());
@@ -63,6 +65,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
+  void initState() {
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
@@ -82,7 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
       child: BlocProvider(
         create: (context) => UserBloc()
           ..add(LoadLanguage())
-          ..add(GetRandomColor()),
+          ..add(GetRandomColor())
+          ..add(GetCurrentUserInfo()),
         child: BlocBuilder<UserBloc, UserState>(
           builder: (context, state) {
             // ignore: deprecated_member_use
