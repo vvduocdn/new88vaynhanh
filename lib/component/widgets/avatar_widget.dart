@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:vaynow_flutter/component/theme.dart';
+import 'package:new88_vaynow/component/theme.dart';
 
 class AvatarUtils {
   static dynamic buildAvatar(String? avatarUrl, String? name, double? size,

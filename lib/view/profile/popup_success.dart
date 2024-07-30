@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vaynow_flutter/component/custom_button.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/gen/assets.gen.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
-import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
+import 'package:new88_vaynow/component/custom_button.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/gen/assets.gen.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
+import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
 class RegisterSuccess extends StatefulWidget {
   const RegisterSuccess({super.key});

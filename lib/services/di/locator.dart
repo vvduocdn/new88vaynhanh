@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
-import 'package:vaynow_flutter/services/api/api_client.dart';
-import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
+import 'package:new88_vaynow/services/api/api_client.dart';
+import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 
 
 GetIt locator = GetIt.instance;

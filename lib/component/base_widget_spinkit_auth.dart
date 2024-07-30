@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/view_model/auth_bloc/authen_bloc.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/view_model/auth_bloc/authen_bloc.dart';
 
 class BaseWidgetSpinkitAuth extends StatefulWidget {
   const BaseWidgetSpinkitAuth({super.key, required this.child});

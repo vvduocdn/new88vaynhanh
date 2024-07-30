@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vaynow_flutter/component/app_flush_bar.dart';
-import 'package:vaynow_flutter/component/base_widget_spinkit_user.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/component/widgets/field.dart';
-import 'package:vaynow_flutter/l10n/localization/app_localizations.dart';
-import 'package:vaynow_flutter/utils/device_util.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
-import 'package:vaynow_flutter/view/profile/change_pass/change_pass_success.dart';
-import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
+import 'package:new88_vaynow/component/app_flush_bar.dart';
+import 'package:new88_vaynow/component/base_widget_spinkit_user.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/component/widgets/field.dart';
+import 'package:new88_vaynow/l10n/localization/app_localizations.dart';
+import 'package:new88_vaynow/utils/device_util.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
+import 'package:new88_vaynow/utils/styles.dart';
+import 'package:new88_vaynow/view/profile/change_pass/change_pass_success.dart';
+import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
 class ChangePassScreen extends StatefulWidget {
   const ChangePassScreen({super.key});

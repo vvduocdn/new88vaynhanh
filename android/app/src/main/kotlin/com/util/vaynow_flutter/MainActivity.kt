@@ -1,4 +1,4 @@
-package com.util.vaynow_flutter
+package com.util.new88_vaynow
 
 import io.flutter.embedding.android.FlutterActivity
 

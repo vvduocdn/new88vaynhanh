@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
 
 class ImagePreviewerDialog extends StatefulWidget {
   final String? url;

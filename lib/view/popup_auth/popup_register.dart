@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vaynow_flutter/component/app_flush_bar.dart';
-import 'package:vaynow_flutter/component/base_widget_spinkit_auth.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/component/widgets/field.dart';
-import 'package:vaynow_flutter/l10n/localization/app_localizations.dart';
-import 'package:vaynow_flutter/services/di/locator.dart';
-import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
-import 'package:vaynow_flutter/utils/regex.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
-import 'package:vaynow_flutter/view/popup_auth/popup_login.dart';
-import 'package:vaynow_flutter/view_model/auth_bloc/authen_bloc.dart';
-import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
+import 'package:new88_vaynow/component/app_flush_bar.dart';
+import 'package:new88_vaynow/component/base_widget_spinkit_auth.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/component/widgets/field.dart';
+import 'package:new88_vaynow/l10n/localization/app_localizations.dart';
+import 'package:new88_vaynow/services/di/locator.dart';
+import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
+import 'package:new88_vaynow/utils/regex.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
+import 'package:new88_vaynow/utils/styles.dart';
+import 'package:new88_vaynow/view/popup_auth/popup_login.dart';
+import 'package:new88_vaynow/view_model/auth_bloc/authen_bloc.dart';
+import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
 class PopupRegister extends StatefulWidget {
   const PopupRegister({super.key});

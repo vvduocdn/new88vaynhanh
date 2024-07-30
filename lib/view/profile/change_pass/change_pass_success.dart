@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/gen/assets.gen.dart';
-import 'package:vaynow_flutter/l10n/localization/app_localizations.dart';
-import 'package:vaynow_flutter/utils/device_util.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/gen/assets.gen.dart';
+import 'package:new88_vaynow/l10n/localization/app_localizations.dart';
+import 'package:new88_vaynow/utils/device_util.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
+import 'package:new88_vaynow/utils/styles.dart';
 
 class ChangePassSuccess extends StatelessWidget {
   const ChangePassSuccess({super.key});

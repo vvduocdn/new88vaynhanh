@@ -1,21 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/services/api/api_client.dart';
-import 'package:vaynow_flutter/services/di/locator.dart';
-import 'package:vaynow_flutter/services/supa_base/supa_base_service.dart';
-import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
-import 'package:vaynow_flutter/view/add_vay_now.dart';
-import 'package:vaynow_flutter/view/profile/info_user_screen.dart';
-import 'package:vaynow_flutter/view/widget/popup_comfirm.dart';
-import 'package:vaynow_flutter/view_model/app_mode_bloc/app_mode_bloc.dart';
-import 'package:vaynow_flutter/view_model/app_mode_bloc/app_mode_state.dart';
-import 'package:vaynow_flutter/view_model/home_bloc/home_bloc.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/services/api/api_client.dart';
+import 'package:new88_vaynow/services/di/locator.dart';
+import 'package:new88_vaynow/services/supa_base/supa_base_service.dart';
+import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
+import 'package:new88_vaynow/utils/styles.dart';
+import 'package:new88_vaynow/view/add_vay_now.dart';
+import 'package:new88_vaynow/view/profile/info_user_screen.dart';
+import 'package:new88_vaynow/view/widget/popup_comfirm.dart';
+import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_bloc.dart';
+import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_state.dart';
+import 'package:new88_vaynow/view_model/home_bloc/home_bloc.dart';
 import 'package:skeletonizer/skeletonizer.dart';
-import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
+import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -75,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             width: 30,
                           ),
                           Text(
-                            'VayNow',
+                            'Vay Uy Tín',
                             style: Styles.n18w7
                                 .copyWith(color: context.colors.text),
                           ),

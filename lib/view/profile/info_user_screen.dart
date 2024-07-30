@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vaynow_flutter/component/bottom_navigation.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/gen/assets.gen.dart';
-import 'package:vaynow_flutter/l10n/localization/app_localizations.dart';
-import 'package:vaynow_flutter/services/di/locator.dart';
-import 'package:vaynow_flutter/services/hive/hive_data_manager.dart';
-import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
-import 'package:vaynow_flutter/view/profile/popup_logout.dart';
-import 'package:vaynow_flutter/view/profile/image_previewer_dialog.dart';
-import 'package:vaynow_flutter/view/web_view/web_view_screen.dart';
-import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
+import 'package:new88_vaynow/component/bottom_navigation.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/gen/assets.gen.dart';
+import 'package:new88_vaynow/l10n/localization/app_localizations.dart';
+import 'package:new88_vaynow/services/di/locator.dart';
+import 'package:new88_vaynow/services/hive/hive_data_manager.dart';
+import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
+import 'package:new88_vaynow/utils/styles.dart';
+import 'package:new88_vaynow/view/profile/popup_logout.dart';
+import 'package:new88_vaynow/view/profile/image_previewer_dialog.dart';
+import 'package:new88_vaynow/view/web_view/web_view_screen.dart';
+import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
 class InfoUserScreen extends StatefulWidget {
   const InfoUserScreen({super.key});

@@ -1,17 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/gen/assets.gen.dart';
-import 'package:vaynow_flutter/services/di/locator.dart';
-import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
-import 'package:vaynow_flutter/utils/time_helper.dart';
-import 'package:vaynow_flutter/view/add_vay_now.dart';
-import 'package:vaynow_flutter/view_model/app_mode_bloc/app_mode_bloc.dart';
-import 'package:vaynow_flutter/view_model/app_mode_bloc/app_mode_state.dart';
-import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/gen/assets.gen.dart';
+import 'package:new88_vaynow/services/di/locator.dart';
+import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
+import 'package:new88_vaynow/utils/styles.dart';
+import 'package:new88_vaynow/utils/time_helper.dart';
+import 'package:new88_vaynow/view/add_vay_now.dart';
+import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_bloc.dart';
+import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_state.dart';
+import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
 class LoanScreen extends StatefulWidget {
   const LoanScreen({super.key});
@@ -76,7 +76,7 @@ class _AddVayNowState extends State<LoanScreen> {
                               width: 30,
                             ),
                             Text(
-                              'VayNow',
+                              'Vay Uy Tín',
                               style: Styles.n18w7
                                   .copyWith(color: context.colors.white),
                             ),

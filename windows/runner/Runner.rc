@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.util" "\0"
-            VALUE "FileDescription", "vaynow_flutter" "\0"
+            VALUE "FileDescription", "new88_vaynow" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "vaynow_flutter" "\0"
+            VALUE "InternalName", "new88_vaynow" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.util. All rights reserved." "\0"
-            VALUE "OriginalFilename", "vaynow_flutter.exe" "\0"
-            VALUE "ProductName", "vaynow_flutter" "\0"
+            VALUE "OriginalFilename", "new88_vaynow.exe" "\0"
+            VALUE "ProductName", "new88_vaynow" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

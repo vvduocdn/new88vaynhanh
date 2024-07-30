@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:vaynow_flutter/model/home/product_model.dart';
+import 'package:new88_vaynow/model/home/product_model.dart';
 
 part 'cart_model.g.dart';
 

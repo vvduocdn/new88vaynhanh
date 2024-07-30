@@ -6,21 +6,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:vaynow_flutter/l10n/localization/app_localizations.dart';
-import 'package:vaynow_flutter/model/user/jwt.dart';
-import 'package:vaynow_flutter/model/user/order_address_hive.dart';
-import 'package:vaynow_flutter/model/user/social_network.dart';
-import 'package:vaynow_flutter/model/user/user.dart';
-import 'package:vaynow_flutter/model/user/user_info.dart';
-import 'package:vaynow_flutter/services/di/locator.dart';
-import 'package:vaynow_flutter/services/supa_base/supa_base_service.dart';
-import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
+import 'package:new88_vaynow/l10n/localization/app_localizations.dart';
+import 'package:new88_vaynow/model/user/jwt.dart';
+import 'package:new88_vaynow/model/user/order_address_hive.dart';
+import 'package:new88_vaynow/model/user/social_network.dart';
+import 'package:new88_vaynow/model/user/user.dart';
+import 'package:new88_vaynow/model/user/user_info.dart';
+import 'package:new88_vaynow/services/di/locator.dart';
+import 'package:new88_vaynow/services/supa_base/supa_base_service.dart';
+import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:vaynow_flutter/view/splash_screen/splash_screen.dart';
-import 'package:vaynow_flutter/view_model/app_mode_bloc/app_mode_bloc.dart';
-import 'package:vaynow_flutter/view_model/auth_bloc/authen_bloc.dart';
-import 'package:vaynow_flutter/view_model/home_bloc/home_bloc.dart';
-import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
+import 'package:new88_vaynow/view/splash_screen/splash_screen.dart';
+import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_bloc.dart';
+import 'package:new88_vaynow/view_model/auth_bloc/authen_bloc.dart';
+import 'package:new88_vaynow/view_model/home_bloc/home_bloc.dart';
+import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
 void main() async {
   setUpInjector();
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 : ThemeMode.dark;
 
             return MaterialApp(
-              title: 'VayNow Mobile',
+              title: 'New88 Vay Uy Tin',
               debugShowMaterialGrid: false,
               debugShowCheckedModeBanner: false,
               home: const SplashScreen(),

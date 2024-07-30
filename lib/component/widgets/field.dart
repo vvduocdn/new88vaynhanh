@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/utils/styles.dart';
 
 // ignore: must_be_immutable
 class FieldWidget extends StatefulWidget {

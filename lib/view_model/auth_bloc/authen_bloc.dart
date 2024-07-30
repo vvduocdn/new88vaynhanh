@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
-import 'package:vaynow_flutter/l10n/localization/app_localizations.dart';
-import 'package:vaynow_flutter/model/user/authen/login_body.dart';
-import 'package:vaynow_flutter/model/user/authen/signup_body.dart';
-import 'package:vaynow_flutter/services/api/api_client.dart';
-import 'package:vaynow_flutter/services/di/locator.dart';
-import 'package:vaynow_flutter/services/hive/hive_data_manager.dart';
-import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
+import 'package:new88_vaynow/l10n/localization/app_localizations.dart';
+import 'package:new88_vaynow/model/user/authen/login_body.dart';
+import 'package:new88_vaynow/model/user/authen/signup_body.dart';
+import 'package:new88_vaynow/services/api/api_client.dart';
+import 'package:new88_vaynow/services/di/locator.dart';
+import 'package:new88_vaynow/services/hive/hive_data_manager.dart';
+import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 part 'authen_event.dart';
 part 'authen_state.dart';
 

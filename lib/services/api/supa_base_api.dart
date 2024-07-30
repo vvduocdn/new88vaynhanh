@@ -1,6 +1,6 @@
 import 'package:logger/logger.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:vaynow_flutter/services/supa_base/supa_base_service.dart';
+import 'package:new88_vaynow/services/supa_base/supa_base_service.dart';
 
 class SupaBaseApi {
   Future<List<Map<String, dynamic>>> checkPhone(String phone) async {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/l10n/localization/app_localizations.dart';
-import 'package:vaynow_flutter/utils/device_util.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/l10n/localization/app_localizations.dart';
+import 'package:new88_vaynow/utils/device_util.dart';
+import 'package:new88_vaynow/utils/styles.dart';
 
 class SearchWidget extends StatelessWidget {
   final TextEditingController searchController;

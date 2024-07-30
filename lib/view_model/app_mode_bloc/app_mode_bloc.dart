@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vaynow_flutter/utils/logger_service.dart';
+import 'package:new88_vaynow/utils/logger_service.dart';
 import 'app_mode_event.dart';
 import 'app_mode_state.dart';
 

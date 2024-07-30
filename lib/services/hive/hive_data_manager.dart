@@ -1,10 +1,10 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:logger/logger.dart';
-import 'package:vaynow_flutter/model/user/authen/login_response.dart';
-import 'package:vaynow_flutter/model/user/jwt.dart';
-import 'package:vaynow_flutter/model/user/order_address_hive.dart';
-import 'package:vaynow_flutter/model/user/user.dart';
-import 'package:vaynow_flutter/model/user/user_info.dart';
+import 'package:new88_vaynow/model/user/authen/login_response.dart';
+import 'package:new88_vaynow/model/user/jwt.dart';
+import 'package:new88_vaynow/model/user/order_address_hive.dart';
+import 'package:new88_vaynow/model/user/user.dart';
+import 'package:new88_vaynow/model/user/user_info.dart';
 
 class HiveDataManager {
   final Logger _logger = Logger();

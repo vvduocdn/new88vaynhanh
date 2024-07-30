@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:vaynow_flutter/model/home/order_address_body.dart';
+import 'package:new88_vaynow/model/home/order_address_body.dart';
 
 part 'order_body.g.dart';
 

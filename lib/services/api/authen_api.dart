@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:vaynow_flutter/model/base_reponse/base_response.dart';
-import 'package:vaynow_flutter/model/home/change_password_body.dart';
-import 'package:vaynow_flutter/model/user/authen/info_user_put_body.dart';
-import 'package:vaynow_flutter/model/user/authen/login_body.dart';
-import 'package:vaynow_flutter/model/user/authen/login_response.dart';
-import 'package:vaynow_flutter/model/user/authen/signup_body.dart';
+import 'package:new88_vaynow/model/base_reponse/base_response.dart';
+import 'package:new88_vaynow/model/home/change_password_body.dart';
+import 'package:new88_vaynow/model/user/authen/info_user_put_body.dart';
+import 'package:new88_vaynow/model/user/authen/login_body.dart';
+import 'package:new88_vaynow/model/user/authen/login_response.dart';
+import 'package:new88_vaynow/model/user/authen/signup_body.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'authen_api.g.dart';

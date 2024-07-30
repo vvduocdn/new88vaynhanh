@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:another_flushbar/flushbar.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:vaynow_flutter/utils/app_colors.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
+import 'package:new88_vaynow/utils/app_colors.dart';
+import 'package:new88_vaynow/utils/styles.dart';
 
 import '../../utils/spaces.dart';
 

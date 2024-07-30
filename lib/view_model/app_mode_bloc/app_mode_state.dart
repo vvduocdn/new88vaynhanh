@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:vaynow_flutter/model/app_mode/app_mode.dart';
+import 'package:new88_vaynow/model/app_mode/app_mode.dart';
 
 abstract class AppModeState extends Equatable {
   const AppModeState();

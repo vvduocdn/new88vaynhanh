@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vaynow_flutter/component/bottom_navigation.dart';
-import 'package:vaynow_flutter/component/custom_button.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/resources/app_color.dart';
-import 'package:vaynow_flutter/services/hive/hive_data_manager.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
-import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
+import 'package:new88_vaynow/component/bottom_navigation.dart';
+import 'package:new88_vaynow/component/custom_button.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/resources/app_color.dart';
+import 'package:new88_vaynow/services/hive/hive_data_manager.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
+import 'package:new88_vaynow/utils/styles.dart';
+import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
 class PopupLogout extends StatefulWidget {
   final Function onApprove;

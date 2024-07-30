@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:vaynow_flutter/component/custom_button.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/resources/app_color.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
+import 'package:new88_vaynow/component/custom_button.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/resources/app_color.dart';
+import 'package:new88_vaynow/utils/styles.dart';
 
 class PopupComfirm extends StatefulWidget {
   final Function onApprove;

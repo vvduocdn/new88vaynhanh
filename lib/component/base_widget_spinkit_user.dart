@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/view_model/user_bloc/user_bloc.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
 class BaseWidgetSpinkitUser extends StatefulWidget {
   const BaseWidgetSpinkitUser({super.key, required this.child});

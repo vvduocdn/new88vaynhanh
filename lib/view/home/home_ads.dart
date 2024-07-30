@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:vaynow_flutter/view/web_view/web_view_screen.dart';
+import 'package:new88_vaynow/view/web_view/web_view_screen.dart';
 
 class HomePageBody extends StatelessWidget {
   const HomePageBody({super.key});

@@ -1,8 +1,8 @@
 import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/utils/date_extensions.dart';
-import 'package:vaynow_flutter/utils/time_helper.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/utils/date_extensions.dart';
+import 'package:new88_vaynow/utils/time_helper.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class DPCalendar extends StatefulWidget {

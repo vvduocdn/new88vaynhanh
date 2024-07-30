@@ -2,15 +2,15 @@ import 'dart:io';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:vaynow_flutter/component/bottom_navigation.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/gen/assets.gen.dart';
-import 'package:vaynow_flutter/services/api/supa_base_api.dart';
-import 'package:vaynow_flutter/utils/logger_service.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
+import 'package:new88_vaynow/component/bottom_navigation.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/gen/assets.gen.dart';
+import 'package:new88_vaynow/services/api/supa_base_api.dart';
+import 'package:new88_vaynow/utils/logger_service.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
+import 'package:new88_vaynow/utils/styles.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:vaynow_flutter/view/home/home_ads.dart';
+import 'package:new88_vaynow/view/home/home_ads.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -113,10 +113,10 @@ class _SplashScreenState extends State<SplashScreen>
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Assets.images.iconApp.image(width: 80, height: 80),
+              Assets.images.icLauncher.image(width: 80, height: 80),
               spaceH4,
               Text(
-                'VayNow',
+                'New88 Vay uy tin',
                 style: Styles.n18w7
                     .copyWith(color: context.colors.main.withOpacity(0.5)),
               )

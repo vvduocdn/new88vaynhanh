@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vaynow_flutter/services/di/locator.dart';
+import 'package:new88_vaynow/services/di/locator.dart';
 
 final NavigatorGlobalContextHelper navigationService =
     locator.get<NavigatorGlobalContextHelper>();

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vaynow_flutter/component/theme.dart';
+import 'package:new88_vaynow/component/theme.dart';
 import 'tabbar_item.dart';
 
 class BottomNavBar extends StatelessWidget {

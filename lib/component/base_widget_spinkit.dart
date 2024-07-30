@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vaynow_flutter/component/theme.dart';
-import 'package:vaynow_flutter/utils/spaces.dart';
-import 'package:vaynow_flutter/utils/styles.dart';
-import 'package:vaynow_flutter/view_model/home_bloc/home_bloc.dart';
+import 'package:new88_vaynow/component/theme.dart';
+import 'package:new88_vaynow/utils/spaces.dart';
+import 'package:new88_vaynow/utils/styles.dart';
+import 'package:new88_vaynow/view_model/home_bloc/home_bloc.dart';
 
 class BaseWidgetSpinkit extends StatefulWidget {
   const BaseWidgetSpinkit({super.key, required this.child});
