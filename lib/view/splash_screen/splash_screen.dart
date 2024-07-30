@@ -78,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen>
           });
         } else {
           if (mounted) {
-            Future.delayed(Duration(seconds: Platform.isIOS ? 0 : 3), () {
+            Future.delayed(Duration(seconds: Platform.isIOS ? 0 : 0), () {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(

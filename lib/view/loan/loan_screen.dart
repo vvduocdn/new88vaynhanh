@@ -193,7 +193,8 @@ class _AddVayNowState extends State<LoanScreen> {
                                       spaceW12,
                                       Text(
                                         DateTime.parse(
-                                                state.userInfo?.createdAt ?? '')
+                                                state.userInfo?.createdAt ??
+                                                    DateTime.now().toString())
                                             .dmy,
                                         style: Styles.n16w5.copyWith(
                                             color: context.colors.text),
