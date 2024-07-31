@@ -7,11 +7,11 @@ import 'package:flutter/foundation.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:vaynow_flutter/services/api/authen_api.dart';
-import 'package:vaynow_flutter/services/api/restaurant_api.dart';
-import 'package:vaynow_flutter/services/di/locator.dart';
-import 'package:vaynow_flutter/services/hive/hive_data_manager.dart';
-import 'package:vaynow_flutter/utils/navigator_global_context_helper.dart';
+import 'package:new88_vaynow/services/api/authen_api.dart';
+import 'package:new88_vaynow/services/api/restaurant_api.dart';
+import 'package:new88_vaynow/services/di/locator.dart';
+import 'package:new88_vaynow/services/hive/hive_data_manager.dart';
+import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 
 // Sử dụng BearerToken cho xác thực
 const authenticatorBearer = 'Bearer';
