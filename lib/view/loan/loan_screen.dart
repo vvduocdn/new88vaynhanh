@@ -58,17 +58,7 @@ class _AddVayNowState extends State<LoanScreen> {
                       Container(
                         padding: const EdgeInsets.symmetric(
                             vertical: 20, horizontal: 15),
-                        decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [
-                                const Color(0xFFF05D0E).withOpacity(0.7),
-                                const Color(0xFFF05D0E).withOpacity(1.0),
-                              ],
-                              begin: const FractionalOffset(0.0, 0.0),
-                              end: const FractionalOffset(1.0, 0.0),
-                              stops: const [0.0, 1.0],
-                              tileMode: TileMode.clamp),
-                        ),
+                        decoration: BoxDecoration(color: Color(0xFFFE5F06)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -119,20 +109,9 @@ class _AddVayNowState extends State<LoanScreen> {
                                       const EdgeInsets.symmetric(
                                           horizontal: 30)),
                                   decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(10)),
-                                    gradient: LinearGradient(
-                                        colors: [
-                                          const Color(0xFFF05D0E)
-                                              .withOpacity(0.7),
-                                          const Color(0xFFF05D0E)
-                                              .withOpacity(1.0),
-                                        ],
-                                        begin: const FractionalOffset(0.0, 0.0),
-                                        end: const FractionalOffset(1.0, 0.0),
-                                        stops: const [0.0, 1.0],
-                                        tileMode: TileMode.clamp),
-                                  ),
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(10)),
+                                      color: Color(0xFFFE5F06)),
                                   alignment: Alignment.center,
                                   child: Text(
                                     'Nộp đơn ngay',

@@ -255,105 +255,105 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                 .add(const EdgeInsets.only(left: 10, right: 6)),
                             child: Column(
                               children: [
-                                Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      color: context.colors.white,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(5)),
-                                    ),
-                                    alignment: Alignment.centerLeft,
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 10)
-                                            .add(const EdgeInsets.only(
-                                                left: 10, right: 6)),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.edit_calendar,
-                                            size: 24,
-                                            color: context.colors.hF05D0E
-                                                .withOpacity(0.7)),
-                                        spaceW10,
-                                        Text(
-                                          'Chỉnh sữa thông tin mới',
-                                          style: Styles.n16.copyWith(
-                                              color: context.colors.text),
-                                        ),
-                                        const Spacer(),
-                                        Icon(
-                                          Icons.chevron_right_rounded,
-                                          size: 30,
-                                          color: context.colors.main
-                                              .withOpacity(0.7),
-                                        ),
-                                      ],
-                                    )),
-                                Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      color: context.colors.white,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(5)),
-                                    ),
-                                    alignment: Alignment.centerLeft,
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 10)
-                                            .add(const EdgeInsets.only(
-                                                left: 5, right: 5)),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.downloading_rounded,
-                                            size: 24,
-                                            color: context.colors.hF05D0E
-                                                .withOpacity(0.7)),
-                                        spaceW10,
-                                        Text(
-                                          'Tải xuống của tôi',
-                                          style: Styles.n16.copyWith(
-                                              color: context.colors.text),
-                                        ),
-                                        const Spacer(),
-                                        Icon(
-                                          Icons.chevron_right_rounded,
-                                          size: 30,
-                                          color: context.colors.main
-                                              .withOpacity(0.7),
-                                        ),
-                                      ],
-                                    )),
-                                Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      color: context.colors.white,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(5)),
-                                    ),
-                                    alignment: Alignment.centerLeft,
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 10)
-                                            .add(const EdgeInsets.only(
-                                                left: 5, right: 5)),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.contact_support,
-                                            size: 24,
-                                            color: context.colors.hF05D0E
-                                                .withOpacity(0.7)),
-                                        spaceW10,
-                                        Text(
-                                          'Liên hệ chúng tôi',
-                                          style: Styles.n16.copyWith(
-                                              color: context.colors.text),
-                                        ),
-                                        const Spacer(),
-                                        Icon(
-                                          Icons.chevron_right_rounded,
-                                          size: 30,
-                                          color: context.colors.main
-                                              .withOpacity(0.7),
-                                        ),
-                                      ],
-                                    )),
+                                // Container(
+                                //     width: MediaQuery.of(context).size.width,
+                                //     decoration: BoxDecoration(
+                                //       color: context.colors.white,
+                                //       borderRadius: const BorderRadius.all(
+                                //           Radius.circular(5)),
+                                //     ),
+                                //     alignment: Alignment.centerLeft,
+                                //     padding:
+                                //         const EdgeInsets.symmetric(vertical: 10)
+                                //             .add(const EdgeInsets.only(
+                                //                 left: 10, right: 6)),
+                                //     child: Row(
+                                //       children: [
+                                //         Icon(Icons.edit_calendar,
+                                //             size: 24,
+                                //             color: context.colors.hF05D0E
+                                //                 .withOpacity(0.7)),
+                                //         spaceW10,
+                                //         Text(
+                                //           'Chỉnh sữa thông tin mới',
+                                //           style: Styles.n16.copyWith(
+                                //               color: context.colors.text),
+                                //         ),
+                                //         const Spacer(),
+                                //         Icon(
+                                //           Icons.chevron_right_rounded,
+                                //           size: 30,
+                                //           color: context.colors.main
+                                //               .withOpacity(0.7),
+                                //         ),
+                                //       ],
+                                //     )),
+                                // Container(
+                                //     width: MediaQuery.of(context).size.width,
+                                //     decoration: BoxDecoration(
+                                //       color: context.colors.white,
+                                //       borderRadius: const BorderRadius.all(
+                                //           Radius.circular(5)),
+                                //     ),
+                                //     alignment: Alignment.centerLeft,
+                                //     padding:
+                                //         const EdgeInsets.symmetric(vertical: 10)
+                                //             .add(const EdgeInsets.only(
+                                //                 left: 5, right: 5)),
+                                //     child: Row(
+                                //       children: [
+                                //         Icon(Icons.downloading_rounded,
+                                //             size: 24,
+                                //             color: context.colors.hF05D0E
+                                //                 .withOpacity(0.7)),
+                                //         spaceW10,
+                                //         Text(
+                                //           'Tải xuống của tôi',
+                                //           style: Styles.n16.copyWith(
+                                //               color: context.colors.text),
+                                //         ),
+                                //         const Spacer(),
+                                //         Icon(
+                                //           Icons.chevron_right_rounded,
+                                //           size: 30,
+                                //           color: context.colors.main
+                                //               .withOpacity(0.7),
+                                //         ),
+                                //       ],
+                                //     )),
+                                // Container(
+                                //     width: MediaQuery.of(context).size.width,
+                                //     decoration: BoxDecoration(
+                                //       color: context.colors.white,
+                                //       borderRadius: const BorderRadius.all(
+                                //           Radius.circular(5)),
+                                //     ),
+                                //     alignment: Alignment.centerLeft,
+                                //     padding:
+                                //         const EdgeInsets.symmetric(vertical: 10)
+                                //             .add(const EdgeInsets.only(
+                                //                 left: 5, right: 5)),
+                                //     child: Row(
+                                //       children: [
+                                //         Icon(Icons.contact_support,
+                                //             size: 24,
+                                //             color: context.colors.hF05D0E
+                                //                 .withOpacity(0.7)),
+                                //         spaceW10,
+                                //         Text(
+                                //           'Liên hệ chúng tôi',
+                                //           style: Styles.n16.copyWith(
+                                //               color: context.colors.text),
+                                //         ),
+                                //         const Spacer(),
+                                //         Icon(
+                                //           Icons.chevron_right_rounded,
+                                //           size: 30,
+                                //           color: context.colors.main
+                                //               .withOpacity(0.7),
+                                //         ),
+                                //       ],
+                                //     )),
                                 GestureDetector(
                                   onTap: () {
                                     Navigator.of(context).push(
@@ -399,74 +399,81 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                         ],
                                       )),
                                 ),
-                                Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    decoration: BoxDecoration(
-                                      color: context.colors.white,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(5)),
-                                    ),
-                                    alignment: Alignment.centerLeft,
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 10)
+                                // Container(
+                                //     width: MediaQuery.of(context).size.width,
+                                //     decoration: BoxDecoration(
+                                //       color: context.colors.white,
+                                //       borderRadius: const BorderRadius.all(
+                                //           Radius.circular(5)),
+                                //     ),
+                                //     alignment: Alignment.centerLeft,
+                                //     padding:
+                                //         const EdgeInsets.symmetric(vertical: 10)
+                                //             .add(const EdgeInsets.only(
+                                //                 left: 5, right: 5)),
+                                //     child: Row(
+                                //       children: [
+                                //         Icon(Icons.settings,
+                                //             size: 24,
+                                //             color: context.colors.hF05D0E
+                                //                 .withOpacity(0.7)),
+                                //         spaceW10,
+                                //         Text(
+                                //           'Cài đặt',
+                                //           style: Styles.n16.copyWith(
+                                //               color: context.colors.text),
+                                //         ),
+                                //         const Spacer(),
+                                //         Icon(
+                                //           Icons.chevron_right_rounded,
+                                //           size: 30,
+                                //           color: context.colors.main
+                                //               .withOpacity(0.7),
+                                //         ),
+                                //       ],
+                                //     )),
+                                Visibility(
+                                  visible:
+                                      (state.userInfo?.phone ?? "").isNotEmpty,
+                                  child: GestureDetector(
+                                    onTap: onLogout,
+                                    child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        decoration: BoxDecoration(
+                                          color: context.colors.white,
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(5)),
+                                        ),
+                                        alignment: Alignment.centerLeft,
+                                        padding: const EdgeInsets.symmetric(
+                                                vertical: 10)
                                             .add(const EdgeInsets.only(
                                                 left: 5, right: 5)),
-                                    child: Row(
-                                      children: [
-                                        Icon(Icons.settings,
-                                            size: 24,
-                                            color: context.colors.hF05D0E
-                                                .withOpacity(0.7)),
-                                        spaceW10,
-                                        Text(
-                                          'Cài đặt',
-                                          style: Styles.n16.copyWith(
-                                              color: context.colors.text),
-                                        ),
-                                        const Spacer(),
-                                        Icon(
-                                          Icons.chevron_right_rounded,
-                                          size: 30,
-                                          color: context.colors.main
-                                              .withOpacity(0.7),
-                                        ),
-                                      ],
-                                    )),
-                                GestureDetector(
-                                  onTap: onLogout,
-                                  child: Container(
-                                      width: MediaQuery.of(context).size.width,
-                                      decoration: BoxDecoration(
-                                        color: context.colors.white,
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(5)),
-                                      ),
-                                      alignment: Alignment.centerLeft,
-                                      padding: const EdgeInsets.symmetric(
-                                              vertical: 10)
-                                          .add(const EdgeInsets.only(
-                                              left: 5, right: 5)),
-                                      child: Row(
-                                        children: [
-                                          Icon(Icons.restore_from_trash_rounded,
-                                              size: 24,
-                                              color: context.colors.hF05D0E
-                                                  .withOpacity(0.7)),
-                                          spaceW10,
-                                          Text(
-                                            'Xóa dữ liệu',
-                                            style: Styles.n16.copyWith(
-                                                color: context.colors.text),
-                                          ),
-                                          const Spacer(),
-                                          Icon(
-                                            Icons.chevron_right_rounded,
-                                            size: 30,
-                                            color: context.colors.main
-                                                .withOpacity(0.7),
-                                          ),
-                                        ],
-                                      )),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                                Icons
+                                                    .restore_from_trash_rounded,
+                                                size: 24,
+                                                color: context.colors.hF05D0E
+                                                    .withOpacity(0.7)),
+                                            spaceW10,
+                                            Text(
+                                              'Xóa dữ liệu',
+                                              style: Styles.n16.copyWith(
+                                                  color: context.colors.text),
+                                            ),
+                                            const Spacer(),
+                                            Icon(
+                                              Icons.chevron_right_rounded,
+                                              size: 30,
+                                              color: context.colors.main
+                                                  .withOpacity(0.7),
+                                            ),
+                                          ],
+                                        )),
+                                  ),
                                 ),
                               ],
                             )),

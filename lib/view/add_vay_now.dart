@@ -82,8 +82,8 @@ class _AddVayNowState extends State<AddVayNow> {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                                 colors: [
-                                  const Color(0xFFF05D0E).withOpacity(0.7),
-                                  const Color(0xFFF05D0E).withOpacity(1.0),
+                                  const Color(0xFFFE5F06 ).withOpacity(0.7),
+                                  const Color(0xFFFE5F06).withOpacity(1.0),
                                 ],
                                 begin: const FractionalOffset(0.0, 0.0),
                                 end: const FractionalOffset(1.0, 0.0),

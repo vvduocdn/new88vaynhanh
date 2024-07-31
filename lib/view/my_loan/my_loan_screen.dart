@@ -58,15 +58,7 @@ class _MyLoanScreenState extends State<MyLoanScreen> {
                         padding: const EdgeInsets.symmetric(
                             vertical: 20, horizontal: 15),
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              colors: [
-                                const Color(0xFFF05D0E).withOpacity(0.7),
-                                const Color(0xFFF05D0E).withOpacity(1.0),
-                              ],
-                              begin: const FractionalOffset(0.0, 0.0),
-                              end: const FractionalOffset(1.0, 0.0),
-                              stops: const [0.0, 1.0],
-                              tileMode: TileMode.clamp),
+                            color: Color(0xFFFE5F06)
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -122,20 +114,9 @@ class _MyLoanScreenState extends State<MyLoanScreen> {
                                       const EdgeInsets.symmetric(
                                           horizontal: 30)),
                                   decoration: BoxDecoration(
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(10)),
-                                    gradient: LinearGradient(
-                                        colors: [
-                                          const Color(0xFFF05D0E)
-                                              .withOpacity(0.7),
-                                          const Color(0xFFF05D0E)
-                                              .withOpacity(1.0),
-                                        ],
-                                        begin: const FractionalOffset(0.0, 0.0),
-                                        end: const FractionalOffset(1.0, 0.0),
-                                        stops: const [0.0, 1.0],
-                                        tileMode: TileMode.clamp),
-                                  ),
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(10)),
+                                      color: Color(0xFFFE5F06)),
                                   alignment: Alignment.center,
                                   child: Text(
                                     'Đăng ký vay ngay',
@@ -149,7 +130,7 @@ class _MyLoanScreenState extends State<MyLoanScreen> {
                         ),
                       ),
                       Visibility(
-                        visible:(state.userInfo?.phone ?? '').isNotEmpty,
+                        visible: (state.userInfo?.phone ?? '').isNotEmpty,
                         child: Expanded(
                           child: Column(
                             mainAxisSize: MainAxisSize.max,

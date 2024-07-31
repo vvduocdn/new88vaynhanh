@@ -72,28 +72,28 @@ class _BottomNavigationState extends State<BottomNavigation> {
             body: Stack(
               children: [
                 _tabs[_currentIndex],
-                Positioned(
-                    bottom: 45,
-                    right: 5,
-                    child: GestureDetector(
-                        onTap: () {
-                          if (state.userInfo?.phone != null &&
-                              state.userInfo!.phone!.isNotEmpty) {
-                            PopupComfirm.showPopModelDialog(
-                                context,
-                                () async {},
-                                'Thông báo',
-                                'Bạn đã sử dụng gói vay now đ 30,000,000.\nVui lòng theo dõi gói vay now nha!!',
-                                'Đóng');
-                            return;
-                          }
-                          Navigator.push(
-                              context,
-                              CupertinoPageRoute(
-                                  builder: (_) => const AddVayNow()));
-                        },
-                        child: Assets.images.voucher
-                            .image(width: 100, height: 100)))
+                // Positioned(
+                //     bottom: 45,
+                //     right: 5,
+                //     child: GestureDetector(
+                //         onTap: () {
+                //           if (state.userInfo?.phone != null &&
+                //               state.userInfo!.phone!.isNotEmpty) {
+                //             PopupComfirm.showPopModelDialog(
+                //                 context,
+                //                 () async {},
+                //                 'Thông báo',
+                //                 'Bạn đã sử dụng gói vay now đ 30,000,000.\nVui lòng theo dõi gói vay now nha!!',
+                //                 'Đóng');
+                //             return;
+                //           }
+                //           Navigator.push(
+                //               context,
+                //               CupertinoPageRoute(
+                //                   builder: (_) => const AddVayNow()));
+                //         },
+                //         child: Assets.images.voucher
+                //             .image(width: 100, height: 100)))
               ],
             ),
             bottomNavigationBar: Theme(

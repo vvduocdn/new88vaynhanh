@@ -67,8 +67,8 @@ const AppColors colorsLight = AppColors(
     hFFF2E5: Color(0xFFFFF2E5),
     hFFCB45: Color(0xFFFFCB45),
     h38B8D1: Color(0xFF38B8D1),
-    hF05D0E: Color(0xFFF05D0E),
-    h54CA92: Color((0xFF54CA92)));
+    hF05D0E: Color(0xFFFE5F06),
+    h54CA92: Color((0xFFFE5F06)));
 
 const AppColors colorsDark = AppColors(
     background: Color(0xFF212121),
@@ -90,8 +90,8 @@ const AppColors colorsDark = AppColors(
     hFFF2E5: Color(0xFFFFF2E5),
     hFFCB45: Color(0xFFFFCB45),
     h38B8D1: Color(0xFF38B8D1),
-    hF05D0E: Color(0xFFF05D0E),
-    h54CA92: Color((0xFF54CA92)));
+    hF05D0E: Color(0xFFFE5F06),
+    h54CA92: Color((0xFFFE5F06)));
 
 extension AppColorsExtension on BuildContext {
   AppColors get colors {
