@@ -361,7 +361,7 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                           builder: (_) => const WebViewScreen(
                                                 initialUrl:
                                                     'https://www.freeprivacypolicy.com/live/90bb152c-be66-4797-84f3-0fb9a3e1d8f5',
-                                                titlePage: 'New88 VayNhanh',
+                                                titlePage: 'Vay New88',
                                               )),
                                     );
                                   },

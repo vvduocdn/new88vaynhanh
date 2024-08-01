@@ -116,7 +116,7 @@ class _SplashScreenState extends State<SplashScreen>
               Assets.images.icLauncher.image(width: 80, height: 80),
               spaceH4,
               Text(
-                'New88 Vay uy tin',
+                'Vay New88',
                 style: Styles.n18w7
                     .copyWith(color: context.colors.main.withOpacity(0.5)),
               )

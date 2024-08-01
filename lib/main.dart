@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 : ThemeMode.dark;
 
             return MaterialApp(
-              title: 'New88 Vay Uy Tin',
+              title: 'Vay New88',
               debugShowMaterialGrid: false,
               debugShowCheckedModeBanner: false,
               home: const SplashScreen(),
