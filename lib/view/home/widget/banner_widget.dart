@@ -44,7 +44,7 @@ class _BannerWidgetState extends State<BannerWidget> {
                 height: double.infinity,
                 width: 10,
                 decoration: BoxDecoration(
-                    color: context.colors.h598FF9,
+                    color: context.colors.hF05D0E,
                     borderRadius: const BorderRadius.only(
                         topRight: Radius.circular(20),
                         bottomRight: Radius.circular(20))),
@@ -114,7 +114,7 @@ class _BannerWidgetState extends State<BannerWidget> {
                 height: double.infinity,
                 width: 10,
                 decoration: BoxDecoration(
-                    color: context.colors.h598FF9,
+                    color: context.colors.hF05D0E,
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(20),
                         bottomLeft: Radius.circular(20))),
