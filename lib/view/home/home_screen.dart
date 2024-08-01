@@ -282,7 +282,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         alignment: Alignment.center,
                         child: const Text(
                           'VayNow không trực tiếp tham gia cho vay mà giới thiệu các sản\nphẩm tài chính an toàn và đáng tin cậy cho người dùng',
-                          style: TextStyle(fontSize: 10),
+                          style: TextStyle(fontSize: 12),
                         ),
                       ),
                       const Spacer(),

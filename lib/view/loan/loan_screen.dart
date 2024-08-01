@@ -136,7 +136,7 @@ class _AddVayNowState extends State<LoanScreen> {
                               children: [
                                 spaceW10,
                                 Text(
-                                  'Vay now của bạn',
+                                  'Gói vay của bạn',
                                   style: Styles.n16b
                                       .copyWith(color: context.colors.text),
                                 )

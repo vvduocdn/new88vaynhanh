@@ -139,7 +139,7 @@ class _MyLoanScreenState extends State<MyLoanScreen> {
                             children: [
                               spaceH100,
                               Text(
-                                'Gói vay now đ 30,000,000 đang được xét duyệt. Vui lòng đợi, chúng tôi sớm sẽ liện hệ bạn',
+                                'Gói vay new88 đ 30,000,000 đang được xét duyệt. Vui lòng đợi, chúng tôi sớm sẽ liện hệ bạn',
                                 style: Styles.n18w4
                                     .copyWith(color: context.colors.text),
                                 textAlign: TextAlign.center,

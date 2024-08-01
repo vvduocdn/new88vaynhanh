@@ -100,7 +100,7 @@ class _AddVayNowState extends State<AddVayNow> {
                                       height: 30,
                                       color: context.colors.white)),
                               Text(
-                                'VayNow',
+                                'Vay New88',
                                 style: Styles.n18w7
                                     .copyWith(color: context.colors.white),
                               ),
