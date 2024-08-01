@@ -11,6 +11,7 @@ import 'package:new88_vaynow/utils/styles.dart';
 import 'package:new88_vaynow/view/home/widget/search_widget.dart';
 import 'package:new88_vaynow/view/profile/popup_logout.dart';
 import 'package:new88_vaynow/view/profile/popup_success.dart';
+import 'package:new88_vaynow/view/web_view/web_view_screen.dart';
 import 'package:new88_vaynow/view/widget/popup_comfirm.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_bloc.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_state.dart';
@@ -82,7 +83,7 @@ class _AddVayNowState extends State<AddVayNow> {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                                 colors: [
-                                  const Color(0xFFFE5F06 ).withOpacity(0.7),
+                                  const Color(0xFFFE5F06).withOpacity(1.0),
                                   const Color(0xFFFE5F06).withOpacity(1.0),
                                 ],
                                 begin: const FractionalOffset(0.0, 0.0),
@@ -198,9 +199,9 @@ class _AddVayNowState extends State<AddVayNow> {
                                     gradient: LinearGradient(
                                         colors: isValidate
                                             ? [
-                                                const Color(0xFFF05D0E)
-                                                    .withOpacity(0.7),
-                                                const Color(0xFFF05D0E)
+                                                const Color(0xFFFE5F06)
+                                                    .withOpacity(1.0),
+                                                const Color(0xFFFE5F06)
                                                     .withOpacity(1.0),
                                               ]
                                             : [
@@ -224,10 +225,23 @@ class _AddVayNowState extends State<AddVayNow> {
                                 ),
                               ),
                               spaceH8,
-                              Text(
-                                'Đăng nhập có nghĩa là bạn đã đồng ý với chính\nsách bảo mật',
-                                style: Styles.n12v2
-                                    .copyWith(color: const Color(0xFF625231)),
+
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                        builder: (_) => const WebViewScreen(
+                                              initialUrl:
+                                                  'https://www.freeprivacypolicy.com/live/90bb152c-be66-4797-84f3-0fb9a3e1d8f5',
+                                              titlePage: 'Vay New88',
+                                            )),
+                                  );
+                                },
+                                child: Text(
+                                  'Đăng nhập có nghĩa là bạn đã đồng ý với chính\nsách bảo mật',
+                                  style: Styles.n12v2
+                                      .copyWith(color: const Color(0xFF625231)),
+                                ),
                               ),
                               spaceH80,
                               // Container(

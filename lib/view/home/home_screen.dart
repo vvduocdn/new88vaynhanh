@@ -55,9 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
           builder: (context, state) {
             final user = context.watch<UserBloc>().state.userInfo;
             return Scaffold(
-                backgroundColor: context.colors.white,
+                backgroundColor: context.colors.hF05D0E,
                 body: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
                   margin:
                       EdgeInsets.only(top: MediaQuery.of(context).padding.top),
                   height: MediaQuery.of(context).size.height,
@@ -67,43 +66,50 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      spaceH18,
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 30,
-                          ),
-                          Text(
-                            'Vay Uy Tín',
-                            style: Styles.n18w7
-                                .copyWith(color: context.colors.text),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  CupertinoPageRoute(
-                                      builder: (_) => InfoUserScreen()));
-                            },
-                            child: const Icon(
-                              Icons.perm_identity_sharp,
-                              size: 30,
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 10, horizontal: 15),
+                        decoration:
+                            const BoxDecoration(color: Color(0xFFFE5F06)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 30,
                             ),
-                          ),
-                        ],
+                            Text(
+                              'Vay Uy Tín',
+                              style: Styles.n18w7
+                                  .copyWith(color: context.colors.white),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                        builder: (_) => const InfoUserScreen()));
+                              },
+                              child:  Icon(
+                                Icons.perm_identity_sharp,
+                                size: 30,
+                                color: context.colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                      spaceH30,
+                      spaceH40,
                       Container(
                         height: 300,
                         width: MediaQuery.of(context).size.width,
+                        margin: const EdgeInsets.symmetric(horizontal: 15),
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         decoration: BoxDecoration(
                           borderRadius: const BorderRadius.only(
-                              topRight: Radius.circular(70),
-                              topLeft: Radius.circular(8),
-                              bottomRight: Radius.circular(8),
-                              bottomLeft: Radius.circular(8)),
+                              topRight: Radius.circular(30),
+                              topLeft: Radius.circular(30),
+                              bottomRight: Radius.circular(30),
+                              bottomLeft: Radius.circular(30)),
                           gradient: LinearGradient(
                               colors: [
                                 const Color(0xFFfe5f06).withOpacity(1.0),
@@ -112,7 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                               begin: const FractionalOffset(0.0, 0.0),
                               end: const FractionalOffset(1.0, 0.0),
-                              stops: [0.0, 0.5, 1.0],
+                              stops: const [0.0, 0.5, 1.0],
                               tileMode: TileMode.clamp),
                         ),
                         child: Column(
@@ -263,6 +269,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       spaceH12,
                       Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 15),
                         width: double.infinity,
                         padding: const EdgeInsets.all(6)
                             .add(const EdgeInsets.symmetric(horizontal: 2)),
