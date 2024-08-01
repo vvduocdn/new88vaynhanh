@@ -237,10 +237,27 @@ class _AddVayNowState extends State<AddVayNow> {
                                             )),
                                   );
                                 },
-                                child: Text(
-                                  'Đăng nhập có nghĩa là bạn đã đồng ý với chính\nsách bảo mật',
-                                  style: Styles.n12v2
-                                      .copyWith(color: const Color(0xFF625231)),
+                                child: Container(
+                                  padding: const EdgeInsets.only(
+                                      bottom:
+                                          0.5),
+                                  decoration: const BoxDecoration(
+                                    border: Border(
+                                      bottom: BorderSide(
+                                        color: Color(0xFF625231),
+                                        width: 0.5,
+                                      ),
+                                    ),
+                                  ),
+                                  child: RichText(
+                                    text: TextSpan(
+                                      text:
+                                          'Đăng nhập có nghĩa là bạn đã đồng ý với chính sách bảo mật',
+                                      style: Styles.n12v7.copyWith(
+                                        color: const Color(0xFF625231),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ),
                               spaceH80,

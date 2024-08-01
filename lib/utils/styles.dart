@@ -94,6 +94,14 @@ class Styles {
     color: Colors.black,
   );
 
+  static TextStyle n12v7 = const TextStyle(
+    fontFamily: gilroy,
+    fontWeight: FontWeight.w700,
+    fontSize: 12.0,
+    color: Colors.black,
+    height: 1.5,
+  );
+
   static TextStyle b12 = const TextStyle(
     fontFamily: gilroy,
     fontWeight: FontWeight.w900,

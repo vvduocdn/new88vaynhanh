@@ -9,6 +9,7 @@ import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 import 'package:new88_vaynow/utils/spaces.dart';
 import 'package:new88_vaynow/utils/styles.dart';
 import 'package:new88_vaynow/view/add_vay_now.dart';
+import 'package:new88_vaynow/view/home/widget/banner_widget.dart';
 import 'package:new88_vaynow/view/profile/info_user_screen.dart';
 import 'package:new88_vaynow/view/widget/popup_comfirm.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_bloc.dart';
@@ -87,9 +88,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 Navigator.push(
                                     context,
                                     CupertinoPageRoute(
-                                        builder: (_) => const InfoUserScreen()));
+                                        builder: (_) =>
+                                            const InfoUserScreen()));
                               },
-                              child:  Icon(
+                              child: Icon(
                                 Icons.perm_identity_sharp,
                                 size: 30,
                                 color: context.colors.white,
@@ -292,7 +294,22 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: TextStyle(fontSize: 12),
                         ),
                       ),
-                      const Spacer(),
+                      spaceH12,
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(
+                            'Sự kiện hàng tháng',
+                            style: Styles.n16b
+                                .copyWith(color: const Color(0xFF625231)),
+                          ),
+                        ],
+                      ),
+                      spaceH12,
+                      const BannerWidget(),
+                      spaceH12,
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.all(6)
