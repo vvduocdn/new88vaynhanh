@@ -339,7 +339,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             spaceW6,
                             Text(
-                              'Nền tảng này hứa hẹn bảo vệ tính bảo mật dữ liệu của\nbản và sẽ không phổ biến thông tin cá nhân của bạn',
+                              'Nền tảng này hứa hẹn bảo vệ tính bảo mật dữ liệu của bản và sẽ không phổ biến thông tin cá nhân của bạn',
                               style: Styles.n12v2
                                   .copyWith(color: const Color(0xFF625231)),
                             )

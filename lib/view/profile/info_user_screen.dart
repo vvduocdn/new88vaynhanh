@@ -131,19 +131,7 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                ImagePreviewerDialog(
-                                                  url: state.userInfo?.avatar ??
-                                                      '',
-                                                  name: state
-                                                          .userInfo?.fullName ??
-                                                      '',
-                                                )));
-                                  },
+                                  onTap: () {},
                                   child: SizedBox(
                                     height: 60,
                                     width: 60,
