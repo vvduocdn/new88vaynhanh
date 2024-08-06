@@ -1,21 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:new88_vaynow/component/theme.dart';
 import 'package:new88_vaynow/services/api/api_client.dart';
 import 'package:new88_vaynow/services/di/locator.dart';
 import 'package:new88_vaynow/services/supa_base/supa_base_service.dart';
+import 'package:new88_vaynow/utils/device_util.dart';
 import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 import 'package:new88_vaynow/utils/spaces.dart';
 import 'package:new88_vaynow/utils/styles.dart';
-import 'package:new88_vaynow/view/add_vay_now.dart';
+import 'package:new88_vaynow/view/auth/add_vay_now.dart';
 import 'package:new88_vaynow/view/home/widget/banner_widget.dart';
 import 'package:new88_vaynow/view/profile/info_user_screen.dart';
 import 'package:new88_vaynow/view/widget/popup_comfirm.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_bloc.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_state.dart';
 import 'package:new88_vaynow/view_model/home_bloc/home_bloc.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,27 +27,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final TextEditingController _searchController = TextEditingController();
-  final FocusNode _focusNode = FocusNode();
   final NavigatorGlobalContextHelper navigationService =
       locator.get<NavigatorGlobalContextHelper>();
-  final api = locator<ApiClient>();
-
-  int current = PAGE;
-  int pageSize = LIMIT;
-  bool isConnectInternet = true;
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _searchController.dispose();
-    _focusNode.dispose();
-    api.closeStream();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
           builder: (context, state) {
             final user = context.watch<UserBloc>().state.userInfo;
             return Scaffold(
+                resizeToAvoidBottomInset: false,
                 backgroundColor: context.colors.hF05D0E,
                 body: Container(
                   margin:
@@ -134,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             spaceH12,
                             Text(
-                              'đ 30,000,000',
+                              'đ  ${user?.money == null ? formatNumber(state.money) : formatNumber(int.parse(user?.money ?? ''))}',
                               style: Styles.n38b
                                   .copyWith(color: context.colors.white),
                             ),
@@ -158,7 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     spaceH10,
                                     Text(
-                                      'đ 30,000,000',
+                                      'đ ${user?.money == null ? formatNumber(state.money) : formatNumber(int.parse(user?.money ?? ''))}',
                                       style: Styles.n18w7.copyWith(
                                           color: context.colors.white),
                                     ),
@@ -196,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       context,
                                       () async {},
                                       'Thông báo',
-                                      'Gói vay now đ 30,000,000 đang được xét duyệt!!',
+                                      'Gói vay now đ ${user.money == null ? formatNumber(state.money) : formatNumber(int.parse(user.money ?? ''))} đang được xét duyệt!!',
                                       'Đóng');
                                   return;
                                 }
@@ -290,14 +273,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         alignment: Alignment.center,
                         child: const Text(
-                          'Vay New88 không trực tiếp tham gia cho vay mà giới thiệu các sản\nphẩm tài chính an toàn và đáng tin cậy cho người dùng',
+                          'Vay New88 không trực tiếp tham gia cho vay mà giới thiệu các sản phẩm tài chính an toàn và đáng tin cậy cho người dùng',
                           style: TextStyle(fontSize: 12),
                         ),
                       ),
                       spaceH12,
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 15,
                           ),
                           Text(
@@ -339,7 +322,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             spaceW6,
                             Text(
-                              'Nền tảng này hứa hẹn bảo vệ tính bảo mật dữ liệu của bản và sẽ không phổ biến thông tin cá nhân của bạn',
+                              'Nền tảng này hứa hẹn bảo vệ tính bảo mật dữ liệu của bản\nvà sẽ không phổ biến thông tin cá nhân của bạn',
                               style: Styles.n12v2
                                   .copyWith(color: const Color(0xFF625231)),
                             )

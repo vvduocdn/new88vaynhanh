@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new88_vaynow/component/base_widget_spinkit.dart';
@@ -8,16 +9,17 @@ import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 import 'package:new88_vaynow/utils/regex.dart';
 import 'package:new88_vaynow/utils/spaces.dart';
 import 'package:new88_vaynow/utils/styles.dart';
+import 'package:new88_vaynow/view/auth/login_screen.dart';
 import 'package:new88_vaynow/view/home/widget/search_widget.dart';
-import 'package:new88_vaynow/view/profile/popup_logout.dart';
 import 'package:new88_vaynow/view/profile/popup_success.dart';
 import 'package:new88_vaynow/view/web_view/web_view_screen.dart';
 import 'package:new88_vaynow/view/widget/popup_comfirm.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_bloc.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_state.dart';
 import 'package:new88_vaynow/view_model/home_bloc/home_bloc.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
+
+import '../../component/widgets/field.dart';
 
 class AddVayNow extends StatefulWidget {
   const AddVayNow({super.key});
@@ -28,26 +30,50 @@ class AddVayNow extends StatefulWidget {
 
 class _AddVayNowState extends State<AddVayNow> {
   final TextEditingController _searchController = TextEditingController();
+  final TextEditingController _passController = TextEditingController();
+  final TextEditingController _passOldController = TextEditingController();
+
   final FocusNode _focusNode = FocusNode();
   final NavigatorGlobalContextHelper navigationService =
       locator.get<NavigatorGlobalContextHelper>();
   bool isValidate = false;
   String phone = '';
+  String pass = '';
+  String passOld = '';
+
   @override
   void initState() {
     super.initState();
   }
 
   void validate() {
-    if (phone != '') {
-      if (!Regex.phone.hasMatch(phone) || phone.contains(' ')) {
-        isValidate = false;
-        setState(() {});
-        return;
-      }
+    bool isValid = true;
 
-      isValidate = true;
-      setState(() {});
+    // Kiểm tra nếu bất kỳ trường nào là trống
+    if (phone.isEmpty || pass.isEmpty || passOld.isEmpty) {
+      isValid = false;
+    } else {
+      if (phone.isNotEmpty) {
+        if (!Regex.phone.hasMatch(phone) || phone.contains(' ')) {
+          isValid = false;
+        }
+      }
+      if (pass.isNotEmpty) {
+        if (pass.length < 8) {
+          isValid = false;
+        }
+      }
+      if (passOld.isNotEmpty) {
+        if (pass.length < 8 || pass != passOld) {
+          isValid = false;
+        }
+      }
+    }
+
+    if (isValidate != isValid) {
+      setState(() {
+        isValidate = isValid;
+      });
     }
   }
 
@@ -94,12 +120,17 @@ class _AddVayNowState extends State<AddVayNow> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              RotatedBox(
-                                  quarterTurns: 2,
-                                  child: Assets.icons.arrowLeft.svg(
-                                      width: 30,
-                                      height: 30,
-                                      color: context.colors.white)),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: RotatedBox(
+                                    quarterTurns: 2,
+                                    child: Assets.icons.arrowLeft.svg(
+                                        width: 30,
+                                        height: 30,
+                                        color: context.colors.white)),
+                              ),
                               Text(
                                 'Vay New88',
                                 style: Styles.n18w7
@@ -142,28 +173,71 @@ class _AddVayNowState extends State<AddVayNow> {
                                     .copyWith(color: context.colors.text),
                               ),
                               spaceH20,
+                              Text(
+                                'Số điện thoại ( ví dụ: xxxxxxxxxxx)',
+                                style: Styles.n15w4
+                                    .copyWith(color: context.colors.main),
+                              ),
                               SearchWidget(
                                 searchController: _searchController,
-                                focusNode: _focusNode,
                                 onSearchChanged: (value) {
                                   setState(() {
                                     phone = value;
                                   });
                                   validate();
                                 },
+                                hinText: 'Vui lòng nhập số điện thoại',
+                                keyboardType: TextInputType.phone,
                               ),
                               spaceH10,
                               Text(
-                                'Số điện thoại ( ví dụ: xxxxxxxxxxx)',
+                                'Nhập mật khẩu (Độ dài tối thiểu 8 ký tự)',
                                 style: Styles.n15w4
                                     .copyWith(color: context.colors.main),
                               ),
+                              FieldWidget(
+                                isIconPass: true,
+                                obscureText: true,
+                                hintText: 'Vui lòng nhập số mật khẩu',
+                                textEditingController: _passController,
+                                onPressed: (String text) {
+                                  pass = text;
+
+                                  validate();
+                                },
+                                label: '',
+                                color: null,
+                                errorText: null,
+                              ),
+                              spaceH10,
+                              Text(
+                                'Nhập lại mật khẩu (Độ dài tối thiểu 8 ký tự)',
+                                style: Styles.n15w4
+                                    .copyWith(color: context.colors.main),
+                              ),
+                              FieldWidget(
+                                isIconPass: true,
+                                obscureText: true,
+                                hintText: 'Vui lòng nhập lại số mật khẩu',
+                                textEditingController: _passOldController,
+                                onPressed: (String text) {
+                                  passOld = text;
+
+                                  validate();
+                                },
+                                label: '',
+                                color: null,
+                                errorText: null,
+                              ),
+                              spaceH10,
                               GestureDetector(
                                 onTap: () {
                                   if (!isValidate) return;
                                   BlocProvider.of<HomeBloc>(context)
                                       .add(PostAccountEvent(
                                           phone: phone,
+                                          pass: pass,
+                                          money: state.money,
                                           func: (message, status) {
                                             if (status) {
                                               BlocProvider.of<UserBloc>(context)
@@ -225,7 +299,33 @@ class _AddVayNowState extends State<AddVayNow> {
                                 ),
                               ),
                               spaceH8,
-
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      CupertinoPageRoute(
+                                          builder: (context) =>
+                                              const LoginScreen()));
+                                },
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  width: double.infinity,
+                                  child: RichText(
+                                    text: TextSpan(
+                                        text: 'Đã có tài khoản, ',
+                                        style: Styles.n12v2.copyWith(
+                                          color: const Color(0xFF625231),
+                                        ),
+                                        children: [
+                                          TextSpan(
+                                              text: 'đăng nhập ngay.',
+                                              style: Styles.n12v7.copyWith(
+                                                  color: context.colors.text))
+                                        ]),
+                                  ),
+                                ),
+                              ),
+                              spaceH4,
                               GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(
@@ -238,9 +338,7 @@ class _AddVayNowState extends State<AddVayNow> {
                                   );
                                 },
                                 child: Container(
-                                  padding: const EdgeInsets.only(
-                                      bottom:
-                                          0.5),
+                                  padding: const EdgeInsets.only(bottom: 0.5),
                                   decoration: const BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
@@ -260,7 +358,6 @@ class _AddVayNowState extends State<AddVayNow> {
                                   ),
                                 ),
                               ),
-                              spaceH80,
                               // Container(
                               //   height: 100,
                               //   width: double.infinity,

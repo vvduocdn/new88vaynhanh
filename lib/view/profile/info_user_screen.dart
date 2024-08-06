@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new88_vaynow/component/bottom_navigation.dart';
@@ -5,12 +6,12 @@ import 'package:new88_vaynow/component/theme.dart';
 import 'package:new88_vaynow/gen/assets.gen.dart';
 import 'package:new88_vaynow/l10n/localization/app_localizations.dart';
 import 'package:new88_vaynow/services/di/locator.dart';
-import 'package:new88_vaynow/services/hive/hive_data_manager.dart';
 import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 import 'package:new88_vaynow/utils/spaces.dart';
 import 'package:new88_vaynow/utils/styles.dart';
+import 'package:new88_vaynow/view/auth/add_vay_now.dart';
+import 'package:new88_vaynow/view/profile/popup_disable_account/popup_disable_account_screen.dart';
 import 'package:new88_vaynow/view/profile/popup_logout.dart';
-import 'package:new88_vaynow/view/profile/image_previewer_dialog.dart';
 import 'package:new88_vaynow/view/web_view/web_view_screen.dart';
 import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
@@ -150,7 +151,13 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                   children: [
                                     !state.isLoggedIn
                                         ? GestureDetector(
-                                            onTap: () {},
+                                            onTap: () {
+                                              Navigator.push(
+                                                  context,
+                                                  CupertinoPageRoute(
+                                                      builder: (_) =>
+                                                          const AddVayNow()));
+                                            },
                                             child: Row(
                                               children: [
                                                 Expanded(
@@ -424,6 +431,59 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                   visible:
                                       (state.userInfo?.phone ?? "").isNotEmpty,
                                   child: GestureDetector(
+                                    onTap: () {
+                                      showModalBottomSheet<void>(
+                                        context: context,
+                                        backgroundColor: Colors.transparent,
+                                        isScrollControlled: true,
+                                        useSafeArea: true,
+                                        builder: (BuildContext context) {
+                                          return const PopupDisableAccount();
+                                        },
+                                      );
+                                    },
+                                    child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        decoration: BoxDecoration(
+                                          color: context.colors.white,
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(5)),
+                                        ),
+                                        alignment: Alignment.centerLeft,
+                                        padding: const EdgeInsets.symmetric(
+                                                vertical: 10)
+                                            .add(const EdgeInsets.only(
+                                                left: 5, right: 5)),
+                                        child: Row(
+                                          children: [
+                                            Icon(
+                                                Icons
+                                                    .restore_from_trash_rounded,
+                                                size: 24,
+                                                color: context.colors.hF05D0E
+                                                    .withOpacity(0.7)),
+                                            spaceW10,
+                                            Text(
+                                              'Xóa tài khoản',
+                                              style: Styles.n16.copyWith(
+                                                  color: context.colors.text),
+                                            ),
+                                            const Spacer(),
+                                            Icon(
+                                              Icons.chevron_right_rounded,
+                                              size: 30,
+                                              color: context.colors.main
+                                                  .withOpacity(0.7),
+                                            ),
+                                          ],
+                                        )),
+                                  ),
+                                ),
+                                Visibility(
+                                  visible:
+                                      (state.userInfo?.phone ?? "").isNotEmpty,
+                                  child: GestureDetector(
                                     onTap: onLogout,
                                     child: Container(
                                         width:
@@ -448,7 +508,7 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                                     .withOpacity(0.7)),
                                             spaceW10,
                                             Text(
-                                              'Xóa dữ liệu',
+                                              'Đăng xuất',
                                               style: Styles.n16.copyWith(
                                                   color: context.colors.text),
                                             ),

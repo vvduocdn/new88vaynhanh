@@ -4,10 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new88_vaynow/component/theme.dart';
 import 'package:new88_vaynow/gen/assets.gen.dart';
 import 'package:new88_vaynow/services/di/locator.dart';
+import 'package:new88_vaynow/utils/device_util.dart';
 import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 import 'package:new88_vaynow/utils/spaces.dart';
 import 'package:new88_vaynow/utils/styles.dart';
-import 'package:new88_vaynow/view/add_vay_now.dart';
+import 'package:new88_vaynow/view/auth/add_vay_now.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_bloc.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_state.dart';
 import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
@@ -139,7 +140,7 @@ class _MyLoanScreenState extends State<MyLoanScreen> {
                             children: [
                               spaceH100,
                               Text(
-                                'Gói vay new88 đ 30,000,000 đang được xét duyệt. Vui lòng đợi, chúng tôi sớm sẽ liện hệ bạn',
+                                'Gói vay new88 đ ${formatNumber(int.parse(state.userInfo?.money ?? '0'))} đang được xét duyệt. Vui lòng đợi, chúng tôi sớm sẽ liện hệ bạn',
                                 style: Styles.n18w4
                                     .copyWith(color: context.colors.text),
                                 textAlign: TextAlign.center,

@@ -6,14 +6,16 @@ import 'package:new88_vaynow/utils/styles.dart';
 
 class SearchWidget extends StatelessWidget {
   final TextEditingController searchController;
-  final FocusNode focusNode;
   final Function(String) onSearchChanged;
-
+  final String hinText;
+  final TextInputType? keyboardType;
   const SearchWidget({
     super.key,
     required this.searchController,
-    required this.focusNode,
     required this.onSearchChanged,
+    required this.hinText,
+    required this.keyboardType,
+
   });
 
   @override
@@ -23,23 +25,22 @@ class SearchWidget extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(0.0, 0, 0.0, 0),
       child: TextField(
         controller: searchController,
-        focusNode: focusNode,
-        keyboardType: TextInputType.phone,
+        keyboardType:  keyboardType,
         decoration: InputDecoration(
-          hintText: 'Vui lòng nhập số điện thoại',
+          hintText: hinText,
           hintStyle: Styles.n15w4.copyWith(color: context.colors.main),
           contentPadding:
               const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide.none,
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide(color: Colors.grey[300]!),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide(color: Colors.grey[300]!),
           ),
           filled: true,

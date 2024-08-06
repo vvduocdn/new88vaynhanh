@@ -114,31 +114,6 @@ class $AssetsIconsGen {
   /// File path: assets/icons/arrow_left.svg
   SvgGenImage get arrowLeft => const SvgGenImage('assets/icons/arrow_left.svg');
 
-  /// File path: assets/icons/calendar.svg
-  SvgGenImage get calendar => const SvgGenImage('assets/icons/calendar.svg');
-
-  /// File path: assets/icons/clock.svg
-  SvgGenImage get clock => const SvgGenImage('assets/icons/clock.svg');
-
-  /// File path: assets/icons/direction.svg
-  SvgGenImage get direction => const SvgGenImage('assets/icons/direction.svg');
-
-  /// File path: assets/icons/discount_coupon.svg
-  SvgGenImage get discountCoupon =>
-      const SvgGenImage('assets/icons/discount_coupon.svg');
-
-  /// File path: assets/icons/edit.svg
-  SvgGenImage get edit => const SvgGenImage('assets/icons/edit.svg');
-
-  /// File path: assets/icons/edit_v.svg
-  SvgGenImage get editV => const SvgGenImage('assets/icons/edit_v.svg');
-
-  /// File path: assets/icons/food.svg
-  SvgGenImage get food => const SvgGenImage('assets/icons/food.svg');
-
-  /// File path: assets/icons/history.svg
-  SvgGenImage get history => const SvgGenImage('assets/icons/history.svg');
-
   /// File path: assets/icons/ic_group.svg
   SvgGenImage get icGroup => const SvgGenImage('assets/icons/ic_group.svg');
 
@@ -152,66 +127,23 @@ class $AssetsIconsGen {
   /// File path: assets/icons/log_out.svg
   SvgGenImage get logOut => const SvgGenImage('assets/icons/log_out.svg');
 
-  /// File path: assets/icons/notification_status.svg
-  SvgGenImage get notificationStatus =>
-      const SvgGenImage('assets/icons/notification_status.svg');
-
   /// File path: assets/icons/password.svg
   SvgGenImage get password => const SvgGenImage('assets/icons/password.svg');
 
   /// File path: assets/icons/reserve.svg
   SvgGenImage get reserve => const SvgGenImage('assets/icons/reserve.svg');
 
-  /// File path: assets/icons/setting.svg
-  SvgGenImage get setting => const SvgGenImage('assets/icons/setting.svg');
-
-  /// File path: assets/icons/star.svg
-  SvgGenImage get star => const SvgGenImage('assets/icons/star.svg');
-
-  /// File path: assets/icons/trash.svg
-  SvgGenImage get trash => const SvgGenImage('assets/icons/trash.svg');
-
-  /// File path: assets/icons/user.svg
-  SvgGenImage get user => const SvgGenImage('assets/icons/user.svg');
-
-  /// File path: assets/icons/user_delete.svg
-  SvgGenImage get userDelete =>
-      const SvgGenImage('assets/icons/user_delete.svg');
-
-  /// File path: assets/icons/voucher.svg
-  SvgGenImage get voucher => const SvgGenImage('assets/icons/voucher.svg');
-
-  /// File path: assets/icons/wallet_money.svg
-  SvgGenImage get walletMoney =>
-      const SvgGenImage('assets/icons/wallet_money.svg');
-
   /// List of all assets
   List<SvgGenImage> get values => [
         address,
         arrowDown,
         arrowLeft,
-        calendar,
-        clock,
-        direction,
-        discountCoupon,
-        edit,
-        editV,
-        food,
-        history,
         icGroup,
         icLogout,
         icUpdateCar,
         logOut,
-        notificationStatus,
         password,
-        reserve,
-        setting,
-        star,
-        trash,
-        user,
-        userDelete,
-        voucher,
-        walletMoney
+        reserve
       ];
 }
 
@@ -221,10 +153,6 @@ class $AssetsImagesGen {
   /// File path: assets/images/banner-3.jpg
   AssetGenImage get banner3 =>
       const AssetGenImage('assets/images/banner-3.jpg');
-
-  /// File path: assets/images/banner_1.jpg
-  AssetGenImage get banner1 =>
-      const AssetGenImage('assets/images/banner_1.jpg');
 
   /// File path: assets/images/banner_2.jpg
   AssetGenImage get banner2 =>
@@ -245,113 +173,28 @@ class $AssetsImagesGen {
   AssetGenImage get businessLoans =>
       const AssetGenImage('assets/images/business_loans.jpg');
 
-  /// File path: assets/images/cat1.png
-  AssetGenImage get cat1 => const AssetGenImage('assets/images/cat1.png');
-
-  /// File path: assets/images/cat10.png
-  AssetGenImage get cat10 => const AssetGenImage('assets/images/cat10.png');
-
-  /// File path: assets/images/cat11.png
-  AssetGenImage get cat11 => const AssetGenImage('assets/images/cat11.png');
-
-  /// File path: assets/images/cat12.png
-  AssetGenImage get cat12 => const AssetGenImage('assets/images/cat12.png');
-
-  /// File path: assets/images/cat2.png
-  AssetGenImage get cat2 => const AssetGenImage('assets/images/cat2.png');
-
-  /// File path: assets/images/cat3.png
-  AssetGenImage get cat3 => const AssetGenImage('assets/images/cat3.png');
-
-  /// File path: assets/images/cat4.png
-  AssetGenImage get cat4 => const AssetGenImage('assets/images/cat4.png');
-
-  /// File path: assets/images/cat5.png
-  AssetGenImage get cat5 => const AssetGenImage('assets/images/cat5.png');
-
-  /// File path: assets/images/cat6.png
-  AssetGenImage get cat6 => const AssetGenImage('assets/images/cat6.png');
-
-  /// File path: assets/images/cat7.png
-  AssetGenImage get cat7 => const AssetGenImage('assets/images/cat7.png');
-
-  /// File path: assets/images/cat8.png
-  AssetGenImage get cat8 => const AssetGenImage('assets/images/cat8.png');
-
-  /// File path: assets/images/cat9.png
-  AssetGenImage get cat9 => const AssetGenImage('assets/images/cat9.png');
-
-  /// File path: assets/images/discount.png
-  AssetGenImage get discount =>
-      const AssetGenImage('assets/images/discount.png');
-
-  /// File path: assets/images/frame.png
-  AssetGenImage get frame => const AssetGenImage('assets/images/frame.png');
-
-  /// File path: assets/images/giftbox.png
-  AssetGenImage get giftbox => const AssetGenImage('assets/images/giftbox.png');
-
   /// File path: assets/images/ic_launcher.png
   AssetGenImage get icLauncher =>
       const AssetGenImage('assets/images/ic_launcher.png');
 
-  /// File path: assets/images/image_splash.png
-  AssetGenImage get imageSplash =>
-      const AssetGenImage('assets/images/image_splash.png');
-
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
-
-  /// File path: assets/images/no-photo.png
-  AssetGenImage get noPhoto =>
-      const AssetGenImage('assets/images/no-photo.png');
-
-  /// File path: assets/images/password_secure.png
-  AssetGenImage get passwordSecure =>
-      const AssetGenImage('assets/images/password_secure.png');
-
-  /// File path: assets/images/photo.png
-  AssetGenImage get photo => const AssetGenImage('assets/images/photo.png');
 
   /// File path: assets/images/result_search.jpg
   AssetGenImage get resultSearch =>
       const AssetGenImage('assets/images/result_search.jpg');
 
-  /// File path: assets/images/voucher.png
-  AssetGenImage get voucher => const AssetGenImage('assets/images/voucher.png');
-
   /// List of all assets
   List<AssetGenImage> get values => [
         banner3,
-        banner1,
         banner2,
         banner4,
         banner6,
         bg,
         businessLoans,
-        cat1,
-        cat10,
-        cat11,
-        cat12,
-        cat2,
-        cat3,
-        cat4,
-        cat5,
-        cat6,
-        cat7,
-        cat8,
-        cat9,
-        discount,
-        frame,
-        giftbox,
         icLauncher,
-        imageSplash,
         logo,
-        noPhoto,
-        passwordSecure,
-        photo,
-        resultSearch,
-        voucher
+        resultSearch
       ];
 }
 

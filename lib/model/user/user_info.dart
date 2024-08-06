@@ -22,7 +22,7 @@ class UserInfo extends HiveObject {
   String? createdAt;
 
   @HiveField(7)
-  String? status;
+  String? money;
 
   @HiveField(8)
   String? email;
@@ -37,7 +37,7 @@ class UserInfo extends HiveObject {
       this.avatar,
       this.fullName,
       this.email,
-      this.status,
+      this.money,
       this.role,
       this.phone});
 
@@ -48,7 +48,7 @@ class UserInfo extends HiveObject {
         avatar: json['avatar'] as String?,
         fullName: json['fullName'] as String?,
         email: json['email'] as String?,
-        status: json['status'] as String?,
+        money: json['money'] as String?,
         role: json['role'] as String?,
         phone: json['phone_number'] as String?,
       );
@@ -60,13 +60,13 @@ class UserInfo extends HiveObject {
         'avatar': avatar,
         'fullName': fullName,
         'email': email,
-        'status': status,
+        'money': money,
         'role': role,
         'phone_number': phone,
       };
   @override
   String toString() {
     return 'UserInfo{id: $id, email: $email, avatar: $avatar, '
-        'fullName: $fullName, createdAt: $createdAt, role: $role, phone: $phone, status: $status, updatedAt: $updatedAt}';
+        'fullName: $fullName, createdAt: $createdAt, role: $role, phone: $phone, money: $money, updatedAt: $updatedAt}';
   }
 }

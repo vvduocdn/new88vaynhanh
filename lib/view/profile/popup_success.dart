@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:new88_vaynow/component/bottom_navigation.dart';
 import 'package:new88_vaynow/component/custom_button.dart';
 import 'package:new88_vaynow/component/theme.dart';
 import 'package:new88_vaynow/gen/assets.gen.dart';
+import 'package:new88_vaynow/utils/device_util.dart';
 import 'package:new88_vaynow/utils/spaces.dart';
 import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
@@ -74,7 +76,7 @@ class _RegisterSuccessState extends State<RegisterSuccess> {
                                         ),
                                       ),
                                       Text(
-                                        'Đăng ký thành công, bạn có thể đang ký gói vây đ 30,000,000',
+                                        'Đăng ký thành công, bạn có thể đang ký gói vây đ  ${(formatNumber(int.parse(state.userInfo?.money ?? '0')))}',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontSize: 14,
@@ -85,8 +87,11 @@ class _RegisterSuccessState extends State<RegisterSuccess> {
                                       spaceH20,
                                       CustomButton(
                                         onPressed: () {
-                                          Navigator.of(context).popUntil(
-                                              (route) => route.isFirst);
+                                          Navigator.of(context).pushAndRemoveUntil(
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const BottomNavigation()),
+                                              (route) => false);
                                         },
                                         text: 'Tiếp tục',
                                         colorText: context.colors.white,

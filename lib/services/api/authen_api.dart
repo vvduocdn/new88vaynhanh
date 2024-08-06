@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:new88_vaynow/model/base_reponse/base_response.dart';
-import 'package:new88_vaynow/model/home/change_password_body.dart';
 import 'package:new88_vaynow/model/user/authen/info_user_put_body.dart';
 import 'package:new88_vaynow/model/user/authen/login_body.dart';
 import 'package:new88_vaynow/model/user/authen/login_response.dart';
@@ -26,7 +25,4 @@ abstract class AuthServices {
   @PUT('/api/users/me')
   Future<BaseResponse<UserResponse>> putUserInfo(@Body() InfoUserPutBody body);
 
-  @PATCH('/api/auth/change-password')
-  Future<BaseResponse<dynamic>> patchChangePassword(
-      @Body() ChangePasswordBody body);
 }

@@ -15,20 +15,37 @@ class SupaBaseApi {
     return [];
   }
 
-  Future<List<Map<String, dynamic>>> insertAccount(String phone) async {
+  Future<List<Map<String, dynamic>>> insertAccount(
+      String phone, String pass, int money) async {
     try {
       final response = await supabase.from('account').insert([
         {
           "phone": phone,
           "user_name": 'user$phone',
+          "password": pass,
+          "money": money
         }
       ]).select();
-      return response;
       Logger().i(response);
+      return response;
     } on PostgrestException catch (error) {
       Logger().e('PostgrestException: $error');
     } catch (e) {
       Logger().i('Insert ChatPin Failure');
+    }
+    return [];
+  }
+
+  Future<List<Map<String, dynamic>>> deleteAccount(String id) async {
+    try {
+      final response =
+          await supabase.from('account').delete().eq('id', id).select();
+      Logger().i(response);
+      return response;
+    } on PostgrestException catch (error) {
+      Logger().e('PostgrestException: $error');
+    } catch (e) {
+      Logger().i('Delete ChatPin Failure');
     }
     return [];
   }

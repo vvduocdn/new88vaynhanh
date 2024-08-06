@@ -23,7 +23,7 @@ class UserInfoAdapter extends TypeAdapter<UserInfo> {
       avatar: fields[2] as String?,
       fullName: fields[3] as String?,
       email: fields[8] as String?,
-      status: fields[7] as String?,
+      money: fields[7] as String?,
       role: fields[5] as String?,
       phone: fields[9] as String?,
     );
@@ -46,7 +46,7 @@ class UserInfoAdapter extends TypeAdapter<UserInfo> {
       ..writeByte(6)
       ..write(obj.createdAt)
       ..writeByte(7)
-      ..write(obj.status)
+      ..write(obj.money)
       ..writeByte(8)
       ..write(obj.email)
       ..writeByte(9)

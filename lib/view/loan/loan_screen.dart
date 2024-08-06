@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:new88_vaynow/component/theme.dart';
 import 'package:new88_vaynow/gen/assets.gen.dart';
 import 'package:new88_vaynow/services/di/locator.dart';
@@ -8,7 +9,7 @@ import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 import 'package:new88_vaynow/utils/spaces.dart';
 import 'package:new88_vaynow/utils/styles.dart';
 import 'package:new88_vaynow/utils/time_helper.dart';
-import 'package:new88_vaynow/view/add_vay_now.dart';
+import 'package:new88_vaynow/view/auth/add_vay_now.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_bloc.dart';
 import 'package:new88_vaynow/view_model/app_mode_bloc/app_mode_state.dart';
 import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
@@ -34,6 +35,11 @@ class _AddVayNowState extends State<LoanScreen> {
   void dispose() {
     _focusNode.canRequestFocus;
     super.dispose();
+  }
+
+  String formatNumber(int number) {
+    final formatter = NumberFormat('#,###,###');
+    return formatter.format(number);
   }
 
   @override
@@ -194,7 +200,7 @@ class _AddVayNowState extends State<LoanScreen> {
                                   ),
                                   spaceH10,
                                   Text(
-                                    'Khoản vay : đ 30,000,000',
+                                    'Khoản vay : đ ${formatNumber(int.parse(state.userInfo?.money ?? '0'))}',
                                     style: Styles.n14w7
                                         .copyWith(color: context.colors.text),
                                   ),

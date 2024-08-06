@@ -14,7 +14,6 @@ class UserState extends Equatable {
   final bool? isEditFullName;
   final bool? isChangePassword;
   final Color? colorAvatar;
-  final List<OrderAddressModel>? orderAddressAlls;
   const UserState(
       {this.colorAvatar,
       this.userInfo,
@@ -28,7 +27,6 @@ class UserState extends Equatable {
       this.theme = true,
       this.isChangePassword = false,
       this.userToken = '',
-      this.orderAddressAlls,
       this.orderAddress});
   UserState.initial(
     this.loadedLanguage,
@@ -43,8 +41,7 @@ class UserState extends Equatable {
         isLoggedIn = false,
         userToken = '',
         orderAddress = null,
-        colorAvatar = null,
-        orderAddressAlls = [];
+        colorAvatar = null;
   UserState copyWith(
       {UserInfo? userInfo,
       bool? isLoggedIn,
@@ -58,8 +55,7 @@ class UserState extends Equatable {
       OrderAddressHive? orderAddress,
       bool? isEditFullName,
       bool? isChangePassword,
-      Color? colorAvatar,
-      List<OrderAddressModel>? orderAddressAlls}) {
+      Color? colorAvatar,}) {
     return UserState(
         isLoadingFollows: isLoadingFollows ?? this.isLoadingFollows,
         statusFollowBLV: statusFollowBLV ?? this.statusFollowBLV,
@@ -73,8 +69,7 @@ class UserState extends Equatable {
         orderAddress: orderAddress ?? this.orderAddress,
         isChangePassword: isChangePassword ?? this.isChangePassword,
         isEditFullName: isEditFullName ?? this.isEditFullName,
-        colorAvatar: colorAvatar ?? this.colorAvatar,
-        orderAddressAlls: orderAddressAlls ?? this.orderAddressAlls);
+        colorAvatar: colorAvatar ?? this.colorAvatar,);
   }
 
   @override
@@ -92,6 +87,5 @@ class UserState extends Equatable {
         isEditFullName,
         isChangePassword,
         colorAvatar,
-        orderAddressAlls
       ];
 }

@@ -4,9 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:logger/logger.dart';
-import 'package:new88_vaynow/model/home/change_password_body.dart';
-import 'package:new88_vaynow/model/home/order_address_model.dart';
 import 'package:new88_vaynow/model/user/authen/info_user_put_body.dart';
 import 'package:new88_vaynow/model/user/order_address_hive.dart';
 import 'package:new88_vaynow/model/user/user_info.dart';
@@ -14,8 +11,6 @@ import 'package:new88_vaynow/services/api/api_client.dart';
 import 'package:new88_vaynow/services/di/locator.dart';
 import 'package:new88_vaynow/services/hive/hive_data_manager.dart';
 import 'package:new88_vaynow/utils/logger_service.dart';
-import 'package:new88_vaynow/view/profile/change_pass/change_pass_success.dart';
-import 'package:signalr_core/signalr_core.dart';
 part 'user_event.dart';
 part 'user_state.dart';
 
@@ -57,50 +52,11 @@ class UserBloc extends Bloc<UserEvent, UserState> {
 
   Future<void> _onChangePasswordEvent(
       ChangePasswordEvent event, Emitter<UserState> emit) async {
-    emit(state.copyWith(isLoading: true, isChangePassword: true));
-
-    try {
-      final body = ChangePasswordBody()
-        ..newPassword = event.passwordNew
-        ..oldPassword = event.passwordOld;
-
-      await api.authServices.patchChangePassword(body);
-      event.func.call('', 0);
-    } catch (error) {
-      String errorMessage = 'Không tìm thấy internet';
-
-      if (error is DioError) {
-        if (error.response?.statusCode == 400) {
-          errorMessage = error.response?.data['error_message']['message'] ??
-              'Thay đổi password thất bại';
-        }
-      }
-
-      event.func.call('Thay đổi password thất bại: $errorMessage', 1);
-    } finally {
-      emit(state.copyWith(isLoading: false, isChangePassword: false));
-    }
   }
 
   Future<void> _onGetOrderAddress(
       GetOrderAddress event, Emitter<UserState> emit) async {
-    try {
-      final orderAddress = await HiveDataManager().getOrderAddress();
-      final response = await api.restaurantApi.getAddressOrder();
-      if (response.success!) {
-        emit(state.copyWith(
-          orderAddressAlls: response.data ?? [],
-        ));
-      }
-      if (orderAddress != null) {
-        emit(state.copyWith(
-          orderAddress: orderAddress,
-        ));
-      }
-      printE("GetOrderAddress Success ${orderAddress.toString()}");
-    } catch (e) {
-      printE("Error in GetOrderAddress: $e");
-    }
+
   }
 
   Future<void> _onGetCurrentUserInfo(
