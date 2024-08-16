@@ -20,8 +20,7 @@ class LoginResponse {
   UserResponse? userInfo;
   LoginResponse();
 
-  factory LoginResponse.fromJson(Map<String, dynamic> json) =>
-      _$LoginResponseFromJson(json);
+  factory LoginResponse.fromJson(Map<String, dynamic> json) => _$LoginResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$LoginResponseToJson(this);
 }
@@ -54,8 +53,7 @@ class UserResponse {
 
   UserResponse();
 
-  factory UserResponse.fromJson(Map<String, dynamic> json) =>
-      _$UserResponseFromJson(json);
+  factory UserResponse.fromJson(Map<String, dynamic> json) => _$UserResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserResponseToJson(this);
 }
@@ -85,8 +83,7 @@ class RoleResponse {
 
   RoleResponse();
 
-  factory RoleResponse.fromJson(Map<String, dynamic> json) =>
-      _$RoleResponseFromJson(json);
+  factory RoleResponse.fromJson(Map<String, dynamic> json) => _$RoleResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$RoleResponseToJson(this);
 }

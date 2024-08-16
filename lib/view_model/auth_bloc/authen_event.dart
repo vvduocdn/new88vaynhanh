@@ -17,12 +17,7 @@ class RegisterEvent extends AuthEvent {
   final String phoneNumber;
   final Function func;
 
-  RegisterEvent(
-      {required this.email,
-      required this.password,
-      required this.fullName,
-      required this.phoneNumber,
-      required this.func});
+  RegisterEvent({required this.email, required this.password, required this.fullName, required this.phoneNumber, required this.func});
 }
 
 class LoginGoogleEvent extends AuthEvent {
@@ -43,10 +38,7 @@ class ChangePassWordEvent extends AuthEvent {
   final String newPassword;
   final String newPassword2;
 
-  ChangePassWordEvent(
-      {required this.currentPassword,
-      required this.newPassword,
-      required this.newPassword2});
+  ChangePassWordEvent({required this.currentPassword, required this.newPassword, required this.newPassword2});
 }
 
 class DeleteAccountEvent extends AuthEvent {

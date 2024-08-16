@@ -20,10 +20,7 @@ class User extends Equatable {
   const User({this.jwt, this.userInfo, this.orderAddress});
 
   User copyWith({Jwt? jwt, UserInfo? userInfo, OrderAddressHive? orderAddress}) {
-    return User(
-        jwt: jwt ?? this.jwt,
-        userInfo: userInfo ?? this.userInfo,
-        orderAddress: orderAddress ?? this.orderAddress);
+    return User(jwt: jwt ?? this.jwt, userInfo: userInfo ?? this.userInfo, orderAddress: orderAddress ?? this.orderAddress);
   }
 
   @override

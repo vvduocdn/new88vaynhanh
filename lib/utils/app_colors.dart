@@ -100,9 +100,9 @@ class AppColors {
   static const red3334 = Color(0xFFFF3334);
   static const h0F1424 = Color(0xFF0F1424);
   static const hFFD325 = Color(0xFFFFD325);
-  static const hY249 =  Color.fromRGBO(249, 232, 46, 0.5);
+  static const hY249 = Color.fromRGBO(249, 232, 46, 0.5);
   static const h838383 = Color(0xFF838383);
-  static const h434343 =   Color(0xFF434343);
+  static const h434343 = Color(0xFF434343);
 
   //text menu tab
   static const textColorBlackTabSelect = Color(0xFF4D4D4D);
@@ -116,8 +116,8 @@ class AppColors {
   // Define new colors gradient
   static const Color darkBlueGray = Color(0xFF0E1424);
   static const Color deepBlue = Color(0xFF283968);
-  static const r000 =  Color.fromRGBO(0, 0, 0, 0.5);
+  static const r000 = Color.fromRGBO(0, 0, 0, 0.5);
 
-    // Newly 
+  // Newly
   static const Color headerColor = Color(0xFF1F1E2A);
 }

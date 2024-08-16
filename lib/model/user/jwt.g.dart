@@ -36,9 +36,5 @@ class JwtAdapter extends TypeAdapter<Jwt> {
   int get hashCode => typeId.hashCode;
 
   @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is JwtAdapter &&
-          runtimeType == other.runtimeType &&
-          typeId == other.typeId;
+  bool operator ==(Object other) => identical(this, other) || other is JwtAdapter && runtimeType == other.runtimeType && typeId == other.typeId;
 }

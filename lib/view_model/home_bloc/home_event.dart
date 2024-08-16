@@ -14,11 +14,7 @@ class PostAccountEvent extends HomeEvent {
 
   final Function(String message, bool status) func;
 
-  const PostAccountEvent(
-      {required this.phone,
-      required this.pass,
-      required this.func,
-      required this.money});
+  const PostAccountEvent({required this.phone, required this.pass, required this.func, required this.money});
 
   @override
   List<Object> get props => [phone, pass, money];
@@ -57,8 +53,7 @@ class LoginEvent extends HomeEvent {
   final String pass;
   final Function(String message, bool status) func;
 
-  const LoginEvent(
-      {required this.phone, required this.pass, required this.func});
+  const LoginEvent({required this.phone, required this.pass, required this.func});
 
   @override
   List<Object> get props => [phone, pass];

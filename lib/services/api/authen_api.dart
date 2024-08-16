@@ -24,5 +24,4 @@ abstract class AuthServices {
 
   @PUT('/api/users/me')
   Future<BaseResponse<UserResponse>> putUserInfo(@Body() InfoUserPutBody body);
-
 }

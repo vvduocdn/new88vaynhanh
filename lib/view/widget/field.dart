@@ -44,19 +44,10 @@ class _FieldWidgetState extends State<FieldWidget> {
       decoration: InputDecoration(
         errorText: widget.errorText,
         labelText: widget.label!,
-        labelStyle: TextStyle(
-            color: widget.color ?? AppColors.h434343,
-            fontSize: 16.0,
-            fontWeight: FontWeight.bold,
-            fontFamily: "SF Pro Display"),
-        focusedBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-            borderSide: BorderSide(
-                color: widget.color ?? AppColors.h838383, width: 1.0)),
-        border: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
-            borderSide: BorderSide(
-                color: widget.color ?? AppColors.h838383, width: 1.0)),
+        labelStyle: TextStyle(color: widget.color ?? AppColors.h434343, fontSize: 16.0, fontWeight: FontWeight.bold, fontFamily: "SF Pro Display"),
+        focusedBorder:
+            OutlineInputBorder(borderRadius: const BorderRadius.all(Radius.circular(10.0)), borderSide: BorderSide(color: widget.color ?? AppColors.h838383, width: 1.0)),
+        border: OutlineInputBorder(borderRadius: const BorderRadius.all(Radius.circular(10.0)), borderSide: BorderSide(color: widget.color ?? AppColors.h838383, width: 1.0)),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5.0),
           borderSide: BorderSide(
@@ -90,11 +81,7 @@ class _FieldWidgetState extends State<FieldWidget> {
               )
             : null,
       ),
-      style: TextStyle(
-          color: widget.color ?? AppColors.h838383,
-          fontSize: 14.0,
-          fontWeight: FontWeight.w400,
-          fontFamily: "SF Pro Display"),
+      style: TextStyle(color: widget.color ?? AppColors.h838383, fontSize: 14.0, fontWeight: FontWeight.w400, fontFamily: "SF Pro Display"),
       controller: widget.textEditingController,
     );
   }

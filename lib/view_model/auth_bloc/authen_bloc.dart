@@ -14,8 +14,7 @@ part 'authen_state.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final appLogger = Logger();
   final api = locator<ApiClient>();
-  final NavigatorGlobalContextHelper navigationService =
-      locator.get<NavigatorGlobalContextHelper>();
+  final NavigatorGlobalContextHelper navigationService = locator.get<NavigatorGlobalContextHelper>();
   AuthBloc() : super(AuthState()) {
     on<OpenScreenEvent>((event, emit) async {
       emit(OpenScreen(event.status));
@@ -29,35 +28,25 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         if (response.success!) {
           // HiveDataManager().saveUserInfo(response.data!);
           if (navigationService.getCurrentContext.mounted) {
-            emit(LoginSuccess(
-                AppLocalizations.of(navigationService.getCurrentContext)!
-                    .r130));
+            emit(LoginSuccess(AppLocalizations.of(navigationService.getCurrentContext)!.r130));
           }
           event.func.call();
           return;
         }
         if (navigationService.getCurrentContext.mounted) {
-          emit(AuthFailure(
-              AppLocalizations.of(navigationService.getCurrentContext)!.r131));
+          emit(AuthFailure(AppLocalizations.of(navigationService.getCurrentContext)!.r131));
         }
       } catch (error) {
         if (error is DioError) {
-          if (error.response?.statusCode == 400 ||
-              error.response?.statusCode == 404) {
+          if (error.response?.statusCode == 400 || error.response?.statusCode == 404) {
             if (navigationService.getCurrentContext.mounted) {
-              final errorMessage = error.response?.data['error_message']
-                      ['message'] ??
-                  AppLocalizations.of(navigationService.getCurrentContext)!
-                      .r131;
-              emit(AuthFailure(
-                  '${AppLocalizations.of(navigationService.getCurrentContext)!.r131}: $errorMessage'));
+              final errorMessage = error.response?.data['error_message']['message'] ?? AppLocalizations.of(navigationService.getCurrentContext)!.r131;
+              emit(AuthFailure('${AppLocalizations.of(navigationService.getCurrentContext)!.r131}: $errorMessage'));
             }
           }
         } else {
           if (navigationService.getCurrentContext.mounted) {
-            emit(AuthFailure(
-                AppLocalizations.of(navigationService.getCurrentContext)!
-                    .r132));
+            emit(AuthFailure(AppLocalizations.of(navigationService.getCurrentContext)!.r132));
           }
         }
       }
@@ -74,35 +63,25 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         if (response.success!) {
           // HiveDataManager().saveUserInfo(response.data!);
           if (navigationService.getCurrentContext.mounted) {
-            emit(RegisterSuccess(
-                AppLocalizations.of(navigationService.getCurrentContext)!
-                    .r133));
+            emit(RegisterSuccess(AppLocalizations.of(navigationService.getCurrentContext)!.r133));
           }
           event.func.call();
           return;
         }
         if (navigationService.getCurrentContext.mounted) {
-          emit(AuthFailure(
-              AppLocalizations.of(navigationService.getCurrentContext)!.r134));
+          emit(AuthFailure(AppLocalizations.of(navigationService.getCurrentContext)!.r134));
         }
       } catch (error) {
         if (error is DioError) {
-          if (error.response?.statusCode == 400 ||
-              error.response?.statusCode == 404) {
+          if (error.response?.statusCode == 400 || error.response?.statusCode == 404) {
             if (navigationService.getCurrentContext.mounted) {
-              final errorMessage = error.response?.data['error_message']
-                      ['message'] ??
-                  AppLocalizations.of(navigationService.getCurrentContext)!
-                      .r134;
-              emit(AuthFailure(
-                  '${AppLocalizations.of(navigationService.getCurrentContext)!.r134}: $errorMessage'));
+              final errorMessage = error.response?.data['error_message']['message'] ?? AppLocalizations.of(navigationService.getCurrentContext)!.r134;
+              emit(AuthFailure('${AppLocalizations.of(navigationService.getCurrentContext)!.r134}: $errorMessage'));
             }
           }
         } else {
           if (navigationService.getCurrentContext.mounted) {
-            emit(AuthFailure(
-                AppLocalizations.of(navigationService.getCurrentContext)!
-                    .r132));
+            emit(AuthFailure(AppLocalizations.of(navigationService.getCurrentContext)!.r132));
           }
         }
       }

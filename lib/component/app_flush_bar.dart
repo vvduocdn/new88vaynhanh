@@ -11,8 +11,7 @@ import '../../utils/spaces.dart';
 enum EFlushbarStatus { Success, Danger, Warning, Info, Failure }
 
 class CommonFlushBar {
-  static void show(BuildContext context, String message, EFlushbarStatus status,
-      [Key? key]) {
+  static void show(BuildContext context, String message, EFlushbarStatus status, [Key? key]) {
     Color getColor() {
       if (status == EFlushbarStatus.Success) {
         return AppColors.warningGreen;
@@ -85,14 +84,7 @@ class CommonFlushBar {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
             decoration: const BoxDecoration(color: AppColors.textColor),
             child: Row(
-              children: [
-                getIcon(),
-                spaceW16,
-                Expanded(
-                    child: Text(message,
-                        style: Styles.n16
-                            .copyWith(color: AppColors.textLightColor)))
-              ],
+              children: [getIcon(), spaceW16, Expanded(child: Text(message, style: Styles.n16.copyWith(color: AppColors.textLightColor)))],
             ),
           )),
       animationDuration: const Duration(milliseconds: 300),

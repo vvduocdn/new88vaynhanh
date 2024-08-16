@@ -7,5 +7,4 @@ part 'restaurant_api.g.dart';
 @RestApi()
 abstract class RestaurantApi {
   factory RestaurantApi(Dio dio, {String baseUrl}) = _RestaurantApi;
-
 }

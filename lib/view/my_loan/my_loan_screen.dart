@@ -23,8 +23,7 @@ class MyLoanScreen extends StatefulWidget {
 class _MyLoanScreenState extends State<MyLoanScreen> {
   final TextEditingController _searchController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
-  final NavigatorGlobalContextHelper navigationService =
-      locator.get<NavigatorGlobalContextHelper>();
+  final NavigatorGlobalContextHelper navigationService = locator.get<NavigatorGlobalContextHelper>();
   @override
   void initState() {
     super.initState();
@@ -46,8 +45,7 @@ class _MyLoanScreenState extends State<MyLoanScreen> {
                 resizeToAvoidBottomInset: false,
                 backgroundColor: context.colors.hF05D0E,
                 body: Container(
-                  margin:
-                      EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+                  margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   color: context.colors.white,
@@ -56,11 +54,8 @@ class _MyLoanScreenState extends State<MyLoanScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 20, horizontal: 15),
-                        decoration: BoxDecoration(
-                            color: Color(0xFFFE5F06)
-                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
+                        decoration: BoxDecoration(color: Color(0xFFFE5F06)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -69,8 +64,7 @@ class _MyLoanScreenState extends State<MyLoanScreen> {
                             ),
                             Text(
                               'Vay Uy Tín',
-                              style: Styles.n18w7
-                                  .copyWith(color: context.colors.white),
+                              style: Styles.n18w7.copyWith(color: context.colors.white),
                             ),
                             Container(
                               width: 30,
@@ -88,41 +82,29 @@ class _MyLoanScreenState extends State<MyLoanScreen> {
                             children: [
                               spaceH100,
                               spaceH10,
-                              Assets.images.businessLoans
-                                  .image(width: 120, height: 120),
+                              Assets.images.businessLoans.image(width: 120, height: 120),
                               spaceH10,
                               Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 20),
+                                padding: const EdgeInsets.symmetric(horizontal: 20),
                                 child: Text(
                                   'Hiện tại bạn chưa có đơn hàng nào tồn đọng, hãy đăng ký vay ngay',
-                                  style: Styles.n14w4
-                                      .copyWith(color: context.colors.text),
+                                  style: Styles.n14w4.copyWith(color: context.colors.text),
                                   textAlign: TextAlign.center,
                                 ),
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      CupertinoPageRoute(
-                                          builder: (_) => const AddVayNow()));
+                                  Navigator.push(context, CupertinoPageRoute(builder: (_) => const AddVayNow()));
                                 },
                                 child: Container(
                                   height: 48,
                                   width: MediaQuery.of(context).size.width,
-                                  margin: const EdgeInsets.only(top: 20).add(
-                                      const EdgeInsets.symmetric(
-                                          horizontal: 30)),
-                                  decoration: BoxDecoration(
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(10)),
-                                      color: Color(0xFFFE5F06)),
+                                  margin: const EdgeInsets.only(top: 20).add(const EdgeInsets.symmetric(horizontal: 30)),
+                                  decoration: BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(10)), color: Color(0xFFFE5F06)),
                                   alignment: Alignment.center,
                                   child: Text(
                                     'Đăng ký vay ngay',
-                                    style: Styles.n16b
-                                        .copyWith(color: context.colors.white),
+                                    style: Styles.n16b.copyWith(color: context.colors.white),
                                   ),
                                 ),
                               ),
@@ -141,8 +123,7 @@ class _MyLoanScreenState extends State<MyLoanScreen> {
                               spaceH100,
                               Text(
                                 'Gói vay new88 đ ${formatNumber(int.parse(state.userInfo?.money ?? '0'))} đang được xét duyệt. Vui lòng đợi, chúng tôi sớm sẽ liện hệ bạn',
-                                style: Styles.n18w4
-                                    .copyWith(color: context.colors.text),
+                                style: Styles.n18w4.copyWith(color: context.colors.text),
                                 textAlign: TextAlign.center,
                               )
                             ],

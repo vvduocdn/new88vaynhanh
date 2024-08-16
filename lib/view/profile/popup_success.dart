@@ -51,21 +51,14 @@ class _RegisterSuccessState extends State<RegisterSuccess> {
                               children: [
                                 Container(
                                   padding: const EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                      color: context.colors.white,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(8))),
+                                  decoration: BoxDecoration(color: context.colors.white, borderRadius: const BorderRadius.all(Radius.circular(8))),
                                   child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       spaceH20,
-                                      Assets.icons.icUpdateCar.svg(
-                                          width: 100,
-                                          height: 100,
-                                          color: context.colors.hF05D0E),
+                                      Assets.icons.icUpdateCar.svg(width: 100, height: 100, color: context.colors.hF05D0E),
                                       spaceH20,
                                       Text(
                                         'Đăng ký thành công',
@@ -87,16 +80,11 @@ class _RegisterSuccessState extends State<RegisterSuccess> {
                                       spaceH20,
                                       CustomButton(
                                         onPressed: () {
-                                          Navigator.of(context).pushAndRemoveUntil(
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      const BottomNavigation()),
-                                              (route) => false);
+                                          Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const BottomNavigation()), (route) => false);
                                         },
                                         text: 'Tiếp tục',
                                         colorText: context.colors.white,
-                                        backgroundColors:
-                                            context.colors.hF05D0E,
+                                        backgroundColors: context.colors.hF05D0E,
                                         colorBorder: context.colors.hF05D0E,
                                       )
                                     ],

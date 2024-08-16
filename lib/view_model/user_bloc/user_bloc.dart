@@ -29,8 +29,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on<ChangePasswordEvent>(_onChangePasswordEvent);
     on<GetRandomColor>(_onGetRandomColor);
   }
-  Future<void> _onGetRandomColor(
-      GetRandomColor event, Emitter<UserState> emit) async {
+  Future<void> _onGetRandomColor(GetRandomColor event, Emitter<UserState> emit) async {
     Random random = Random();
     var color = Color.fromRGBO(
       random.nextInt(128) + 128,
@@ -43,24 +42,17 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     ));
   }
 
-  Future<void> _onUpdateStateEdit(
-      UpdateStateEdit event, Emitter<UserState> emit) async {
+  Future<void> _onUpdateStateEdit(UpdateStateEdit event, Emitter<UserState> emit) async {
     emit(state.copyWith(
       isEditFullName: event.isEdit,
     ));
   }
 
-  Future<void> _onChangePasswordEvent(
-      ChangePasswordEvent event, Emitter<UserState> emit) async {
-  }
+  Future<void> _onChangePasswordEvent(ChangePasswordEvent event, Emitter<UserState> emit) async {}
 
-  Future<void> _onGetOrderAddress(
-      GetOrderAddress event, Emitter<UserState> emit) async {
+  Future<void> _onGetOrderAddress(GetOrderAddress event, Emitter<UserState> emit) async {}
 
-  }
-
-  Future<void> _onGetCurrentUserInfo(
-      GetCurrentUserInfo event, Emitter<UserState> emit) async {
+  Future<void> _onGetCurrentUserInfo(GetCurrentUserInfo event, Emitter<UserState> emit) async {
     try {
       final userInfo = await HiveDataManager().getUserInfo();
       if (userInfo != null) {
@@ -76,8 +68,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     }
   }
 
-  Future<void> _onUpdateInfoUserEvent(
-      UpdateInfoUserEvent event, Emitter<UserState> emit) async {
+  Future<void> _onUpdateInfoUserEvent(UpdateInfoUserEvent event, Emitter<UserState> emit) async {
     emit(state.copyWith(isLoading: true));
 
     try {
@@ -109,8 +100,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     }
   }
 
-  Future<void> _onClearDataInUserBloc(
-      ClearDataInUserBloc event, Emitter<UserState> emit) async {
+  Future<void> _onClearDataInUserBloc(ClearDataInUserBloc event, Emitter<UserState> emit) async {
     try {
       emit(UserState.initial(
         state.loadedLanguage,
@@ -127,8 +117,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     }
   }
 
-  Future<void> _onLoadLanguage(
-      LoadLanguage event, Emitter<UserState> emit) async {
+  Future<void> _onLoadLanguage(LoadLanguage event, Emitter<UserState> emit) async {
     emit(state.copyWith(languageLoading: true));
 
     try {
@@ -163,8 +152,7 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     }
   }
 
-  Future<void> _onUpdateLanguage(
-      UpdateLanguage event, Emitter<UserState> emit) async {
+  Future<void> _onUpdateLanguage(UpdateLanguage event, Emitter<UserState> emit) async {
     try {
       await HiveDataManager().saveUserLanguage(event.newLanguage);
       emit(state.copyWith(loadedLanguage: event.newLanguage));

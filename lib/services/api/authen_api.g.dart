@@ -25,23 +25,22 @@ class _AuthServices implements AuthServices {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<LoginResponse>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<LoginResponse>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/api/auth/login',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
+        .compose(
+          _dio.options,
+          '/api/auth/login',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
     final _value = BaseResponse<LoginResponse>.fromJson(
       _result.data!,
       (json) => LoginResponse.fromJson(json as Map<String, dynamic>),
@@ -56,23 +55,22 @@ class _AuthServices implements AuthServices {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<LoginResponse>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<LoginResponse>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/api/auth/signup',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
+        .compose(
+          _dio.options,
+          '/api/auth/signup',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
     final _value = BaseResponse<LoginResponse>.fromJson(
       _result.data!,
       (json) => LoginResponse.fromJson(json as Map<String, dynamic>),
@@ -87,23 +85,22 @@ class _AuthServices implements AuthServices {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body.toJson());
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<BaseResponse<UserResponse>>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(_setStreamType<BaseResponse<UserResponse>>(Options(
       method: 'PUT',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/api/users/me',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
+        .compose(
+          _dio.options,
+          '/api/users/me',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        ))));
     final _value = BaseResponse<UserResponse>.fromJson(
       _result.data!,
       (json) => UserResponse.fromJson(json as Map<String, dynamic>),
@@ -112,9 +109,7 @@ class _AuthServices implements AuthServices {
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
-    if (T != dynamic &&
-        !(requestOptions.responseType == ResponseType.bytes ||
-            requestOptions.responseType == ResponseType.stream)) {
+    if (T != dynamic && !(requestOptions.responseType == ResponseType.bytes || requestOptions.responseType == ResponseType.stream)) {
       if (T == String) {
         requestOptions.responseType = ResponseType.plain;
       } else {

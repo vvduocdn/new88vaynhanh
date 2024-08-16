@@ -30,16 +30,7 @@ class UserInfo extends HiveObject {
   @HiveField(9)
   String? phone;
 
-  UserInfo(
-      {this.id,
-      this.createdAt,
-      this.updatedAt,
-      this.avatar,
-      this.fullName,
-      this.email,
-      this.money,
-      this.role,
-      this.phone});
+  UserInfo({this.id, this.createdAt, this.updatedAt, this.avatar, this.fullName, this.email, this.money, this.role, this.phone});
 
   factory UserInfo.fromJson(Map<String, dynamic> json) => UserInfo(
         id: json['id'] as String?,

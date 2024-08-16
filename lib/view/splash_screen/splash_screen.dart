@@ -20,8 +20,7 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>
-    with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
   final String? role = dotenv.env['ROLE']!;
@@ -117,8 +116,7 @@ class _SplashScreenState extends State<SplashScreen>
               spaceH4,
               Text(
                 'Vay New88',
-                style: Styles.n18w7
-                    .copyWith(color: context.colors.main.withOpacity(0.5)),
+                style: Styles.n18w7.copyWith(color: context.colors.main.withOpacity(0.5)),
               )
             ],
           ),

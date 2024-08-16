@@ -25,13 +25,11 @@ class InfoUserScreen extends StatefulWidget {
 class _InfoUserScreenState extends State<InfoUserScreen> {
   TextEditingController controllerName = TextEditingController();
   late FocusNode focusNode;
-  final BuildContext _context =
-      locator.get<NavigatorGlobalContextHelper>().getCurrentContext;
+  final BuildContext _context = locator.get<NavigatorGlobalContextHelper>().getCurrentContext;
   Future<void> onLogout() async {
     PopupLogout.showPopModelDialog(context, () async {
       BlocProvider.of<UserBloc>(context).add(GetCurrentUserInfo());
-    }, AppLocalizations.of(context)!.r63, AppLocalizations.of(context)!.r64,
-        AppLocalizations.of(context)!.r65);
+    }, AppLocalizations.of(context)!.r63, AppLocalizations.of(context)!.r64, AppLocalizations.of(context)!.r65);
   }
 
   @override
@@ -71,11 +69,8 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
               body: Stack(
                 children: [
                   Container(
-                    decoration: BoxDecoration(
-                        color: context.colors.hF05D0E,
-                        borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20))),
+                    decoration:
+                        BoxDecoration(color: context.colors.hF05D0E, borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20))),
                     height: 140,
                     width: MediaQuery.of(context).size.width,
                   ),
@@ -85,8 +80,7 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                     color: context.colors.main.withOpacity(0.1),
                   ),
                   Container(
-                    margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).padding.top),
+                    margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
                     height: MediaQuery.of(context).size.height,
                     width: MediaQuery.of(context).size.width,
                     child: Column(
@@ -94,8 +88,7 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 15),
+                          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -103,17 +96,11 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                 onTap: () {
                                   Navigator.pop(context);
                                 },
-                                child: RotatedBox(
-                                    quarterTurns: 2,
-                                    child: Assets.icons.arrowLeft.svg(
-                                        width: 30,
-                                        height: 30,
-                                        color: context.colors.white)),
+                                child: RotatedBox(quarterTurns: 2, child: Assets.icons.arrowLeft.svg(width: 30, height: 30, color: context.colors.white)),
                               ),
                               Text(
                                 'VayNow',
-                                style: Styles.n18w7
-                                    .copyWith(color: context.colors.white),
+                                style: Styles.n18w7.copyWith(color: context.colors.white),
                               ),
                               Container(
                                 width: 30,
@@ -124,10 +111,7 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                         Container(
                           margin: const EdgeInsets.all(20),
                           padding: const EdgeInsets.all(20),
-                          decoration: BoxDecoration(
-                              color: context.colors.white,
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(10))),
+                          decoration: BoxDecoration(color: context.colors.white, borderRadius: const BorderRadius.all(Radius.circular(10))),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -137,8 +121,7 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                     height: 60,
                                     width: 60,
                                     child: CircleAvatar(
-                                        backgroundColor: context.colors.hF05D0E
-                                            .withOpacity(0.7),
+                                        backgroundColor: context.colors.hF05D0E.withOpacity(0.7),
                                         child: Icon(
                                           Icons.perm_identity_sharp,
                                           size: 50,
@@ -152,40 +135,24 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                     !state.isLoggedIn
                                         ? GestureDetector(
                                             onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  CupertinoPageRoute(
-                                                      builder: (_) =>
-                                                          const AddVayNow()));
+                                              Navigator.push(context, CupertinoPageRoute(builder: (_) => const AddVayNow()));
                                             },
                                             child: Row(
                                               children: [
                                                 Expanded(
                                                   child: Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                                                       Text(
                                                         'Đăng nhập',
-                                                        style: Styles.n24w7
-                                                            .copyWith(
-                                                                color: context
-                                                                    .colors
-                                                                    .text),
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
+                                                        style: Styles.n24w7.copyWith(color: context.colors.text),
+                                                        overflow: TextOverflow.ellipsis,
                                                       ),
                                                       spaceH10,
                                                       Text(
                                                         'Bấm để đăng nhập',
-                                                        style: Styles.n16w4
-                                                            .copyWith(
-                                                                color: context
-                                                                    .colors
-                                                                    .text),
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
+                                                        style: Styles.n16w4.copyWith(color: context.colors.text),
+                                                        overflow: TextOverflow.ellipsis,
                                                       )
                                                     ],
                                                   ),
@@ -199,31 +166,18 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                               children: [
                                                 Expanded(
                                                   child: Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
                                                       Text(
-                                                        state.userInfo?.phone ??
-                                                            '',
-                                                        style: Styles.n24w7
-                                                            .copyWith(
-                                                                color: context
-                                                                    .colors
-                                                                    .text),
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
+                                                        state.userInfo?.phone ?? '',
+                                                        style: Styles.n24w7.copyWith(color: context.colors.text),
+                                                        overflow: TextOverflow.ellipsis,
                                                       ),
                                                       spaceH10,
                                                       Text(
                                                         'user${state.userInfo?.phone ?? ''}',
-                                                        style: Styles.n16w4
-                                                            .copyWith(
-                                                                color: context
-                                                                    .colors
-                                                                    .text),
-                                                        overflow: TextOverflow
-                                                            .ellipsis,
+                                                        style: Styles.n16w4.copyWith(color: context.colors.text),
+                                                        overflow: TextOverflow.ellipsis,
                                                       )
                                                     ],
                                                   ),
@@ -242,12 +196,10 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
                               color: context.colors.white,
-                              borderRadius:
-                                  const BorderRadius.all(Radius.circular(10)),
+                              borderRadius: const BorderRadius.all(Radius.circular(10)),
                             ),
                             alignment: Alignment.centerLeft,
-                            padding: const EdgeInsets.symmetric(vertical: 10)
-                                .add(const EdgeInsets.only(left: 10, right: 6)),
+                            padding: const EdgeInsets.symmetric(vertical: 10).add(const EdgeInsets.only(left: 10, right: 6)),
                             child: Column(
                               children: [
                                 // Container(
@@ -354,8 +306,7 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                     Navigator.of(context).push(
                                       MaterialPageRoute(
                                           builder: (_) => const WebViewScreen(
-                                                initialUrl:
-                                                    'https://www.freeprivacypolicy.com/live/90bb152c-be66-4797-84f3-0fb9a3e1d8f5',
+                                                initialUrl: 'https://www.freeprivacypolicy.com/live/90bb152c-be66-4797-84f3-0fb9a3e1d8f5',
                                                 titlePage: 'Vay New88',
                                               )),
                                     );
@@ -364,32 +315,23 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                       width: MediaQuery.of(context).size.width,
                                       decoration: BoxDecoration(
                                         color: context.colors.white,
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(5)),
+                                        borderRadius: const BorderRadius.all(Radius.circular(5)),
                                       ),
                                       alignment: Alignment.centerLeft,
-                                      padding: const EdgeInsets.symmetric(
-                                              vertical: 10)
-                                          .add(const EdgeInsets.only(
-                                              left: 5, right: 5)),
+                                      padding: const EdgeInsets.symmetric(vertical: 10).add(const EdgeInsets.only(left: 5, right: 5)),
                                       child: Row(
                                         children: [
-                                          Icon(Icons.security_sharp,
-                                              size: 24,
-                                              color: context.colors.hF05D0E
-                                                  .withOpacity(0.7)),
+                                          Icon(Icons.security_sharp, size: 24, color: context.colors.hF05D0E.withOpacity(0.7)),
                                           spaceW10,
                                           Text(
                                             'Chính sách bảo mật',
-                                            style: Styles.n16.copyWith(
-                                                color: context.colors.text),
+                                            style: Styles.n16.copyWith(color: context.colors.text),
                                           ),
                                           const Spacer(),
                                           Icon(
                                             Icons.chevron_right_rounded,
                                             size: 30,
-                                            color: context.colors.main
-                                                .withOpacity(0.7),
+                                            color: context.colors.main.withOpacity(0.7),
                                           ),
                                         ],
                                       )),
@@ -428,8 +370,7 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                 //       ],
                                 //     )),
                                 Visibility(
-                                  visible:
-                                      (state.userInfo?.phone ?? "").isNotEmpty,
+                                  visible: (state.userInfo?.phone ?? "").isNotEmpty,
                                   child: GestureDetector(
                                     onTap: () {
                                       showModalBottomSheet<void>(
@@ -443,81 +384,56 @@ class _InfoUserScreenState extends State<InfoUserScreen> {
                                       );
                                     },
                                     child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width,
+                                        width: MediaQuery.of(context).size.width,
                                         decoration: BoxDecoration(
                                           color: context.colors.white,
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(5)),
+                                          borderRadius: const BorderRadius.all(Radius.circular(5)),
                                         ),
                                         alignment: Alignment.centerLeft,
-                                        padding: const EdgeInsets.symmetric(
-                                                vertical: 10)
-                                            .add(const EdgeInsets.only(
-                                                left: 5, right: 5)),
+                                        padding: const EdgeInsets.symmetric(vertical: 10).add(const EdgeInsets.only(left: 5, right: 5)),
                                         child: Row(
                                           children: [
-                                            Icon(
-                                                Icons
-                                                    .restore_from_trash_rounded,
-                                                size: 24,
-                                                color: context.colors.hF05D0E
-                                                    .withOpacity(0.7)),
+                                            Icon(Icons.restore_from_trash_rounded, size: 24, color: context.colors.hF05D0E.withOpacity(0.7)),
                                             spaceW10,
                                             Text(
                                               'Xóa tài khoản',
-                                              style: Styles.n16.copyWith(
-                                                  color: context.colors.text),
+                                              style: Styles.n16.copyWith(color: context.colors.text),
                                             ),
                                             const Spacer(),
                                             Icon(
                                               Icons.chevron_right_rounded,
                                               size: 30,
-                                              color: context.colors.main
-                                                  .withOpacity(0.7),
+                                              color: context.colors.main.withOpacity(0.7),
                                             ),
                                           ],
                                         )),
                                   ),
                                 ),
                                 Visibility(
-                                  visible:
-                                      (state.userInfo?.phone ?? "").isNotEmpty,
+                                  visible: (state.userInfo?.phone ?? "").isNotEmpty,
                                   child: GestureDetector(
                                     onTap: onLogout,
                                     child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width,
+                                        width: MediaQuery.of(context).size.width,
                                         decoration: BoxDecoration(
                                           color: context.colors.white,
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(5)),
+                                          borderRadius: const BorderRadius.all(Radius.circular(5)),
                                         ),
                                         alignment: Alignment.centerLeft,
-                                        padding: const EdgeInsets.symmetric(
-                                                vertical: 10)
-                                            .add(const EdgeInsets.only(
-                                                left: 5, right: 5)),
+                                        padding: const EdgeInsets.symmetric(vertical: 10).add(const EdgeInsets.only(left: 5, right: 5)),
                                         child: Row(
                                           children: [
-                                            Icon(
-                                                Icons
-                                                    .restore_from_trash_rounded,
-                                                size: 24,
-                                                color: context.colors.hF05D0E
-                                                    .withOpacity(0.7)),
+                                            Icon(Icons.restore_from_trash_rounded, size: 24, color: context.colors.hF05D0E.withOpacity(0.7)),
                                             spaceW10,
                                             Text(
                                               'Đăng xuất',
-                                              style: Styles.n16.copyWith(
-                                                  color: context.colors.text),
+                                              style: Styles.n16.copyWith(color: context.colors.text),
                                             ),
                                             const Spacer(),
                                             Icon(
                                               Icons.chevron_right_rounded,
                                               size: 30,
-                                              color: context.colors.main
-                                                  .withOpacity(0.7),
+                                              color: context.colors.main.withOpacity(0.7),
                                             ),
                                           ],
                                         )),

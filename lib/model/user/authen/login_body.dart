@@ -4,7 +4,6 @@ part 'login_body.g.dart';
 
 @JsonSerializable()
 class LoginBody {
-
   @JsonKey(name: 'email')
   String? email;
 
@@ -13,8 +12,7 @@ class LoginBody {
 
   LoginBody();
 
-  factory LoginBody.fromJson(Map<String, dynamic> json) =>
-      _$LoginBodyFromJson(json);
+  factory LoginBody.fromJson(Map<String, dynamic> json) => _$LoginBodyFromJson(json);
 
   Map<String, dynamic> toJson() => _$LoginBodyToJson(this);
 }

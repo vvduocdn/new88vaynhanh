@@ -5,8 +5,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:new88_vaynow/component/theme.dart';
 
 class AvatarUtils {
-  static dynamic buildAvatar(String? avatarUrl, String? name, double? size,
-      double? fonts, Color color) {
+  static dynamic buildAvatar(String? avatarUrl, String? name, double? size, double? fonts, Color color) {
     return avatarUrl!.isEmpty
         ? ImagePlaceHolder(
             heightWeight: size ?? 32,
@@ -27,14 +26,10 @@ class AvatarUtils {
                         image: imageProvider,
                         fit: BoxFit.cover,
                       ),
-                      border: Border.all(
-                          width: 1.4,
-                          color: const Color.fromRGBO(241, 126, 126, 1)),
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(100.0))),
+                      border: Border.all(width: 1.4, color: const Color.fromRGBO(241, 126, 126, 1)),
+                      borderRadius: const BorderRadius.all(Radius.circular(100.0))),
                 ),
-                placeholder: (context, url) =>
-                    const CircularProgressIndicator(),
+                placeholder: (context, url) => const CircularProgressIndicator(),
                 errorWidget: (context, url, error) => ImagePlaceHolder(
                   heightWeight: size ?? 32,
                   name: name ?? 'n',
@@ -61,12 +56,7 @@ class ImagePlaceHolder extends StatelessWidget {
   final double? heightWeight;
   final double? fontSize;
   final Color? color;
-  const ImagePlaceHolder(
-      {super.key,
-      this.name,
-      this.heightWeight = 32,
-      this.fontSize,
-      this.color});
+  const ImagePlaceHolder({super.key, this.name, this.heightWeight = 32, this.fontSize, this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -81,9 +71,7 @@ class ImagePlaceHolder extends StatelessWidget {
       child: Text(
         name!.substring(0, 1).toUpperCase(),
         textAlign: TextAlign.center,
-        style: TextStyle(
-            fontSize: fontSize ?? 22,
-            color: Colors.black), // Set text color to dark tone
+        style: TextStyle(fontSize: fontSize ?? 22, color: Colors.black), // Set text color to dark tone
       ),
     );
   }

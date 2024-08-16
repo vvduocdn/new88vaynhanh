@@ -18,10 +18,8 @@ import 'package:new88_vaynow/view/widget/popup_comfirm.dart';
 import 'package:new88_vaynow/view_model/home_bloc/home_bloc.dart';
 import 'package:new88_vaynow/view_model/user_bloc/user_bloc.dart';
 
-final StreamController streamConnectActivity =
-    StreamController<bool>.broadcast();
-final StreamController streamTabBottomNavBar =
-    StreamController<int>.broadcast();
+final StreamController streamConnectActivity = StreamController<bool>.broadcast();
+final StreamController streamTabBottomNavBar = StreamController<int>.broadcast();
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -32,8 +30,7 @@ class BottomNavigation extends StatefulWidget {
 
 class _BottomNavigationState extends State<BottomNavigation> {
   int _currentIndex = 0;
-  final NavigatorGlobalContextHelper navigationService =
-      locator.get<NavigatorGlobalContextHelper>();
+  final NavigatorGlobalContextHelper navigationService = locator.get<NavigatorGlobalContextHelper>();
   final List<Widget> _tabs = [
     const HomeScreen(),
     const LoanScreen(),

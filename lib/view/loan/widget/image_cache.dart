@@ -26,8 +26,7 @@ class ImageCached extends StatelessWidget {
           width: width,
           height: height,
           fit: fit,
-          progressIndicatorBuilder:
-              (BuildContext context, String url, DownloadProgress progress) {
+          progressIndicatorBuilder: (BuildContext context, String url, DownloadProgress progress) {
             return Shimmer.fromColors(
               baseColor: Colors.grey.shade300,
               highlightColor: Colors.grey.shade100,

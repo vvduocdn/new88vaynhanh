@@ -15,8 +15,7 @@ class InfoUserPutBody {
 
   InfoUserPutBody();
 
-  factory InfoUserPutBody.fromJson(Map<String, dynamic> json) =>
-      _$InfoUserPutBodyFromJson(json);
+  factory InfoUserPutBody.fromJson(Map<String, dynamic> json) => _$InfoUserPutBodyFromJson(json);
 
   Map<String, dynamic> toJson() => _$InfoUserPutBodyToJson(this);
 }

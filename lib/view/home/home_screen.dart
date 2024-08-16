@@ -27,8 +27,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final NavigatorGlobalContextHelper navigationService =
-      locator.get<NavigatorGlobalContextHelper>();
+  final NavigatorGlobalContextHelper navigationService = locator.get<NavigatorGlobalContextHelper>();
 
   @override
   Widget build(BuildContext context) {
@@ -41,8 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 resizeToAvoidBottomInset: false,
                 backgroundColor: context.colors.hF05D0E,
                 body: Container(
-                  margin:
-                      EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+                  margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   color: context.colors.white,
@@ -51,10 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 10, horizontal: 15),
-                        decoration:
-                            const BoxDecoration(color: Color(0xFFFE5F06)),
+                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                        decoration: const BoxDecoration(color: Color(0xFFFE5F06)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -63,16 +59,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             Text(
                               'Vay Uy Tín',
-                              style: Styles.n18w7
-                                  .copyWith(color: context.colors.white),
+                              style: Styles.n18w7.copyWith(color: context.colors.white),
                             ),
                             GestureDetector(
                               onTap: () {
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (_) =>
-                                            const InfoUserScreen()));
+                                Navigator.push(context, CupertinoPageRoute(builder: (_) => const InfoUserScreen()));
                               },
                               child: Icon(
                                 Icons.perm_identity_sharp,
@@ -91,10 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         decoration: BoxDecoration(
                           borderRadius: const BorderRadius.only(
-                              topRight: Radius.circular(30),
-                              topLeft: Radius.circular(30),
-                              bottomRight: Radius.circular(30),
-                              bottomLeft: Radius.circular(30)),
+                              topRight: Radius.circular(30), topLeft: Radius.circular(30), bottomRight: Radius.circular(30), bottomLeft: Radius.circular(30)),
                           gradient: LinearGradient(
                               colors: [
                                 const Color(0xFFfe5f06).withOpacity(1.0),
@@ -112,14 +100,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             spaceH26,
                             Text(
                               'Số tiền có sẵn',
-                              style: Styles.n14
-                                  .copyWith(color: context.colors.white),
+                              style: Styles.n14.copyWith(color: context.colors.white),
                             ),
                             spaceH12,
                             Text(
                               'đ  ${user?.money == null ? formatNumber(state.money) : formatNumber(int.parse(user?.money ?? ''))}',
-                              style: Styles.n38b
-                                  .copyWith(color: context.colors.white),
+                              style: Styles.n38b.copyWith(color: context.colors.white),
                             ),
                             spaceH16,
                             Container(
@@ -136,14 +122,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: [
                                     Text(
                                       'Tổn cộng',
-                                      style: Styles.n14.copyWith(
-                                          color: context.colors.white),
+                                      style: Styles.n14.copyWith(color: context.colors.white),
                                     ),
                                     spaceH10,
                                     Text(
                                       'đ ${user?.money == null ? formatNumber(state.money) : formatNumber(int.parse(user?.money ?? ''))}',
-                                      style: Styles.n18w7.copyWith(
-                                          color: context.colors.white),
+                                      style: Styles.n18w7.copyWith(color: context.colors.white),
                                     ),
                                   ],
                                 ),
@@ -157,14 +141,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: [
                                     Text(
                                       'Số tiền đã sử dụng',
-                                      style: Styles.n14.copyWith(
-                                          color: context.colors.white),
+                                      style: Styles.n14.copyWith(color: context.colors.white),
                                     ),
                                     spaceH10,
                                     Text(
                                       'đ 0',
-                                      style: Styles.n18w7.copyWith(
-                                          color: context.colors.white),
+                                      style: Styles.n18w7.copyWith(color: context.colors.white),
                                     ),
                                   ],
                                 )
@@ -173,20 +155,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             spaceH30,
                             GestureDetector(
                               onTap: () {
-                                if (user?.phone != null &&
-                                    user!.phone!.isNotEmpty) {
-                                  PopupComfirm.showPopModelDialog(
-                                      context,
-                                      () async {},
-                                      'Thông báo',
-                                      'Gói vay now đ ${user.money == null ? formatNumber(state.money) : formatNumber(int.parse(user.money ?? ''))} đang được xét duyệt!!',
-                                      'Đóng');
+                                if (user?.phone != null && user!.phone!.isNotEmpty) {
+                                  PopupComfirm.showPopModelDialog(context, () async {}, 'Thông báo',
+                                      'Gói vay now đ ${user.money == null ? formatNumber(state.money) : formatNumber(int.parse(user.money ?? ''))} đang được xét duyệt!!', 'Đóng');
                                   return;
                                 }
-                                Navigator.push(
-                                    context,
-                                    CupertinoPageRoute(
-                                        builder: (_) => const AddVayNow()));
+                                Navigator.push(context, CupertinoPageRoute(builder: (_) => const AddVayNow()));
                               },
                               child: Stack(
                                 children: [
@@ -195,27 +169,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                     width: MediaQuery.of(context).size.width,
                                     margin: const EdgeInsets.only(top: 15),
                                     decoration: BoxDecoration(
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(6)),
+                                      borderRadius: const BorderRadius.all(Radius.circular(6)),
                                       gradient: LinearGradient(
-                                          colors: [
-                                            context.colors.white,
-                                            context.colors.white
-                                          ],
-                                          begin:
-                                              const FractionalOffset(0.0, 0.0),
+                                          colors: [context.colors.white, context.colors.white],
+                                          begin: const FractionalOffset(0.0, 0.0),
                                           end: const FractionalOffset(1.0, 0.0),
                                           stops: const [0.0, 1.0],
                                           tileMode: TileMode.clamp),
                                     ),
                                     alignment: Alignment.center,
                                     child: Text(
-                                      ((user?.phone ?? '').isEmpty)
-                                          ? 'Lấy nó ngay'
-                                          : "Đang xét duyệt",
-                                      style: Styles.n16b.copyWith(
-                                          color: context.colors.hF05D0E
-                                              .withOpacity(0.7)),
+                                      ((user?.phone ?? '').isEmpty) ? 'Lấy nó ngay' : "Đang xét duyệt",
+                                      style: Styles.n16b.copyWith(color: context.colors.hF05D0E.withOpacity(0.7)),
                                     ),
                                   ),
                                   Positioned(
@@ -223,17 +188,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                       right: 0,
                                       child: Container(
                                         height: 20,
-                                        padding: const EdgeInsets.all(6).add(
-                                            const EdgeInsets.symmetric(
-                                                horizontal: 2)),
+                                        padding: const EdgeInsets.all(6).add(const EdgeInsets.symmetric(horizontal: 2)),
                                         decoration: const BoxDecoration(
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(6)),
+                                          borderRadius: BorderRadius.all(Radius.circular(6)),
                                           gradient: LinearGradient(
-                                              colors: [
-                                                Color(0xFFE7D384),
-                                                Color(0xFFEFE2AF)
-                                              ],
+                                              colors: [Color(0xFFE7D384), Color(0xFFEFE2AF)],
                                               begin: FractionalOffset(0.0, 0.0),
                                               end: FractionalOffset(1.0, 0.0),
                                               stops: [0.0, 1.0],
@@ -242,8 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         alignment: Alignment.center,
                                         child: Text(
                                           'Vay thành công 85%',
-                                          style: Styles.n10.copyWith(
-                                              color: const Color(0xFF625231)),
+                                          style: Styles.n10.copyWith(color: const Color(0xFF625231)),
                                         ),
                                       )),
                                 ],
@@ -256,11 +214,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       Container(
                         margin: const EdgeInsets.symmetric(horizontal: 15),
                         width: double.infinity,
-                        padding: const EdgeInsets.all(6)
-                            .add(const EdgeInsets.symmetric(horizontal: 2)),
+                        padding: const EdgeInsets.all(6).add(const EdgeInsets.symmetric(horizontal: 2)),
                         decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(6)),
+                          borderRadius: const BorderRadius.all(Radius.circular(6)),
                           gradient: LinearGradient(
                               colors: [
                                 const Color(0xFFE7D384).withOpacity(0.1),
@@ -285,8 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           Text(
                             'Sự kiện hàng tháng',
-                            style: Styles.n16b
-                                .copyWith(color: const Color(0xFF625231)),
+                            style: Styles.n16b.copyWith(color: const Color(0xFF625231)),
                           ),
                         ],
                       ),
@@ -295,11 +250,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       spaceH12,
                       Container(
                         width: double.infinity,
-                        padding: const EdgeInsets.all(6)
-                            .add(const EdgeInsets.symmetric(horizontal: 2)),
+                        padding: const EdgeInsets.all(6).add(const EdgeInsets.symmetric(horizontal: 2)),
                         decoration: BoxDecoration(
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(6)),
+                          borderRadius: const BorderRadius.all(Radius.circular(6)),
                           gradient: LinearGradient(
                               colors: [
                                 const Color(0xFFE7D384).withOpacity(0.0),
@@ -323,8 +276,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             spaceW6,
                             Text(
                               'Nền tảng này hứa hẹn bảo vệ tính bảo mật dữ liệu của bản\nvà sẽ không phổ biến thông tin cá nhân của bạn',
-                              style: Styles.n12v2
-                                  .copyWith(color: const Color(0xFF625231)),
+                              style: Styles.n12v2.copyWith(color: const Color(0xFF625231)),
                             )
                           ],
                         ),

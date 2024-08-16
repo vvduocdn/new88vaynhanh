@@ -15,16 +15,10 @@ class SupaBaseApi {
     return [];
   }
 
-  Future<List<Map<String, dynamic>>> insertAccount(
-      String phone, String pass, int money) async {
+  Future<List<Map<String, dynamic>>> insertAccount(String phone, String pass, int money) async {
     try {
       final response = await supabase.from('account').insert([
-        {
-          "phone": phone,
-          "user_name": 'user$phone',
-          "password": pass,
-          "money": money
-        }
+        {"phone": phone, "user_name": 'user$phone', "password": pass, "money": money}
       ]).select();
       Logger().i(response);
       return response;
@@ -38,8 +32,7 @@ class SupaBaseApi {
 
   Future<List<Map<String, dynamic>>> deleteAccount(String id) async {
     try {
-      final response =
-          await supabase.from('account').delete().eq('id', id).select();
+      final response = await supabase.from('account').delete().eq('id', id).select();
       Logger().i(response);
       return response;
     } on PostgrestException catch (error) {
@@ -58,6 +51,19 @@ class SupaBaseApi {
       Logger().e('PostgrestException: $error');
     } catch (error) {
       Logger().e('getStatusApp Errr: $error');
+    }
+    return [];
+  }
+
+  Future<List<Map<String, dynamic>>> getLink() async {
+    try {
+      final data = await supabase.from('link').select();
+      Logger().i(data);
+      return data;
+    } on PostgrestException catch (error) {
+      Logger().e('PostgrestException: $error');
+    } catch (error) {
+      Logger().e('Link Errr: $error');
     }
     return [];
   }

@@ -14,8 +14,7 @@ class HiveDataManager {
 
   HiveDataManager._privateConstructor();
 
-  static final HiveDataManager _instance =
-      HiveDataManager._privateConstructor();
+  static final HiveDataManager _instance = HiveDataManager._privateConstructor();
 
   factory HiveDataManager() {
     return _instance;
@@ -48,8 +47,7 @@ class HiveDataManager {
     _userThemeBox = null;
   }
 
-  Future<void> saveUserInfo(
-      String phone, String createdAt, String id, int money) async {
+  Future<void> saveUserInfo(String phone, String createdAt, String id, int money) async {
     await _openUserBox();
     var jwt = Jwt()
       ..token = ''
@@ -64,8 +62,7 @@ class HiveDataManager {
       ..phone = phone ?? ''
       ..updatedAt = '';
 
-    var user = const User()
-        .copyWith(jwt: null, userInfo: userInfo, orderAddress: null);
+    var user = const User().copyWith(jwt: null, userInfo: userInfo, orderAddress: null);
     _logger.i("Save Token user to Hive: $user.");
     await _userBox?.put('currentLogin', user);
   }
@@ -140,8 +137,7 @@ class HiveDataManager {
   Future<String?> getUserLanguage() async {
     try {
       await _openUserLanguageBox();
-      var languageSubtag =
-          _userLanguageBox?.get('userLanguage', defaultValue: null);
+      var languageSubtag = _userLanguageBox?.get('userLanguage', defaultValue: null);
       return languageSubtag;
     } catch (e) {
       _logger.e("Error getting user language: $e");

@@ -53,12 +53,8 @@ class _FieldWidgetState extends State<FieldWidget> {
         labelStyle: Styles.n16w4.copyWith(
           color: context.colors.main,
         ),
-        focusedBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-            borderSide: BorderSide(color: context.colors.hEFEFEF, width: 1.0)),
-        border: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-            borderSide: BorderSide(color: context.colors.hEFEFEF, width: 1.0)),
+        focusedBorder: OutlineInputBorder(borderRadius: const BorderRadius.all(Radius.circular(5.0)), borderSide: BorderSide(color: context.colors.hEFEFEF, width: 1.0)),
+        border: OutlineInputBorder(borderRadius: const BorderRadius.all(Radius.circular(5.0)), borderSide: BorderSide(color: context.colors.hEFEFEF, width: 1.0)),
         disabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5.0),
           borderSide: BorderSide(

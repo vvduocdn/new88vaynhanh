@@ -23,8 +23,7 @@ class PopupLogout extends StatefulWidget {
     required this.cancel,
   });
 
-  static Future<void> showPopModelDialog(parentContext, Function onApprove,
-      String title, String content, String cancel) {
+  static Future<void> showPopModelDialog(parentContext, Function onApprove, String title, String content, String cancel) {
     return showDialog(
       barrierDismissible: false,
       context: parentContext,
@@ -64,66 +63,58 @@ class _PopupLogoutState extends State<PopupLogout> {
                   ),
                   child: SizedBox(
                     width: double.infinity,
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                    child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        widget.title,
+                        style: Styles.n16.copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: AppColor.h444444,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        widget.content,
+                        style: Styles.n14.copyWith(
+                          fontWeight: FontWeight.w400,
+                          color: AppColor.h444444,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const Spacer(),
+                      Row(
                         children: [
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            widget.title,
-                            style: Styles.n16.copyWith(
-                              fontWeight: FontWeight.w700,
-                              color: AppColor.h444444,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            widget.content,
-                            style: Styles.n14.copyWith(
-                              fontWeight: FontWeight.w400,
-                              color: AppColor.h444444,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          const Spacer(),
-                          Row(
-                            children: [
-                              spaceW2,
-                              Expanded(
-                                  child: CustomButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                text: 'Cancel',
-                                colorText: context.colors.hF05D0E,
-                                backgroundColors: context.colors.white,
-                                colorBorder: context.colors.hF05D0E,
-                              )),
-                              spaceW6,
-                              Expanded(
-                                  child: CustomButton(
-                                onPressed: () async {
-                                  await HiveDataManager()
-                                      .logout()
-                                      .then((value) => {
-                                        widget.onApprove.call(),
-                                            Navigator.pop(context)
-                                          });
-                                },
-                                text: 'Logout',
-                                colorText: context.colors.white,
-                                backgroundColors: context.colors.hF05D0E,
-                                colorBorder: context.colors.hF05D0E,
-                              )),
-                              spaceW2,
-                            ],
-                          ),
-                          spaceH4
-                        ]),
+                          spaceW2,
+                          Expanded(
+                              child: CustomButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            text: 'Cancel',
+                            colorText: context.colors.hF05D0E,
+                            backgroundColors: context.colors.white,
+                            colorBorder: context.colors.hF05D0E,
+                          )),
+                          spaceW6,
+                          Expanded(
+                              child: CustomButton(
+                            onPressed: () async {
+                              await HiveDataManager().logout().then((value) => {widget.onApprove.call(), Navigator.pop(context)});
+                            },
+                            text: 'Logout',
+                            colorText: context.colors.white,
+                            backgroundColors: context.colors.hF05D0E,
+                            colorBorder: context.colors.hF05D0E,
+                          )),
+                          spaceW2,
+                        ],
+                      ),
+                      spaceH4
+                    ]),
                   )),
             ],
           ),

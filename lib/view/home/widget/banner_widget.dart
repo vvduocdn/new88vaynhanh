@@ -43,11 +43,7 @@ class _BannerWidgetState extends State<BannerWidget> {
               Container(
                 height: double.infinity,
                 width: 10,
-                decoration: BoxDecoration(
-                    color: context.colors.hF05D0E,
-                    borderRadius: const BorderRadius.only(
-                        topRight: Radius.circular(20),
-                        bottomRight: Radius.circular(20))),
+                decoration: BoxDecoration(color: context.colors.hF05D0E, borderRadius: const BorderRadius.only(topRight: Radius.circular(20), bottomRight: Radius.circular(20))),
               ),
               spaceW10,
               Expanded(
@@ -63,8 +59,7 @@ class _BannerWidgetState extends State<BannerWidget> {
                           alignment: Alignment.center,
                           margin: const EdgeInsets.symmetric(horizontal: 2),
                           child: ClipRRect(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(10.0)),
+                            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                             child: ImageCached(
                               height: double.infinity,
                               width: double.infinity,
@@ -83,8 +78,7 @@ class _BannerWidgetState extends State<BannerWidget> {
                   pagination: SwiperPagination(
                     margin: EdgeInsets.zero,
                     builder: SwiperCustomPagination(
-                      builder:
-                          (BuildContext context, SwiperPluginConfig config) {
+                      builder: (BuildContext context, SwiperPluginConfig config) {
                         return Stack(
                           children: <Widget>[
                             Row(
@@ -113,11 +107,7 @@ class _BannerWidgetState extends State<BannerWidget> {
               Container(
                 height: double.infinity,
                 width: 10,
-                decoration: BoxDecoration(
-                    color: context.colors.hF05D0E,
-                    borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(20),
-                        bottomLeft: Radius.circular(20))),
+                decoration: BoxDecoration(color: context.colors.hF05D0E, borderRadius: const BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20))),
               )
             ],
           ),

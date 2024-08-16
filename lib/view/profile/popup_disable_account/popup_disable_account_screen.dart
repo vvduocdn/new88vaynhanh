@@ -23,8 +23,7 @@ class PopupDisableAccount extends StatefulWidget {
 class _PopupDisableAccountState extends State<PopupDisableAccount> {
   TextEditingController controllerPassword = TextEditingController();
   late FocusNode focusNode;
-  final BuildContext _context =
-      locator.get<NavigatorGlobalContextHelper>().getCurrentContext;
+  final BuildContext _context = locator.get<NavigatorGlobalContextHelper>().getCurrentContext;
   String password = '';
   bool isDisableAccount = false;
 
@@ -52,15 +51,11 @@ class _PopupDisableAccountState extends State<PopupDisableAccount> {
             BlocProvider.of<UserBloc>(context).add(GetCurrentUserInfo());
             isDisableAccount = false;
             setState(() {});
-            Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(
-                    builder: (context) => const BottomNavigation()),
-                (route) => false);
+            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const BottomNavigation()), (route) => false);
             return;
           }
           if (!status) {
-            CommonFlushBar.show(
-                _context, 'Mật khẩu không chính xác', EFlushbarStatus.Failure);
+            CommonFlushBar.show(_context, 'Mật khẩu không chính xác', EFlushbarStatus.Failure);
             isDisableAccount = false;
             setState(() {});
           }
@@ -100,15 +95,11 @@ class _PopupDisableAccountState extends State<PopupDisableAccount> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               SizedBox(
-                                height:
-                                    MediaQuery.of(context).size.height / 3.2,
+                                height: MediaQuery.of(context).size.height / 3.2,
                               ),
                               Container(
                                 padding: const EdgeInsets.all(10),
-                                decoration: const BoxDecoration(
-                                    color: AppColors.white,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(8))),
+                                decoration: const BoxDecoration(color: AppColors.white, borderRadius: BorderRadius.all(Radius.circular(8))),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -124,30 +115,21 @@ class _PopupDisableAccountState extends State<PopupDisableAccount> {
                                     ),
                                     spaceH10,
                                     Container(
-                                      decoration: const BoxDecoration(
-                                          border: Border(
-                                              bottom: BorderSide(
-                                                  color: AppColors.gray,
-                                                  width: 1))),
+                                      decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: AppColors.gray, width: 1))),
                                       height: 40,
                                       child: TextField(
                                         autofocus: true,
                                         focusNode: focusNode,
                                         controller: controllerPassword,
-                                        style: const TextStyle(
-                                            color: Colors.black),
+                                        style: const TextStyle(color: Colors.black),
                                         obscureText: true,
                                         decoration: InputDecoration(
                                           hintText: 'Nhập mật khẩu',
-                                          enabledBorder:
-                                              const UnderlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.white),
+                                          enabledBorder: const UnderlineInputBorder(
+                                            borderSide: BorderSide(color: Colors.white),
                                           ),
-                                          focusedBorder:
-                                              const UnderlineInputBorder(
-                                            borderSide:
-                                                BorderSide(color: Colors.white),
+                                          focusedBorder: const UnderlineInputBorder(
+                                            borderSide: BorderSide(color: Colors.white),
                                           ),
                                           errorText: null,
                                         ),
@@ -169,22 +151,13 @@ class _PopupDisableAccountState extends State<PopupDisableAccount> {
                                         Expanded(
                                           flex: 1,
                                           child: GestureDetector(
-                                            onTap: isDisableAccount
-                                                ? null
-                                                : _disableAccount,
+                                            onTap: isDisableAccount ? null : _disableAccount,
                                             child: Container(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 10,
-                                                      vertical: 10),
+                                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                               decoration: BoxDecoration(
                                                 color: Colors.red,
-                                                border: Border.all(
-                                                    color: Colors.red,
-                                                    width: 1),
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        5), // Bo viền container
+                                                border: Border.all(color: Colors.red, width: 1),
+                                                borderRadius: BorderRadius.circular(5), // Bo viền container
                                               ),
                                               alignment: Alignment.center,
                                               child: isDisableAccount
@@ -201,8 +174,7 @@ class _PopupDisableAccountState extends State<PopupDisableAccount> {
                                                       style: const TextStyle(
                                                         fontSize: 14,
                                                         color: AppColors.white,
-                                                        fontWeight:
-                                                            FontWeight.normal,
+                                                        fontWeight: FontWeight.normal,
                                                       ),
                                                     ),
                                             ),
@@ -217,20 +189,12 @@ class _PopupDisableAccountState extends State<PopupDisableAccount> {
                                               Navigator.pop(context);
                                             },
                                             child: Container(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 10,
-                                                      vertical: 10),
+                                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                               decoration: BoxDecoration(
                                                 color: const Color(0xFF5D5D5D),
 
-                                                border: Border.all(
-                                                    color:
-                                                        const Color(0xFF5D5D5D),
-                                                    width: 1),
-                                                borderRadius:
-                                                    BorderRadius.circular(
-                                                        5), // Bo viền container
+                                                border: Border.all(color: const Color(0xFF5D5D5D), width: 1),
+                                                borderRadius: BorderRadius.circular(5), // Bo viền container
                                               ),
                                               alignment: Alignment.center,
                                               child: Text(

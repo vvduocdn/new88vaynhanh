@@ -54,8 +54,7 @@ class _BaseWidgetSpinkitState extends State<BaseWidgetSpinkit> {
                         spaceW12,
                         Text(
                           'loading ...',
-                          style:
-                              Styles.n14.copyWith(color: context.colors.text),
+                          style: Styles.n14.copyWith(color: context.colors.text),
                         )
                       ],
                     ),

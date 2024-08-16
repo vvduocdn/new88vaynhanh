@@ -49,11 +49,7 @@ class UpdateInfoUserEvent extends UserEvent {
   @override
   List<Object> get props => [fullName, phoneNumber, id];
 
-  const UpdateInfoUserEvent(
-      {required this.fullName,
-      required this.phoneNumber,
-      required this.id,
-      required this.func});
+  const UpdateInfoUserEvent({required this.fullName, required this.phoneNumber, required this.id, required this.func});
 }
 
 class UpdateStateEdit extends UserEvent {
@@ -70,10 +66,7 @@ class ChangePasswordEvent extends UserEvent {
   final String passwordNew;
   final Function(String message, int status) func;
 
-  const ChangePasswordEvent(
-      {required this.passwordOld,
-      required this.passwordNew,
-      required this.func});
+  const ChangePasswordEvent({required this.passwordOld, required this.passwordNew, required this.func});
 
   @override
   List<Object> get props => [passwordOld, passwordNew];

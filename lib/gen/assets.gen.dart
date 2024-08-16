@@ -42,8 +42,7 @@ class $AssetsFontsGen {
   String get sVNGilroyLight => 'assets/fonts/SVN-Gilroy Light.otf';
 
   /// File path: assets/fonts/SVN-Gilroy Medium Italic.otf
-  String get sVNGilroyMediumItalic =>
-      'assets/fonts/SVN-Gilroy Medium Italic.otf';
+  String get sVNGilroyMediumItalic => 'assets/fonts/SVN-Gilroy Medium Italic.otf';
 
   /// File path: assets/fonts/SVN-Gilroy Medium.otf
   String get sVNGilroyMedium => 'assets/fonts/SVN-Gilroy Medium.otf';
@@ -52,8 +51,7 @@ class $AssetsFontsGen {
   String get sVNGilroyRegular => 'assets/fonts/SVN-Gilroy Regular.otf';
 
   /// File path: assets/fonts/SVN-Gilroy SemiBold Italic.otf
-  String get sVNGilroySemiBoldItalic =>
-      'assets/fonts/SVN-Gilroy SemiBold Italic.otf';
+  String get sVNGilroySemiBoldItalic => 'assets/fonts/SVN-Gilroy SemiBold Italic.otf';
 
   /// File path: assets/fonts/SVN-Gilroy SemiBold.otf
   String get sVNGilroySemiBold => 'assets/fonts/SVN-Gilroy SemiBold.otf';
@@ -71,8 +69,7 @@ class $AssetsFontsGen {
   String get sVNGilroyXBold => 'assets/fonts/SVN-Gilroy XBold.otf';
 
   /// File path: assets/fonts/SVN-Gilroy Xlight Italic.otf
-  String get sVNGilroyXlightItalic =>
-      'assets/fonts/SVN-Gilroy Xlight Italic.otf';
+  String get sVNGilroyXlightItalic => 'assets/fonts/SVN-Gilroy Xlight Italic.otf';
 
   /// File path: assets/fonts/SVN-Gilroy Xlight.otf
   String get sVNGilroyXlight => 'assets/fonts/SVN-Gilroy Xlight.otf';
@@ -121,8 +118,7 @@ class $AssetsIconsGen {
   SvgGenImage get icLogout => const SvgGenImage('assets/icons/ic_logout.svg');
 
   /// File path: assets/icons/ic_update_car.svg
-  SvgGenImage get icUpdateCar =>
-      const SvgGenImage('assets/icons/ic_update_car.svg');
+  SvgGenImage get icUpdateCar => const SvgGenImage('assets/icons/ic_update_car.svg');
 
   /// File path: assets/icons/log_out.svg
   SvgGenImage get logOut => const SvgGenImage('assets/icons/log_out.svg');
@@ -134,68 +130,41 @@ class $AssetsIconsGen {
   SvgGenImage get reserve => const SvgGenImage('assets/icons/reserve.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [
-        address,
-        arrowDown,
-        arrowLeft,
-        icGroup,
-        icLogout,
-        icUpdateCar,
-        logOut,
-        password,
-        reserve
-      ];
+  List<SvgGenImage> get values => [address, arrowDown, arrowLeft, icGroup, icLogout, icUpdateCar, logOut, password, reserve];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   /// File path: assets/images/banner-3.jpg
-  AssetGenImage get banner3 =>
-      const AssetGenImage('assets/images/banner-3.jpg');
+  AssetGenImage get banner3 => const AssetGenImage('assets/images/banner-3.jpg');
 
   /// File path: assets/images/banner_2.jpg
-  AssetGenImage get banner2 =>
-      const AssetGenImage('assets/images/banner_2.jpg');
+  AssetGenImage get banner2 => const AssetGenImage('assets/images/banner_2.jpg');
 
   /// File path: assets/images/banner_4.jpg
-  AssetGenImage get banner4 =>
-      const AssetGenImage('assets/images/banner_4.jpg');
+  AssetGenImage get banner4 => const AssetGenImage('assets/images/banner_4.jpg');
 
   /// File path: assets/images/banner_6.jpg
-  AssetGenImage get banner6 =>
-      const AssetGenImage('assets/images/banner_6.jpg');
+  AssetGenImage get banner6 => const AssetGenImage('assets/images/banner_6.jpg');
 
   /// File path: assets/images/bg.jpeg
   AssetGenImage get bg => const AssetGenImage('assets/images/bg.jpeg');
 
   /// File path: assets/images/business_loans.jpg
-  AssetGenImage get businessLoans =>
-      const AssetGenImage('assets/images/business_loans.jpg');
+  AssetGenImage get businessLoans => const AssetGenImage('assets/images/business_loans.jpg');
 
   /// File path: assets/images/ic_launcher.png
-  AssetGenImage get icLauncher =>
-      const AssetGenImage('assets/images/ic_launcher.png');
+  AssetGenImage get icLauncher => const AssetGenImage('assets/images/ic_launcher.png');
 
   /// File path: assets/images/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
 
   /// File path: assets/images/result_search.jpg
-  AssetGenImage get resultSearch =>
-      const AssetGenImage('assets/images/result_search.jpg');
+  AssetGenImage get resultSearch => const AssetGenImage('assets/images/result_search.jpg');
 
   /// List of all assets
-  List<AssetGenImage> get values => [
-        banner3,
-        banner2,
-        banner4,
-        banner6,
-        bg,
-        businessLoans,
-        icLauncher,
-        logo,
-        resultSearch
-      ];
+  List<AssetGenImage> get values => [banner3, banner2, banner4, banner6, bg, businessLoans, icLauncher, logo, resultSearch];
 }
 
 class Assets {

@@ -17,8 +17,7 @@ class SignupBody {
   String? phoneNumber;
   SignupBody();
 
-  factory SignupBody.fromJson(Map<String, dynamic> json) =>
-      _$SignupBodyFromJson(json);
+  factory SignupBody.fromJson(Map<String, dynamic> json) => _$SignupBodyFromJson(json);
 
   Map<String, dynamic> toJson() => _$SignupBodyToJson(this);
 }

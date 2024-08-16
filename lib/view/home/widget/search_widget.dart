@@ -15,7 +15,6 @@ class SearchWidget extends StatelessWidget {
     required this.onSearchChanged,
     required this.hinText,
     required this.keyboardType,
-
   });
 
   @override
@@ -25,12 +24,11 @@ class SearchWidget extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(0.0, 0, 0.0, 0),
       child: TextField(
         controller: searchController,
-        keyboardType:  keyboardType,
+        keyboardType: keyboardType,
         decoration: InputDecoration(
           hintText: hinText,
           hintStyle: Styles.n15w4.copyWith(color: context.colors.main),
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide.none,

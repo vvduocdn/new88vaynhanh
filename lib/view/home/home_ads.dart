@@ -1,9 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:new88_vaynow/services/api/supa_base_api.dart';
+import 'package:new88_vaynow/utils/logger_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:new88_vaynow/view/web_view/web_view_screen.dart';
 
-class HomePageBody extends StatelessWidget {
+class HomePageBody extends StatefulWidget {
   const HomePageBody({super.key});
+
+  @override
+  _HomePageBodyState createState() => _HomePageBodyState();
+}
+
+class _HomePageBodyState extends State<HomePageBody> {
+  String linkLogin = 'https://new889.ec/?a=2423967';
+  String linkRegister = 'https://new889.ec/?a=2423967';
+  String linkPromotion = 'tg://resolve?domain=MAITRANG_TROLYBCR';
+
+  @override
+  void initState() {
+    _initApp();
+    super.initState();
+  }
+
+  Future<void> _initApp() async {
+    try {
+      final response = await SupaBaseApi().getLink();
+      if (response.isNotEmpty) {
+        linkLogin = response.first['link_login'];
+        linkRegister = response.first['link_register'];
+        linkPromotion = response.first['link_promotion'];
+      }
+    } catch (e) {
+      printE(e.toString());
+    } finally {}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +70,9 @@ class HomePageBody extends StatelessWidget {
                     width: 180,
                   ),
                   const SizedBox(height: 20),
-                  const Text('Đối tác duy nhất của giải LaLiga',
-                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                  const Text('Đối tác duy nhất của giải LaLiga', style: TextStyle(color: Colors.white, fontSize: 20)),
                   const SizedBox(height: 20),
-                  _buildTextField(
-                      hint: 'Tài khoản đăng nhập', icon: Icons.person),
+                  _buildTextField(hint: 'Tài khoản đăng nhập', icon: Icons.person),
                   _buildTextField(hint: 'Số điện thoại', icon: Icons.phone),
                   const SizedBox(height: 20),
                   SizedBox(
@@ -53,8 +81,8 @@ class HomePageBody extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (_) => const WebViewScreen(
-                                    initialUrl: 'https://new889.ec/?a=2423967',
+                              builder: (_) => WebViewScreen(
+                                    initialUrl: linkLogin,
                                     titlePage: 'New889',
                                   )),
                         );
@@ -74,9 +102,9 @@ class HomePageBody extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (_) => const WebViewScreen(
-                                initialUrl: 'https://new889.ec/?a=2423967',
-                                titlePage: 'New889',
+                              builder: (_) => WebViewScreen(
+                                    initialUrl: linkRegister,
+                                    titlePage: 'New889',
                                   )),
                         );
                       },
@@ -89,9 +117,7 @@ class HomePageBody extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  launchButton(
-                      context, 'Hỗ trợ nhận khuyến mãi', 'MAITRANG_TROLYBCR',
-                      isTelegram: true),
+                  launchButton(context, 'Hỗ trợ nhận khuyến mãi', 'MAITRANG_TROLYBCR', isTelegram: true),
                 ],
               ),
             ),
@@ -121,15 +147,11 @@ class HomePageBody extends StatelessWidget {
     );
   }
 
-  Widget launchButton(BuildContext context, String text, String url,
-      {bool isTelegram = false}) {
+  Widget launchButton(BuildContext context, String text, String url, {bool isTelegram = false}) {
     return SizedBox(
       width: 300,
       child: ElevatedButton(
         onPressed: () {
-          // MaterialPageRoute(
-          //     builder: (_) => const WebViewContainer(
-          //         url: 'tg://resolve?domain=MAITRANG_TROLYBCR'));
           launchURL(context, url, isTelegram);
         },
         style: ElevatedButton.styleFrom(
@@ -142,15 +164,11 @@ class HomePageBody extends StatelessWidget {
     );
   }
 
-  Future<void> launchURL(
-      BuildContext context, String url, bool isTelegram) async {
-    final Uri launchUri = isTelegram
-        ? Uri.parse("tg://resolve?domain=${url.split('/').last}")
-        : Uri.parse(url);
+  Future<void> launchURL(BuildContext context, String url, bool isTelegram) async {
+    final Uri launchUri = isTelegram ? Uri.parse(linkPromotion) : Uri.parse(url);
     if (!await launchUrl(launchUri, mode: LaunchMode.externalApplication)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-            content: Text('Could not open the app or app not installed')),
+        const SnackBar(content: Text('Could not open the app or app not installed')),
       );
     }
   }

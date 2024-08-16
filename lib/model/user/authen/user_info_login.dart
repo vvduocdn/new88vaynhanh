@@ -18,21 +18,21 @@ class UserInfoLogin {
 
   UserInfoLogin(
       {this.id,
-        this.username,
-        this.password,
-        this.avatar,
-        this.fullName,
-        this.phoneNumber,
-        this.role,
-        this.activeStatus,
-        this.level,
-        this.typeAccount,
-        this.experience,
-        this.point,
-        this.totalTimeOnline,
-        this.totalTimeOnlineExp,
-        this.createdTime,
-        this.lastedLogin});
+      this.username,
+      this.password,
+      this.avatar,
+      this.fullName,
+      this.phoneNumber,
+      this.role,
+      this.activeStatus,
+      this.level,
+      this.typeAccount,
+      this.experience,
+      this.point,
+      this.totalTimeOnline,
+      this.totalTimeOnlineExp,
+      this.createdTime,
+      this.lastedLogin});
 
   UserInfoLogin.fromJson(Map<String, dynamic> json) {
     id = json['_id'];

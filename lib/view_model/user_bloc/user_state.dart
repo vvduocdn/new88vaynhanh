@@ -42,34 +42,36 @@ class UserState extends Equatable {
         userToken = '',
         orderAddress = null,
         colorAvatar = null;
-  UserState copyWith(
-      {UserInfo? userInfo,
-      bool? isLoggedIn,
-      bool? isLoading,
-      String? loadedLanguage,
-      bool? languageLoading,
-      bool? isLoadingFollows,
-      String? statusFollowBLV,
-      String? userToken,
-      bool? theme,
-      OrderAddressHive? orderAddress,
-      bool? isEditFullName,
-      bool? isChangePassword,
-      Color? colorAvatar,}) {
+  UserState copyWith({
+    UserInfo? userInfo,
+    bool? isLoggedIn,
+    bool? isLoading,
+    String? loadedLanguage,
+    bool? languageLoading,
+    bool? isLoadingFollows,
+    String? statusFollowBLV,
+    String? userToken,
+    bool? theme,
+    OrderAddressHive? orderAddress,
+    bool? isEditFullName,
+    bool? isChangePassword,
+    Color? colorAvatar,
+  }) {
     return UserState(
-        isLoadingFollows: isLoadingFollows ?? this.isLoadingFollows,
-        statusFollowBLV: statusFollowBLV ?? this.statusFollowBLV,
-        isLoading: isLoading ?? this.isLoading,
-        userInfo: userInfo ?? this.userInfo,
-        isLoggedIn: isLoggedIn ?? this.isLoggedIn,
-        loadedLanguage: loadedLanguage ?? this.loadedLanguage,
-        languageLoading: languageLoading ?? this.languageLoading,
-        theme: theme ?? this.theme,
-        userToken: userToken ?? this.userToken,
-        orderAddress: orderAddress ?? this.orderAddress,
-        isChangePassword: isChangePassword ?? this.isChangePassword,
-        isEditFullName: isEditFullName ?? this.isEditFullName,
-        colorAvatar: colorAvatar ?? this.colorAvatar,);
+      isLoadingFollows: isLoadingFollows ?? this.isLoadingFollows,
+      statusFollowBLV: statusFollowBLV ?? this.statusFollowBLV,
+      isLoading: isLoading ?? this.isLoading,
+      userInfo: userInfo ?? this.userInfo,
+      isLoggedIn: isLoggedIn ?? this.isLoggedIn,
+      loadedLanguage: loadedLanguage ?? this.loadedLanguage,
+      languageLoading: languageLoading ?? this.languageLoading,
+      theme: theme ?? this.theme,
+      userToken: userToken ?? this.userToken,
+      orderAddress: orderAddress ?? this.orderAddress,
+      isChangePassword: isChangePassword ?? this.isChangePassword,
+      isEditFullName: isEditFullName ?? this.isEditFullName,
+      colorAvatar: colorAvatar ?? this.colorAvatar,
+    );
   }
 
   @override

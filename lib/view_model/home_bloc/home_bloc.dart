@@ -85,8 +85,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         return;
       }
       var passHashMd5 = await hashPassword(event.pass);
-      final response = await SupaBaseApi()
-          .insertAccount(event.phone, passHashMd5, event.money);
+      final response = await SupaBaseApi().insertAccount(event.phone, passHashMd5, event.money);
       if (response.isNotEmpty) {
         HiveDataManager().saveUserInfo(
           event.phone,
@@ -141,16 +140,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     // final salt = await FlutterBcrypt.salt();
     final String salt = dotenv.env['SALT']!;
     printE(salt);
-    return await FlutterBcrypt.hashPw(
-        password: password, salt: r'$2b$06$C6UzMDM.H6dfI/f/IKxGhu');
+    return await FlutterBcrypt.hashPw(password: password, salt: r'$2b$06$C6UzMDM.H6dfI/f/IKxGhu');
   }
 
   // fuc component hand error
   void handError(Object e, String message) {
     if (e is DioException && e.type == DioExceptionType.connectionError) {
       if (navigationService.getCurrentContext.mounted) {
-        CommonFlushBar.show(navigationService.getCurrentContext, message,
-            EFlushbarStatus.Failure);
+        CommonFlushBar.show(navigationService.getCurrentContext, message, EFlushbarStatus.Failure);
       }
     }
     handErrorServer(e);
@@ -161,10 +158,8 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     if (e is DioError) {
       if (e.response?.statusCode == 400) {
         if (navigationService.getCurrentContext.mounted) {
-          final errorMessage = e.response?.data['error_message']['message'] ??
-              AppLocalizations.of(navigationService.getCurrentContext)!.r135;
-          CommonFlushBar.show(navigationService.getCurrentContext, errorMessage,
-              EFlushbarStatus.Warning);
+          final errorMessage = e.response?.data['error_message']['message'] ?? AppLocalizations.of(navigationService.getCurrentContext)!.r135;
+          CommonFlushBar.show(navigationService.getCurrentContext, errorMessage, EFlushbarStatus.Warning);
         }
       }
     }

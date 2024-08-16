@@ -18,8 +18,7 @@ class InfoUserPutResponse {
 
   InfoUserPutResponse();
 
-  factory InfoUserPutResponse.fromJson(Map<String, dynamic> json) =>
-      _$InfoUserPutResponseFromJson(json);
+  factory InfoUserPutResponse.fromJson(Map<String, dynamic> json) => _$InfoUserPutResponseFromJson(json);
 
   Map<String, dynamic> toJson() => _$InfoUserPutResponseToJson(this);
 }

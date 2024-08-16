@@ -18,7 +18,6 @@ class JWTLogin {
     return {
       'token': token,
       'expiredAt': expiredAt,
-
     };
   }
 }

@@ -6,18 +6,14 @@ part of 'login_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
-    LoginResponse()
-      ..accessToken = json['access_token'] as String?
-      ..userId = json['user_id'] as String?
-      ..status = json['status'] as String?
-      ..expireAt = json['expire_at'] as String?
-      ..userInfo = json['user_info'] == null
-          ? null
-          : UserResponse.fromJson(json['user_info'] as Map<String, dynamic>);
+LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) => LoginResponse()
+  ..accessToken = json['access_token'] as String?
+  ..userId = json['user_id'] as String?
+  ..status = json['status'] as String?
+  ..expireAt = json['expire_at'] as String?
+  ..userInfo = json['user_info'] == null ? null : UserResponse.fromJson(json['user_info'] as Map<String, dynamic>);
 
-Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) => <String, dynamic>{
       'access_token': instance.accessToken,
       'user_id': instance.userId,
       'status': instance.status,
@@ -35,8 +31,7 @@ UserResponse _$UserResponseFromJson(Map<String, dynamic> json) => UserResponse()
   ..phone = json['phone_number'] as String?
   ..status = json['status'] as String?;
 
-Map<String, dynamic> _$UserResponseToJson(UserResponse instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$UserResponseToJson(UserResponse instance) => <String, dynamic>{
       'id': instance.id,
       'created_at': instance.createdAt,
       'updated_at': instance.updatedAt,
@@ -56,8 +51,7 @@ RoleResponse _$RoleResponseFromJson(Map<String, dynamic> json) => RoleResponse()
   ..roleName = json['role_name'] as String?
   ..status = json['status'] as bool?;
 
-Map<String, dynamic> _$RoleResponseToJson(RoleResponse instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$RoleResponseToJson(RoleResponse instance) => <String, dynamic>{
       'id': instance.id,
       'created_at': instance.createdAt,
       'updated_at': instance.updatedAt,

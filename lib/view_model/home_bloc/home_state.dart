@@ -31,8 +31,7 @@ class HomeState extends Equatable {
   final int money;
 
   const HomeState(
-      {
-      this.isLoadMoreNotification = false,
+      {this.isLoadMoreNotification = false,
       this.isLoadingNotification = false,
       this.phone = '',
       this.statusHistoryOrder = '',
@@ -61,53 +60,49 @@ class HomeState extends Equatable {
       this.isLoadMoreProducts = false,
       this.hasNew = false});
 
-  HomeState copyWith(
-      {bool? isSearch,
-      String? linkOfMatchsDetail,
-      bool? isLoadingRestaurant,
-      bool? isUpdateAvailable,
-      bool? isLiveStreamListLoading,
-      bool? isBottomLiveStreamListLoading,
-      bool? isDataEmpty,
-      bool? isBottomNavigationShow,
-      String? address,
-      bool? isHiddenLoadMore,
-      bool? isLoadingMenuRestaurant,
-      bool? isLoadingProductRestaurant,
-      bool? isLoading,
-      DateTime? focusedDay,
-      DateTime? dateSelected,
-      String? sortDate,
-      String? fillterByDate,
-      bool? isOrderSuccess,
-      bool? isHistoryOrder,
-      bool? isDetailOrder,
-      String? recipient,
-      String? phone,
-      bool? isLoadMoreRestaurants,
-      bool? isLoadingAds,
-      bool? isLoadMoreHistoryOrder,
-      String? statusHistoryOrder,
-      bool? isLoadMoreProducts,
-      bool? isLoadMoreNotification,
-      bool? isLoadingNotification,
-      bool? hasNew,
-      int? money,}) {
+  HomeState copyWith({
+    bool? isSearch,
+    String? linkOfMatchsDetail,
+    bool? isLoadingRestaurant,
+    bool? isUpdateAvailable,
+    bool? isLiveStreamListLoading,
+    bool? isBottomLiveStreamListLoading,
+    bool? isDataEmpty,
+    bool? isBottomNavigationShow,
+    String? address,
+    bool? isHiddenLoadMore,
+    bool? isLoadingMenuRestaurant,
+    bool? isLoadingProductRestaurant,
+    bool? isLoading,
+    DateTime? focusedDay,
+    DateTime? dateSelected,
+    String? sortDate,
+    String? fillterByDate,
+    bool? isOrderSuccess,
+    bool? isHistoryOrder,
+    bool? isDetailOrder,
+    String? recipient,
+    String? phone,
+    bool? isLoadMoreRestaurants,
+    bool? isLoadingAds,
+    bool? isLoadMoreHistoryOrder,
+    String? statusHistoryOrder,
+    bool? isLoadMoreProducts,
+    bool? isLoadMoreNotification,
+    bool? isLoadingNotification,
+    bool? hasNew,
+    int? money,
+  }) {
     return HomeState(
-
         isSearch: isSearch ?? this.isSearch,
         isLoadingRestaurant: isLoadingRestaurant ?? this.isLoadingRestaurant,
         isDataEmpty: isDataEmpty ?? this.isDataEmpty,
-        isBottomNavigationShow:
-            isBottomNavigationShow ?? this.isBottomNavigationShow,
+        isBottomNavigationShow: isBottomNavigationShow ?? this.isBottomNavigationShow,
         isUpdateAvailable: isUpdateAvailable ?? this.isUpdateAvailable,
         address: address ?? this.address,
-
-        isLoadingMenuRestaurant:
-            isLoadingMenuRestaurant ?? this.isLoadingMenuRestaurant,
+        isLoadingMenuRestaurant: isLoadingMenuRestaurant ?? this.isLoadingMenuRestaurant,
         isHiddenLoadMore: isHiddenLoadMore ?? this.isHiddenLoadMore,
-        isLoadingProductRestaurant:
-            isLoadingProductRestaurant ?? this.isLoadingProductRestaurant,
+        isLoadingProductRestaurant: isLoadingProductRestaurant ?? this.isLoadingProductRestaurant,
         isLoading: isLoading ?? this.isLoading,
         sortDate: sortDate ?? this.sortDate,
         focusedDay: focusedDay ?? this.focusedDay,
@@ -118,17 +113,13 @@ class HomeState extends Equatable {
         isDetailOrder: isDetailOrder ?? this.isDetailOrder,
         recipient: recipient ?? this.recipient,
         phone: phone ?? this.phone,
-        isLoadMoreRestaurants:
-            isLoadMoreRestaurants ?? this.isLoadMoreRestaurants,
+        isLoadMoreRestaurants: isLoadMoreRestaurants ?? this.isLoadMoreRestaurants,
         isLoadingAds: isLoadingAds ?? this.isLoadingAds,
-        isLoadMoreHistoryOrder:
-            isLoadMoreHistoryOrder ?? this.isLoadMoreHistoryOrder,
+        isLoadMoreHistoryOrder: isLoadMoreHistoryOrder ?? this.isLoadMoreHistoryOrder,
         statusHistoryOrder: statusHistoryOrder ?? this.statusHistoryOrder,
         isLoadMoreProducts: isLoadMoreProducts ?? this.isLoadMoreProducts,
-        isLoadMoreNotification:
-            isLoadMoreNotification ?? this.isLoadMoreNotification,
-        isLoadingNotification:
-            isLoadingNotification ?? this.isLoadingNotification,
+        isLoadMoreNotification: isLoadMoreNotification ?? this.isLoadMoreNotification,
+        isLoadingNotification: isLoadingNotification ?? this.isLoadingNotification,
         money: money ?? this.money,
         hasNew: hasNew ?? this.hasNew);
   }

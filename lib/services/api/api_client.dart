@@ -15,15 +15,13 @@ import 'package:new88_vaynow/utils/navigator_global_context_helper.dart';
 
 // Sử dụng BearerToken cho xác thực
 const authenticatorBearer = 'Bearer';
-final StreamController<bool?> streamOpenLogin =
-    StreamController<bool?>.broadcast();
+final StreamController<bool?> streamOpenLogin = StreamController<bool?>.broadcast();
 
 class ApiClient {
   bool isOpenLogin = false;
   final dio = Dio();
   final String baseUrl = dotenv.env['API_URL']!;
-  final NavigatorGlobalContextHelper navigationService =
-      locator.get<NavigatorGlobalContextHelper>();
+  final NavigatorGlobalContextHelper navigationService = locator.get<NavigatorGlobalContextHelper>();
   late AuthServices authServices;
   late RestaurantApi restaurantApi;
 
@@ -45,10 +43,8 @@ class ApiClient {
 
     try {
       // ignore: deprecated_member_use
-      (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate =
-          (HttpClient client) {
-        client.badCertificateCallback =
-            ((X509Certificate cert, String host, int port) => true);
+      (dio.httpClientAdapter as DefaultHttpClientAdapter).onHttpClientCreate = (HttpClient client) {
+        client.badCertificateCallback = ((X509Certificate cert, String host, int port) => true);
         return null;
       };
     } catch (_) {}
@@ -61,8 +57,7 @@ class ApiClient {
         }
 
         // Remove null or empty values from query parameters
-        options.queryParameters
-            .removeWhere((key, value) => value == '' || value == null);
+        options.queryParameters.removeWhere((key, value) => value == '' || value == null);
 
         // Check and log null or empty fields in the request body
         if (options.data is Map) {
@@ -83,16 +78,14 @@ class ApiClient {
         handler.next(options);
       },
       onError: (error, handler) async {
-        if (error.response?.statusCode == HttpStatus.unauthorized ||
-            error.response?.statusCode == HttpStatus.forbidden) {
+        if (error.response?.statusCode == HttpStatus.unauthorized || error.response?.statusCode == HttpStatus.forbidden) {
           streamOpenLogin.sink.add(null);
           return;
         }
 
         final result = await Connectivity().checkConnectivity();
-        if (result.contains(ConnectivityResult.none)){
-          const errorMsg =
-              "No internet connection. Please check the connection again.";
+        if (result.contains(ConnectivityResult.none)) {
+          const errorMsg = "No internet connection. Please check the connection again.";
           if (kDebugMode) {
             print(errorMsg);
           }
@@ -124,6 +117,5 @@ class ApiClient {
     streamOpenLogin.close();
   }
 
-  Future<void> goToLogin() async {
-  }
+  Future<void> goToLogin() async {}
 }

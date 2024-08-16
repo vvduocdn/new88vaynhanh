@@ -18,8 +18,7 @@ class PopupComfirm extends StatefulWidget {
     required this.cancel,
   });
 
-  static Future<void> showPopModelDialog(parentContext, Function onApprove,
-      String title, String content, String cancel) {
+  static Future<void> showPopModelDialog(parentContext, Function onApprove, String title, String content, String cancel) {
     return showDialog(
       barrierDismissible: false,
       context: parentContext,
@@ -59,42 +58,39 @@ class _PopupComfirmState extends State<PopupComfirm> {
                   ),
                   child: SizedBox(
                     width: double.infinity,
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            height: 8,
-                          ),
-                          Text(
-                            widget.title,
-                            style: Styles.n16.copyWith(
-                              fontWeight: FontWeight.w700,
-                              color: AppColor.h444444,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            widget.content,
-                            style: Styles.n14.copyWith(
-                              fontWeight: FontWeight.w400,
-                              color: AppColor.h444444,
-                            ),
-                            textAlign: TextAlign.center,
-                          ),
-                          const Spacer(),
-                          CustomButton(
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                            text: widget.cancel,
-                            colorText: context.colors.white,
-                            backgroundColors: context.colors.hF05D0E,
-                            colorBorder: context.colors.hF05D0E,
-                          )
-                        ]),
+                    child: Column(mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center, children: [
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        widget.title,
+                        style: Styles.n16.copyWith(
+                          fontWeight: FontWeight.w700,
+                          color: AppColor.h444444,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        widget.content,
+                        style: Styles.n14.copyWith(
+                          fontWeight: FontWeight.w400,
+                          color: AppColor.h444444,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      const Spacer(),
+                      CustomButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        text: widget.cancel,
+                        colorText: context.colors.white,
+                        backgroundColors: context.colors.hF05D0E,
+                        colorBorder: context.colors.hF05D0E,
+                      )
+                    ]),
                   )),
             ],
           ),

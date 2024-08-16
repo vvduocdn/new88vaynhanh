@@ -35,8 +35,7 @@ void main() async {
   Hive.registerAdapter(OrderAddressHiveAdapter());
   SupaBaseService.instance;
 
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
     runApp(const MyApp());
   });
 }
@@ -96,12 +95,9 @@ class _MyHomePageState extends State<MyHomePage> {
             // ignore: deprecated_member_use
             var systemLocale = window.locale;
             var systemLanguage = systemLocale.languageCode;
-            var locale = context.watch<UserBloc>().state.loadedLanguage ??
-                systemLanguage;
+            var locale = context.watch<UserBloc>().state.loadedLanguage ?? systemLanguage;
             ThemeMode themeMode = ThemeMode.system;
-            themeMode = context.watch<UserBloc>().state.theme!
-                ? ThemeMode.light
-                : ThemeMode.dark;
+            themeMode = context.watch<UserBloc>().state.theme! ? ThemeMode.light : ThemeMode.dark;
 
             return MaterialApp(
               title: 'Vay New88',
@@ -115,8 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 }
                 return systemLocale;
               },
-              navigatorKey:
-                  locator.get<NavigatorGlobalContextHelper>().navigatorKey,
+              navigatorKey: locator.get<NavigatorGlobalContextHelper>().navigatorKey,
               localizationsDelegates: const [
                 AppLocalizations.delegate,
                 GlobalMaterialLocalizations.delegate,

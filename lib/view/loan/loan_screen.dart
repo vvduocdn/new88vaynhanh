@@ -24,8 +24,7 @@ class LoanScreen extends StatefulWidget {
 class _AddVayNowState extends State<LoanScreen> {
   final TextEditingController _searchController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
-  final NavigatorGlobalContextHelper navigationService =
-      locator.get<NavigatorGlobalContextHelper>();
+  final NavigatorGlobalContextHelper navigationService = locator.get<NavigatorGlobalContextHelper>();
   @override
   void initState() {
     super.initState();
@@ -52,8 +51,7 @@ class _AddVayNowState extends State<LoanScreen> {
                 resizeToAvoidBottomInset: false,
                 backgroundColor: context.colors.hF05D0E,
                 body: Container(
-                  margin:
-                      EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+                  margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
                   color: context.colors.white,
@@ -62,8 +60,7 @@ class _AddVayNowState extends State<LoanScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 20, horizontal: 15),
+                        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 15),
                         decoration: BoxDecoration(color: Color(0xFFFE5F06)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,8 +70,7 @@ class _AddVayNowState extends State<LoanScreen> {
                             ),
                             Text(
                               'Vay Uy Tín',
-                              style: Styles.n18w7
-                                  .copyWith(color: context.colors.white),
+                              style: Styles.n18w7.copyWith(color: context.colors.white),
                             ),
                             Container(
                               width: 30,
@@ -92,37 +88,26 @@ class _AddVayNowState extends State<LoanScreen> {
                             children: [
                               spaceH100,
                               spaceH10,
-                              Assets.images.resultSearch
-                                  .image(width: 120, height: 120),
+                              Assets.images.resultSearch.image(width: 120, height: 120),
                               spaceH10,
                               Text(
                                 'Điên thông tin để đăng ký, có thể vây thêm thì đ\n30,000,000',
-                                style: Styles.n14w4
-                                    .copyWith(color: context.colors.text),
+                                style: Styles.n14w4.copyWith(color: context.colors.text),
                                 textAlign: TextAlign.center,
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      CupertinoPageRoute(
-                                          builder: (_) => const AddVayNow()));
+                                  Navigator.push(context, CupertinoPageRoute(builder: (_) => const AddVayNow()));
                                 },
                                 child: Container(
                                   height: 48,
                                   width: MediaQuery.of(context).size.width,
-                                  margin: const EdgeInsets.only(top: 20).add(
-                                      const EdgeInsets.symmetric(
-                                          horizontal: 30)),
-                                  decoration: BoxDecoration(
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(10)),
-                                      color: Color(0xFFFE5F06)),
+                                  margin: const EdgeInsets.only(top: 20).add(const EdgeInsets.symmetric(horizontal: 30)),
+                                  decoration: BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(10)), color: Color(0xFFFE5F06)),
                                   alignment: Alignment.center,
                                   child: Text(
                                     'Nộp đơn ngay',
-                                    style: Styles.n16b
-                                        .copyWith(color: context.colors.white),
+                                    style: Styles.n16b.copyWith(color: context.colors.white),
                                   ),
                                 ),
                               ),
@@ -143,8 +128,7 @@ class _AddVayNowState extends State<LoanScreen> {
                                 spaceW10,
                                 Text(
                                   'Gói vay của bạn',
-                                  style: Styles.n16b
-                                      .copyWith(color: context.colors.text),
+                                  style: Styles.n16b.copyWith(color: context.colors.text),
                                 )
                               ],
                             ),
@@ -153,62 +137,48 @@ class _AddVayNowState extends State<LoanScreen> {
                               width: MediaQuery.of(context).size.width,
                               padding: const EdgeInsets.all(10),
                               margin: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(10)),
-                                  border: Border.all(
-                                      width: 1, color: context.colors.hF05D0E)),
+                              decoration: BoxDecoration(borderRadius: const BorderRadius.all(Radius.circular(10)), border: Border.all(width: 1, color: context.colors.hF05D0E)),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Flexible(
                                         child: Text(
                                           '#${state.userInfo?.id ?? ""}',
-                                          style: Styles.n16w5.copyWith(
-                                              color: context.colors.text),
+                                          style: Styles.n16w5.copyWith(color: context.colors.text),
                                           maxLines: 1,
                                           overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
                                       spaceW12,
                                       Text(
-                                        DateTime.parse(
-                                                state.userInfo?.createdAt ??
-                                                    DateTime.now().toString())
-                                            .dmy,
-                                        style: Styles.n16w5.copyWith(
-                                            color: context.colors.text),
+                                        DateTime.parse(state.userInfo?.createdAt ?? DateTime.now().toString()).dmy,
+                                        style: Styles.n16w5.copyWith(color: context.colors.text),
                                       ),
                                     ],
                                   ),
                                   spaceH12,
                                   Text(
                                     "Name: ${state.userInfo?.fullName ?? ''}",
-                                    style: Styles.n14w4
-                                        .copyWith(color: context.colors.text),
+                                    style: Styles.n14w4.copyWith(color: context.colors.text),
                                   ),
                                   spaceH10,
                                   Text(
                                     "Phone: ${state.userInfo?.phone ?? ''}",
-                                    style: Styles.n14w4
-                                        .copyWith(color: context.colors.text),
+                                    style: Styles.n14w4.copyWith(color: context.colors.text),
                                   ),
                                   spaceH10,
                                   Text(
                                     'Khoản vay : đ ${formatNumber(int.parse(state.userInfo?.money ?? '0'))}',
-                                    style: Styles.n14w7
-                                        .copyWith(color: context.colors.text),
+                                    style: Styles.n14w7.copyWith(color: context.colors.text),
                                   ),
                                   spaceH10,
                                   Text(
                                     'Đang xét duyệt',
-                                    style: Styles.n14w7.copyWith(
-                                        color: context.colors.hF05D0E),
+                                    style: Styles.n14w7.copyWith(color: context.colors.hF05D0E),
                                   ),
                                 ],
                               ),
